@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Saltnic E-liquids</title>
+<link rel="icon" type="image/x-icon" href="logo.png">
+<meta http-equiv="refresh" content="300">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style type="text/css">
+ .col-6{
+ border:solid;
+ border-color:powderblue;
+ }
+ #upperFooter{
+ color:white;
+ background-color:hsl(0, 0%, 20%);
+ padding:10px;
+ }
+ 
+ #lowerFooter{
+ color:white;
+ background-color:YellowGreen;
+ text-align:center;
+ }
+  </style>
+  </head>
+  <body>
+  <!--navbar-->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="index.html"><img src="logo.png" alt="logo" style="width:60px;" class="rounded-pill"></a>
+  <span style="color:white;"><h1><b>Shop Inventory</b></h1></span>
+  <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"><span class="navbar-toggler-icon"></span></button>
+  <div id="collapsibleNavbar" class="collapse navbar-collapse">
+  <ul class="navbar-nav">
+  <li class="nav-item"><a class="nav-link" href="index.html" >Home</a></li>
+  <li class="nav-item"><a class="nav-link" href="saltnic.html" >Saltnic E-juice</a></li>
+  <li class="nav-item"><a class="nav-link" href="freebase.html" >Freebase E-juice</a></li>
+  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">Convenient Tools</a>
+  <ul class="dropdown-menu">
+  <li><a class="dropdown-item" href="">Calculator: bKash Cashout charge</a></li>
+  <li><a class="dropdown-item" href="">VAT Calculation</a></li>
+  </ul>
+  </li>
+  </ul>
+  <form class="d-flex">
+  <input type="text" class="form-control me-2" placeholder="Search">
+  <button type="button" class="btn btn-primary">Search</button>
+  </form>
+  </div>
+  </div>
+  </nav>
+  
+  <div style="padding:5px;" class="container-fluid bg-info">
+  <h1 style="text-align:center;"><b>Saltnic</b></h1>
+  </div>
+  <div class="container mt-3">
+ <div class="row">
+ <div class="col-6 col-md-2">
+ <h3><b>Dry Tobacco Iced 25mg salt</b></h3><br>
+ <img src="https://vapeshopsky.com/wp-content/uploads/2024/03/giu.jpg" class="img-fluid" width="120px" alt="Dry tobacco iced 25mg"><br>
+ <p style="text-align:center;"><kbd>Qnty-<span id="dryTobacco25mg"></span></kbd></p>
+ </div>
+ 
+ <div class="col-6 col-md-2">
+ <h3><b>Dry Tobacco Iced 50mg salt</b></h3><br>
+ <img src="drytobacco50mg.jpeg" class="img-fluid" alt="Dry tobacco iced 50mg"><br>
+ <p style="text-align:center;"><kbd>Qnty-<span id="dryTobacco50mg"></span></kbd></p>
+ </div>
+ <div class="col-6 col-md-2">
+ <h3><b>Purple Bomb 25mg salt</b></h3><br>
+ <img src="purplebomb25mg.jpeg" class="img-fluid" alt="Purple Bomb 25mg"><br>
+ <p style="text-align:center;"><kbd>Qnty-<span id="purpleBomb25mg"></span></kbd></p>
+ </div>
+ <div class="col-6 col-md-2">
+ <h3><b>Purple Bomb 50mg salt</b></h3><br>
+ <img src="https://getpop.co/cdn/shop/products/vgod-purple-bomb-50mg.jpg?v=1593887130" class="img-fluid" alt="Purple Bomb 50mg"><br>
+ <p style="text-align:center;"><kbd>Qnty-<span id="purpleBomb50mg"></span></kbd></p>
+ </div>
+ <div class="col-6 col-md-2">
+ <h3><b> Mango Bomb & Mango Bomb Iced 25mg salt</b></h3><br>
+ <img src="https://ecloudsbd.com/admin_assats/product/064aa262bed790459530ed270fd3408a.vgod-mango-bomb.webp" class="img-fluid" alt="mango bomb"><br>
+ <center><div class="btn btn-group btn-group-sm">
+ <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">Select Option</button>
+ <ul class="dropdown-menu">
+ <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#myModal1">Iced</a></li>
+ <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#myModal2" >Non-Iced</a></li>
+ </ul>
+ </div></center>
+ 
+ 
+ <!-- The Modal -->
+ <div class="modal fade" id="myModal1">
+ <div class="modal-dialog modal-dialog-centered modal-sm">
+ <div class="modal-content">
+ 
+ <!-- Modal Header -->
+ <div class="modal-header">
+ <h4 class="modal-title" style="color:black;"><h4><b>Apple Bomb Iced 25mg</b></h4>
+ <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+ </div>
+ 
+ <!-- Modal body -->
+ <div class="modal-body" style="color:black;">
+ <img src="https://ecloudsbd.com/admin_assats/product/064aa262bed790459530ed270fd3408a.vgod-mango-bomb.webp" class="img-fluid">
+ <p style="text-align:center;"><kbd>Qnty-<span id="mangoBomb25mgIced"></span></kbd></p>
+ </div>
+ 
+ <!-- Modal footer -->
+ <div class="modal-footer">
+ <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+ </div>
+ 
+ </div>
+ </div>
+ </div>
+ 
+ 
+ <!-- The Modal -->
+ <div class="modal fade" id="myModal2">
+ <div class="modal-dialog modal-dialog-centered modal-sm">
+ <div class="modal-content">
+ 
+ <!-- Modal Header -->
+ <div class="modal-header">
+ <h4 class="modal-title" style="color:black;"><h4><b>Apple Bomb Non-Iced 25mg</b></h4>
+ <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+ </div>
+ 
+ <!-- Modal body -->
+ <div class="modal-body" style="color:black;">
+ <img src="https://vapeshopsky.com/wp-content/uploads/2021/03/vgod-mango-1.jpg" class="img-fluid">
+ <p style="text-align:center;"><kbd>Qnty-<span id="mangoBomb25mgnonIced"></span></kbd></p>
+ </div>
+ 
+ <!-- Modal footer -->
+ <div class="modal-footer">
+ <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+ </div>
+ 
+ </div>
+ </div>
+ </div>
+ </div>
+ <!--End of Mango bomb-->
+ 
+ 
+ <div class="col-6 col-md-2">
+ <h3><b>Sizia Hami Melon 20mg salt</b></h3><br>
+ <img src="siziahamimelon.jpeg" class="img-fluid" alt="Sizia Hami Melon 20mg"><br>
+ <p style="text-align:center;"><kbd>Qnty-<span id="siziaHamiMelon20mg"></span></kbd></p>
+ </div>
+ </div>
+ <div class="row">
+ <div class="col-6 col-md-2">
+ <h3><strong>Sizia Hami Melon 50mg salt</strong></h3><br>
+ <img src="siziahamimelon.jpeg" class="img-fluid" alt="Sizia Hami Melon 50mg"><br>
+ <p style="text-align:center;"><kbd>Qnty-<span id="siziaHamiMelon50mg"></span></kbd></p>
+ </div>
+ <div class="col-6 col-md-2">
+ <h3><b>Sizia Mango Peach Iced 20mg salt</b></h3><br>
+ <img src="https://ovseg.com/wp-content/uploads/2024/06/Tokyo-Iced-Mango-Peach-30ml.jpg" class="img-fluid" alt="Sizia Mango Peach iced 20mg"><br>
+ <p style="text-align:center;"><kbd>Qnty-<span id="siziaMangoPeachIce20mg"></span></kbd></p>
+ </div>
+ <div class="col-6 col-md-2">
+ <h3><b>VCT 30mg salt</b></h3><br>
+ <img src="https://vaporzonebd.com/admin_assats/product/f3401e7d73ed125c8b9fcd7a957e9ff1.ripe-vape-vct-salt-nic-30ml.webp" class="img-fluid" alt="VCT 30mg"><br>
+ <p style="text-align:center;"><kbd>Qnty-<span id="vct30mg"></span></kbd></p>
+ </div>
+ <div class="col-6 col-md-2">
+ <h3><b>VCT 50mg salt</b></h3><br>
+ <img src="https://vaporzonebd.com/admin_assats/product/f3401e7d73ed125c8b9fcd7a957e9ff1.ripe-vape-vct-salt-nic-30ml.webp" class="img-fluid" alt="VCT 50mg"><br>
+ <p style="text-align:center;"><kbd>Qnty-<span id="vct50mg"></span></kbd></p>
+ </div>
+ <div class="col-6 col-md-2">
+ <h3><b>Banana Bomb Iced 25mg salt</b></h3><br>
+ <img src="https://b3051526.smushcdn.com/3051526/wp-content/uploads/2023/10/VGOD-Iced-Banana-Bomb-25mg-30ml-1-600x600.png?lossy=1&strip=1&webp=1" class="img-fluid" alt="Banana Bomb Iced 25mg salt"><br>
+ <p style="text-align:center;"><kbd>Qnty-<span id="banana25mgIced"></span></kbd></p>
+ </div>
+ <div class="col-6 col-md-2">
+ <h3><b> Apple Bomb & Apple Bomb Iced 25mg salt</b></h3><br>
+ <img src="https://ecloudsbd.com/admin_assats/product/cb4f6f1d1f1593a7d21801e01ce1f8f9.vgod-apple-bomb.webp" class="img-fluid" alt="mango bomb"><br>
+ <center><div class="btn btn-group btn-group-sm">
+ <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">Select Option</button>
+ <ul class="dropdown-menu">
+ <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#myModal3">Iced</a></li>
+ <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#myModal4" >Non-Iced</a></li>
+ </ul>
+ </div></center>
+ 
+ 
+ <!-- The Modal -->
+ <div class="modal fade" id="myModal3">
+ <div class="modal-dialog modal-dialog-centered modal-sm">
+ <div class="modal-content">
+ 
+ <!-- Modal Header -->
+ <div class="modal-header">
+ <h4 class="modal-title" style="color:black;"><h4><b>Apple Bomb Iced 25mg</b></h4>
+ <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+ </div>
+ 
+ <!-- Modal body -->
+ <div class="modal-body" style="color:black;">
+ <img src="https://ecloudsbd.com/admin_assats/product/cb4f6f1d1f1593a7d21801e01ce1f8f9.vgod-apple-bomb.webp" class="img-fluid">
+ <p style="text-align:center;"><kbd>Qnty-<span id="appleBomb25mgIced"></span></kbd></p>
+ </div>
+ 
+ <!-- Modal footer -->
+ <div class="modal-footer">
+ <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+ </div>
+ 
+ </div>
+ </div>
+ </div>
+ 
+ 
+ <!-- The Modal -->
+ <div class="modal fade" id="myModal4">
+ <div class="modal-dialog modal-dialog-centered modal-sm">
+ <div class="modal-content">
+ 
+ <!-- Modal Header -->
+ <div class="modal-header">
+ <h4 class="modal-title" style="color:black;"><h4><b>Apple Bomb Non-Iced 25mg</b></h4>
+ <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+ </div>
+ 
+ <!-- Modal body -->
+ <div class="modal-body" style="color:black;">
+ <img src="https://vapegoodies.com/wp-content/uploads/2024/05/Vgod-Apple-Bomb-Salt-Nicotine.jpg" class="img-fluid">
+ <p style="text-align:center;"><kbd>Qnty-<span id="appleBomb25mgnonIced"></span></kbd></p>
+ </div>
+ 
+ <!-- Modal footer -->
+ <div class="modal-footer">
+ <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+ </div>
+ 
+ </div>
+ </div>
+ </div>
+ </div>
+ <!--End of Apple bomb-->
+ </div>
+  </div>
+  <div style="border:gray 2px solid; border-radius:12px; background-color:powderblue;" class="container mt-3">
+  <h2 style="text-align:center;">Stock Summery</h2>
+  <center><p class="badge bg-info rounded-pill mt-3">Total saltnic items: <span id="sum"></span></p></center>
+  </div>
+  <footer>
+  <div id="upperFooter" class="mt-5">
+  <a class="btn btn-light float-end" href="#"><i class="bi bi-chevron-double-up"></i></a><br>
+  <div class="mt-1" style="text-align:center; word-spacing:15px">
+  <p style="word-spacing:0px;"><strong>Follow us:</strong></p>
+  <i class="bi bi-facebook" style="font-size:26px; color:#1877F2;"></i>
+  <i class="bi bi-instagram" style="font-size:26px; color:#fa7e1e;"></i>
+  <i class="bi bi-pinterest" style="font-size:26px; color:#E60023;"></i>
+  <i class="bi bi-linkedin" style="font-size:26px; color:#0077B5;"></i>
+  <i class="bi bi-twitter-x" style="font-size:26px; color:#657786;"></i>
+  </div>
+  <div class="row mt-5">
+  <div class="col-3">
+  <p style="font-weight:bold;">About</p>
+  </div>
+  <div class="col-3">
+  <p style="font-weight:bold;">Contact</p>
+  </div>
+  <div class="col-3">
+  <p style="font-weight:bold;">Privacy Policy</p>
+  </div>
+  <div class="col-3">
+  <p style="font-weight:bold;">Navigation</p>
+  </div>
+  </div>
+  <div class="mt-2">
+  <a href="index.html"><img src="logo.png" width="60"height="45" alt="logo"></a><br>
+   <p>This is a products inventory website.<br>Where you can see how many products are available.<br> On the other hand You can calculate some necessary accountings like bKash payment cashout charges.<br> The cost of Merchant payment cashout charger as well.<br>You can also calculate Mushak(VAT) calculation on this website </p>
+  </div>
+  </div>
+  <div id="lowerFooter">
+  <p>All rights reserved | Copyright ©2024<br>Designed by Abdul Muktadir Nahid</p>
+  </div>
+  </footer>
+  
+  <script type="text/javascript">
+  //item List
+  let dryTobacco25mg=1;
+  let dryTobacco50mg=3;
+  let mangoBomb25mgIced=5;
+  let mangoBomb25mgnonIced=5;
+  let purpleBomb25mg=5;
+  let purpleBomb50mg=5;
+  let siziaHamiMelon20mg=2;
+  let siziaHamiMelon50mg=1;
+  let siziaMangoPeachIce20mg=1;
+  let vct30mg=4;
+  let vct50mg=2;
+  let banana25mgIced=1;
+  let appleBomb25mgIced=1;
+  let appleBomb25mgnonIced=1;
+  
+  
+  if(dryTobacco25mg==0){
+  document.getElementById('dryTobacco25mg').innerHTML="Sold Out";
+  document.getElementById('dryTobacco25mg').style.color="#ff0000";
+  }else{
+  document.getElementById('dryTobacco25mg').innerHTML=dryTobacco25mg;
+  }
+  if(dryTobacco50mg==0){
+  document.getElementById('dryTobacco50mg').innerHTML="Sold Out";
+  document.getElementById('dryTobacco50mg').style.color="#ff0000";
+  }else{
+  document.getElementById('dryTobacco50mg').innerHTML=dryTobacco50mg;
+  }
+  if(mangoBomb25mgIced==0){
+  document.getElementById('mangoBomb25mgIced').innerHTML="Sold Out";
+  document.getElementById('mangoBomb25mgIced').style.color="#ff0000";
+  }else{
+  document.getElementById('mangoBomb25mgIced').innerHTML=mangoBomb25mgIced;
+  }
+  if(mangoBomb25mgnonIced==0){
+  document.getElementById('mangoBomb25mgnonIced').innerHTML="Sold Out";
+  document.getElementById('mangoBomb25mgnonIced').style.color="#ff0000";
+  }else{
+  document.getElementById('mangoBomb25mgnonIced').innerHTML=mangoBomb25mgnonIced;
+  }
+  if(purpleBomb25mg==0){
+  document.getElementById('purpleBomb25mg').innerHTML="Sold Out";
+  document.getElementById('purpleBomb25mg').style.color="#ff0000";
+  }else{
+  document.getElementById('purpleBomb25mg').innerHTML=purpleBomb25mg;
+  }
+if(purpleBomb50mg==0){
+  document.getElementById('purpleBomb50mg').innerHTML="Sold Out";
+  document.getElementById('purpleBomb50mg').style.color="#ff0000";
+  }else{
+  document.getElementById('purpleBomb50mg').innerHTML=purpleBomb50mg;
+  }
+if(siziaHamiMelon20mg==0){
+  document.getElementById('siziaHamiMelon20mg').innerHTML="Sold Out";
+  document.getElementById('siziaHamiMelon20mg').style.color="#ff0000";
+  }else{
+  document.getElementById('siziaHamiMelon20mg').innerHTML=siziaHamiMelon20mg;
+  }
+if(siziaHamiMelon50mg==0){
+  document.getElementById('siziaHamiMelon50mg').innerHTML="Sold Out";
+  document.getElementById('siziaHamiMelon50mg').style.color="#ff0000";
+  }else{
+  document.getElementById('siziaHamiMelon50mg').innerHTML=siziaHamiMelon50mg;
+  }
+if(siziaMangoPeachIce20mg==0){
+  document.getElementById('siziaMangoPeachIce20mg').innerHTML="Sold Out";
+  document.getElementById('siziaMangoPeachIce20mg').style.color="#ff0000";
+  }else{
+  document.getElementById('siziaMangoPeachIce20mg').innerHTML=siziaMangoPeachIce20mg;
+  }
+if(vct30mg==0){
+  document.getElementById('vct30mg').innerHTML="Sold Out";
+  document.getElementById('vct30mg').style.color="#ff0000";
+  }else{
+  document.getElementById('vct30mg').innerHTML=vct30mg;
+  }
+if(vct50mg==0){
+  document.getElementById('vct50mg').innerHTML="Sold Out";
+  document.getElementById('vct50mg').style.color="#ff0000";
+  }else{
+  document.getElementById('vct50mg').innerHTML=vct50mg;
+  }
+if(banana25mgIced==0){
+  document.getElementById('banana25mgIced').innerHTML="Sold Out";
+  document.getElementById('banana25mgIced').style.color="#ff0000";
+  }else{
+  document.getElementById('banana25mgIced').innerHTML=banana25mgIced;
+  }
+  if(appleBomb25mgIced==0){
+  document.getElementById('appleBomb25mgIced').innerHTML="Sold Out";
+  document.getElementById('appleBomb25mgIced').style.color="#ff0000";
+  }else{
+  document.getElementById('appleBomb25mgIced').innerHTML=appleBomb25mgIced;
+  }
+if(appleBomb25mgnonIced==0){
+  document.getElementById('appleBomb25mgnonIced').innerHTML="Sold Out";
+  document.getElementById('appleBomb25mgnonIced').style.color="#ff0000";
+  }else{
+  document.getElementById('appleBomb25mgnonIced').innerHTML=appleBomb25mgnonIced;
+  }
+
+
+  let sum=dryTobacco25mg+
+  dryTobacco50mg+
+  mangoBomb25mgIced+
+  mangoBomb25mgnonIced+
+  purpleBomb25mg+
+  purpleBomb50mg+
+  siziaHamiMelon20mg+
+  siziaHamiMelon50mg+
+  siziaMangoPeachIce20mg+
+  vct30mg+
+  vct50mg+
+  banana25mgIced+
+  appleBomb25mgIced+
+  appleBomb25mgnonIced;
+  document.getElementById('sum').innerHTML=sum;
+  </script>
+  </body>
+  </html>
