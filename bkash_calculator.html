@@ -2,7 +2,6 @@
 <html>
 <head>
 <title>Payment bKash cashout charges</title>
-<link rel="icon" type="image/x-icon" href="logo.png">
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -68,6 +67,64 @@
   background-color:#4A4A4A;
   }
   
+  #codSubmit, #costSubmit{
+  display:inline-block;
+  width:100%;
+  padding:15px 30px;
+  border:none;
+  border-radius:6px;
+  background-color:gray;
+  color:white;
+  font-weight:bold;
+  }
+  
+  #resetCod{
+  display:inline-block;
+  margin:15px 4px 5px 0px;
+  width:48%;
+  padding:15px 30px;
+  border:none;
+  border-radius:6px;
+  background-color:#FF4747;
+  color:white;
+  font-weight:bold;
+  }
+  
+  #codCalculate{
+  display:inline-block;
+  margin:15px 0px 5px 4px;
+  width:48%;
+  padding:15px 30px;
+  border:none;
+  border-radius:6px;
+  background-color:#4CAF50;
+  color:white;
+  font-weight:bold;
+  }
+  
+  #codCashoutCost{
+  margin:15px 0px 15px 0px;
+  border:hidden;
+  border-radius:2px;
+  padding:20px;
+  font-size:39px;
+  color:white;
+  font-weight:bold;
+  text-align:center;
+  background-color:#4A4A4A;
+  }
+  
+  #clear1, #clear2{
+  display:inline-block;
+  width:100%;
+  padding:15px 30px;
+  border:none;
+  border-radius:6px;
+  background-color:#FF4747;
+  color:white;
+  font-weight:bold;
+  }
+  
   #upperFooter{
   color:white;
   background-color:hsl(0, 0%, 20%);
@@ -111,20 +168,21 @@
   
   
   <!--Merchant cashout calculator-->
-  <h3 style="text-align:center; margin-top:100px;">Merchant Payment Cashout</h3>
-  <hr>
+  <h1 style="text-align:center; margin-top:100px;">bKash Cashout charge for Merchant Payment</h1>
   <div class="container mt-3">
   <div class="row">
   <div class="col-12 col-md-4">
   </div>
-  <div class="col-12 col-md-4">
+  <div class="col-12 col-md-4" style="background-color:lightblue;">
   <form id="cashoutForm">
   <label for="amount">Payment Amount:</label>
   <input type="number" id="amount" name="amount" placeholder="Payment Amount..">
   <button type="submit" id="submitBtn">Add Amount</button>
   </form>
+  
   <button type="button" id="reset">Reset</button>
   <button type="button" id="calculate">Calculate</button>
+  
   <div id="merchantCashoutCost">
   <p id="amountOutput"></p>
   <p id="costOutput"></p>
@@ -134,7 +192,45 @@
   </div>
   </div>
   </div>
+  <p style="text-align:justify;">Merchant bKash Payment cashout charge is 1.49% Which is per thousand 14.9 Tk. in any Cashout point, Like agent Cashout and ATM booth.</p>
+  <hr>
   
+  
+  
+  
+  
+  <!--COD Cashout calculator-->
+  <h1 style="text-align:center; margin-top:50px;"> bKash Cashout charge for Cash On Delivery Payment</h1>
+  <div class="container mt-3">
+  <div class="row">
+  <div class="col-12 col-md-4">
+  </div>
+  <div class="col-12 col-md-4" style="background-color:lightblue;">
+  <form id="codCashout">
+  <input id="codAmount" type="number" name="codAmount" placeholder="COD Amount">
+  <button type="submit" id="codSubmit">Add Amount</button>
+  </form>
+  <button type="button" id="clear1" style="margin: 5px 0px 50px 0px;">Clear</button>
+  
+  <form id="deliveryCost">
+  <input id="deliveryAmount" type="number" name="deliveryAmount" placeholder="Delivery Cost">
+  <button type="submit" id="costSubmit">Add Amount</button>
+  </form>
+    <button type="button" id="clear2" style="margin: 5px 0px 40px 0px;">Clear</button>
+
+  <button type="button" id="resetCod">Reset</button>
+  <button type="button" id="codCalculate">Calculate</button>
+  
+  <div id="codCashoutCost">
+  <p id="codAmountOutput">COD Amount:</p>
+  <p id="delAmountOutput"><span style="font-size:38px;">Delivery Amount:</span></p>
+  <p id="codCashoutOutput"></p>
+  </div>
+  </div>
+  <div class="col-12 col-md-4">
+  </div>
+  </div>
+  </div>
   
   
   
@@ -174,6 +270,7 @@
   </footer>
   
   <script type="text/javascript">
+  //Merchant cashout calculator
   //Add amount with button
   let sum=0;
   document.getElementById('cashoutForm').addEventListener("submit",function(e){
@@ -186,13 +283,13 @@
   });
   
   
-  //cost calculation 
+  //calculation 
   document.getElementById('calculate').addEventListener("click",function(){
   let calculation=Math.round(sum*1.49/100);
   document.getElementById('costOutput').innerHTML="৳ "+calculation;
   });
   
-  //Reset the amoun & calculation result
+  //Reset button
   document.getElementById('reset').addEventListener("click",function(){
   sum=0;
   calculation=0;
@@ -200,6 +297,68 @@
   document.getElementById('costOutput').innerHTML="";
   document.getElementById('amount').focus();
   });
+  
+  
+  
+  
+  //COD cashout calculator
+  //COD add amount button
+  let codSum=0;
+  document.getElementById('codCashout').addEventListener("submit",function(f){
+  f.preventDefault();
+  let codAmount=parseInt(document.getElementById('codAmount').value);
+  codSum+=codAmount;
+  document.getElementById('codAmountOutput').innerHTML+=`<span class="badge bg-warning" style="margin: 0px 4px 0px 4px;">${codAmount}</span>`;
+  document.getElementById('codCashout').reset();
+  document.getElementById('codAmount').focus();
+  });
+  
+  //Clear1 button
+  document.getElementById('clear1').addEventListener("click",clear1);
+  function clear1(){
+  codSum=0;
+  document.getElementById('codAmountOutput').innerHTML="COD Amount:";
+  }
+  
+  //delivery charge add amount button
+  let costSum=0;
+  document.getElementById('deliveryCost').addEventListener("submit",function(g){
+  g.preventDefault();
+  let delAmount=parseInt(document.getElementById('deliveryAmount').value);
+  costSum+=delAmount;
+  document.getElementById('delAmountOutput').innerHTML+=`<span class="badge bg-warning" style="margin: 0px 4px 0px 4px;">${delAmount}</span>`;
+  document.getElementById('deliveryCost').reset();
+  document.getElementById('deliveryAmount').focus();
+  });
+  
+  //Clear2 button
+  document.getElementById('clear2').addEventListener("click",clear2);
+  function clear2(){
+  costSum=0;
+  document.getElementById('delAmountOutput').innerHTML=`<span style="font-size:38px;">Delivery Amount:</span>`;
+  }
+  
+  //Calculate button 
+  let result;
+  document.getElementById('codCalculate').addEventListener("click",function(){
+  let subtraction=codSum-costSum;
+  result=Math.round(subtraction*1.49/100);
+  document.getElementById('codCashoutOutput').innerHTML="৳ "+result;
+  });
+  
+  //Reset Button
+  document.getElementById('resetCod').addEventListener("click",clearAll);
+  function clearAll(){
+  codSum=0;
+  costSum=0;
+  result=0;
+  document.getElementById('codAmountOutput').innerHTML="";
+  document.getElementById('delAmountOutput').innerHTML="";
+  document.getElementById('codCashoutOutput').innerHTML="";
+  document.getElementById('codCashout').reset();
+  document.getElementById('deliveryCost').reset();
+  document.getElementById('codAmount').focus();
+  }
   </script>
   </body>
   
