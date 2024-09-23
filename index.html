@@ -155,7 +155,21 @@ div.containerz {
   
   <!--for Admin panel-->
   <p>Only Admin Access: <span id="admin" class="badge bg-warning">Admin</span></p>
-  
+<!--New Start-->
+  <input type="text" id="searchInput" placeholder="Search..." class="form-control me-2">
+<button type="button" id="searchBtn" class="btn btn-primary">Search</button>
+
+<div id="searchResults"></div>
+
+<div class="search-item" data-keywords="saltnic juice vaping">
+  <h3>Saltnic E-juice</h3>
+  <p>Description of Saltnic E-juice...</p>
+</div>
+<div class="search-item" data-keywords="freebase juice">
+  <h3>Freebase E-juice</h3>
+  <p>Description of Freebase E-juice...</p>
+</div>
+  <!--New End-->
   <footer>
   <div id="upperFooter" class="mt-5">
   <a class="btn btn-light float-end" href="#"><i class="bi bi-chevron-double-up"></i></a><br>
@@ -199,6 +213,31 @@ window.location.href="admin_page.html";
 alert("⚠️ Acess denied");
 }
 });
+
+  //New Start
+
+  document.getElementById('searchBtn').addEventListener('click', function() {
+    let searchQuery = document.getElementById('searchInput').value.toLowerCase();
+    let items = document.querySelectorAll('.search-item');
+    let resultsContainer = document.getElementById('searchResults');
+    
+    resultsContainer.innerHTML = ''; // Clear previous results
+
+    items.forEach(function(item) {
+        let keywords = item.getAttribute('data-keywords').toLowerCase();
+        
+        if (keywords.includes(searchQuery)) {
+            let clone = item.cloneNode(true);  // Clone matched element
+            resultsContainer.appendChild(clone);  // Append it to results container
+        }
+    });
+
+    if (resultsContainer.innerHTML === '') {
+        resultsContainer.innerHTML = '<p>No results found.</p>';
+    }
+});
+
+  //New End
 </script>
 </body>
 </html>
