@@ -47,8 +47,8 @@ text-align:center;
  </li>
  </ul>
  <form class="d-flex">
- <input type="text" class="form-control me-2" placeholder="Search">
- <button type="button" class="btn btn-primary">Search</button>
+ <input id="searchInput" type="text" class="form-control me-2" placeholder="Search">
+ <button id="searchBtn" type="button" class="btn btn-primary">Search</button>
  </form>
  </div>
  </div>
@@ -57,41 +57,45 @@ text-align:center;
  <div style="padding:5px;" class="container-fluid bg-info">
  <h1 style="text-align:center;"><b>Freebase</b></h1>
  </div>
+ 
+ <!--Search Result appear here-->
+ <p id="searchResult"></p>
+ 
  <div class="container mt-3">
 <div class="row">
-<div class="col-6 col-md-2">
+<div class="col-6 col-md-2 search-item" data-keywords="rasberry green apple watermalon 6mg">
 <h3><b>Rasberry Green Apple Watermalon 100 ml 6mg</b></h3><br>
 <img src="https://www.e-cigclouds.co.uk/wp-content/uploads/2023/01/RASPBERRY-GREEN-APPLE-WATERMELON-100ML-E-LIQUID-7-DAZE-FUSION.jpg" class="img-fluid" alt="Rasberry Green Apple Watermalon 100 ml 6mg"><br>
 <p style="text-align:center;"><kbd>Qnty-<span id="raspberryGreenAppleWatermelon6mg"></span></kbd></p>
 </div>
-<div class="col-6 col-md-2">
+<div class="col-6 col-md-2 search-item" data-keywords="grape fruit orange mango 6mg">
 <h3><b>Grape fruit Orange Mango 100 ml 6mg</b></h3><br>
 <img src="https://vape-street.com/cdn/shop/files/7Daze-Fusion-Iced-Grapefruit-Orange-Mango.jpg?v=1708735249&width=1080" class="img-fluid" alt="Grape fruit Orange Mango 100 ml 6mg"><br>
 <p style="text-align:center;"><kbd>Qnty-<span id="grapefruitOrangeMango6mg"></span></kbd></p>
 </div>
-<div class="col-6 col-md-2">
+<div class="col-6 col-md-2 search-item" data-keywords="orange yuzu tengerin 6mg">
 <h3><b>Orange Yuzu Tengerin 100 ml 6mg</b></h3><br>
 <img src="https://bizweb.dktcdn.net/100/496/679/products/orange-yuzu-tanerine-100ml-vapetoyvn.jpg?v=1698845996480" class="img-fluid" alt="Orange Yuzu Tengerin 100 ml 6mg"><br>
 <p style="text-align:center;"><kbd>Qnty-<span id="orangeYuzuTengerin6mg"></span></kbd></p>
 </div>
-<div class="col-6 col-md-2">
+<div class="col-6 col-md-2 search-item" data-keywords="yellow red green mango 6mg">
 <h3><b>Yellow Red Green Mango 100 ml 6mg</b></h3><br>
 <img src="https://demandvape.com/image/cache/catalog/1_liquid_lines/Reds/Synthetic%20Nicotine/Fusion/100mL/DAZEFusion100mL_YellowGreenRedMango-800x800.png" class="img-fluid" alt="Yellow Red Green Mango 100 ml 6mg"><br>
 <p style="text-align:center;"><kbd>Qnty-<span id="yellowRedGreenMango6mg"></span></kbd></p>
 </div>
-<div class="col-6 col-md-2">
+<div class="col-6 col-md-2 search-item" data-keywords="banana cantaloup honeydew 6mg">
 <h3><b>Banana Cantaloup Honeydew 100 ml 6mg</b></h3><br>
 <img src="https://www.flawlessvapeshop.com/cdn/shop/products/banana-cantaloupe-honeydew-by-7-daze-e-liquid-100ml-956521.jpg?v=1655926197" class="img-fluid" alt="Banana Cantaloup Honeydew 100 ml 6mg"><br>
 <p style="text-align:center;"><kbd>Qnty-<span id="bananaCantaloupHoneydew6mg"></span></kbd></p>
 </div>
-<div class="col-6 col-md-2">
+<div class="col-6 col-md-2 search-item" data-keywords="lush ice 3mg">
 <h3><b>Lush Ice 3mg</b></h3><br>
 <img src="https://vapeshopsky.com/wp-content/uploads/2023/06/vgod-lush-ice-liquid.jpg" class="img-fluid" alt="Lush Ice 3mg"><br>
 <p style="text-align:center;"><kbd>Qnty-<span id="lushIce3mg"></span></kbd></p>
 </div>
 </div>
 <div class="row">
-<div class="col-6 col-md-2">
+<div class="col-6 col-md-2 search-item" data-keywords="sour licious 6mg">
 <h3><b>Sour licious 6mg</b></h3><br>
 <img src="https://vapesdirect.pk/wp-content/uploads/2022/03/vgod_sourlicious_3mg.png" class="img-fluid" alt="Lush Ice 3mg"><br>
 <p style="text-align:center;"><kbd>Qnty-<span id="sourlicious3mg"></span></kbd></p>
@@ -155,6 +159,7 @@ text-align:center;
  </footer>
  
  <script type="text/javascript">
+ //item list
  let raspberryGreenAppleWatermelon6mg=0;
  let grapefruitOrangeMango6mg=1;
  let orangeYuzuTengerin6mg=0;
@@ -215,6 +220,28 @@ text-align:center;
  lushIce3mg+
  sourlicious3mg;
  document.getElementById('sum').innerHTML=sum;
+ 
+ 
+ //search Engine
+ document.getElementById('searchBtn').addEventListener("click",function(){
+ let searchQuery=document.getElementById('searchInput').value.toLowerCase();
+ let items=document.querySelectorAll(".search-item");
+ let resultContainer=document.getElementById('searchResult');
+ resultContainer.innerHTML="Showing result:\n";
+ let found=false;
+ 
+ items.forEach(function(item){
+ let keywords=item.getAttribute("data-keywords").toLowerCase();
+ if(keywords.includes(searchQuery)){
+ let clone=item.cloneNode(true);
+ resultContainer.appendChild(clone);
+ found=true;
+ }
+ });
+ if(!found){
+ resultContainer.innerHTML="<p>Result not found</p>";
+ }
+ });
  </script>
  </body>
  </html>
