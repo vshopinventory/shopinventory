@@ -60,8 +60,8 @@ div.header {
   </li>
   </ul>
   <form class="d-flex">
-  <input type="text" class="form-control me-2" placeholder="Search">
-  <button type="button" class="btn btn-primary">Search</button>
+  <input id="searchInput" type="text" class="form-control me-2" placeholder="Search">
+  <button id="searchBtn" type="button" class="btn btn-primary">Search</button>
   </form>
   </div>
   </div>
@@ -71,31 +71,35 @@ div.header {
   <h1 style="text-align:center;"><b>Saltnic</b></h1>
   </div>
   
+  <!--Search Result appear here-->
+  <p id="searchResult"></p>
+  
+  
   <!--post start from here-->
   <div class="container mt-3">
  <div class="row">
- <div class="col-6 col-md-2">
+ <div class="col-6 col-md-2 search-item" data-keywords="dry tobacco iced 25mg salt">
  <span id="dryTobacco25mgR"></span>
  <h3><b>Dry Tobacco Iced 25mg salt</b></h3><br>
  <img src="https://vapeshopsky.com/wp-content/uploads/2024/03/giu.jpg" class="img-fluid" width="120px" alt="Dry tobacco iced 25mg"><br>
  <p style="text-align:center;"><kbd>Qnty-<span id="dryTobacco25mg"></span></kbd></p>
  </div>
  
- <div class="col-6 col-md-2">
+ <div class="col-6 col-md-2 search-item" data-keywords="dry tobacco iced 50mg salt">
  <span id="dryTobacco50mgR"></span>
  <h3><b>Dry Tobacco Iced 50mg salt</b></h3><br>
  <img src="drytobacco50mg.jpeg" class="img-fluid" alt="Dry tobacco iced 50mg"><br>
  <p style="text-align:center;"><kbd>Qnty-<span id="dryTobacco50mg"></span></kbd></p>
  </div>
  
- <div class="col-6 col-md-2">
+ <div class="col-6 col-md-2 search-item" data-keywords="purple bomb 25mg iced salt">
  <span id="purpleBomb25mgR"></span>
  <h3><b>Purple Bomb 25mg Iced salt</b></h3><br>
  <img src="purplebomb25mg.jpeg" class="img-fluid" alt="Purple Bomb 25mg"><br>
  <p style="text-align:center;"><kbd>Qnty-<span id="purpleBomb25mg"></span></kbd></p>
  </div>
  
- <div class="col-6 col-md-2">
+ <div class="col-6 col-md-2 search-item" data-keywords="purple bomb 50mg iced salt">
  <span id="purpleBomb50mgR"></span>
  <h3><b>Purple Bomb 50mg Iced salt</b></h3><br>
  <img src="https://getpop.co/cdn/shop/products/vgod-purple-bomb-50mg.jpg?v=1593887130" class="img-fluid" alt="Purple Bomb 50mg"><br>
@@ -115,7 +119,7 @@ div.header {
  
  
  <!-- The Modal -->
- <div class="modal fade" id="myModal1">
+ <div class="modal fade search-item" id="myModal1" data-keywords="mango bomb iced 25mg">
  <div class="modal-dialog modal-dialog-centered modal-sm">
  <div class="modal-content">
  
@@ -143,7 +147,7 @@ div.header {
  
  
  <!-- The Modal -->
- <div class="modal fade" id="myModal2">
+ <div class="modal fade search-item" id="myModal2" data-keywords="mango bomb non iced 25mg non-iced">
  <div class="modal-dialog modal-dialog-centered modal-sm">
  <div class="modal-content">
  
@@ -172,7 +176,7 @@ div.header {
  <!--End of Mango bomb-->
  
  
- <div class="col-6 col-md-2">
+ <div class="col-6 col-md-2 search-item" data-keywords="sizia hami melon 20mg salt">
  <span id="siziaHamiMelon20mgR"></span>
  <h3><b>Sizia Hami Melon 20mg salt</b></h3><br>
  <img src="siziahamimelon.jpeg" class="img-fluid" alt="Sizia Hami Melon 20mg"><br>
@@ -180,31 +184,31 @@ div.header {
  </div>
  </div>
  <div class="row">
- <div class="col-6 col-md-2">
+ <div class="col-6 col-md-2 search-item" data-keywords="sizia hami melon 50mg salt">
  <span id="siziaHamiMelon50mgR"></span>
  <h3><strong>Sizia Hami Melon 50mg salt</strong></h3><br>
  <img src="siziahamimelon.jpeg" class="img-fluid" alt="Sizia Hami Melon 50mg"><br>
  <p style="text-align:center;"><kbd>Qnty-<span id="siziaHamiMelon50mg"></span></kbd></p>
  </div>
- <div class="col-6 col-md-2">
+ <div class="col-6 col-md-2 search-item" data-keywords="sizia mango peach iced 20mg salt">
  <span id="siziaMangoPeachIce20mgR"></span>
  <h3><b>Sizia Mango Peach Iced 20mg salt</b></h3><br>
  <img src="https://ovseg.com/wp-content/uploads/2024/06/Tokyo-Iced-Mango-Peach-30ml.jpg" class="img-fluid" alt="Sizia Mango Peach iced 20mg"><br>
  <p style="text-align:center;"><kbd>Qnty-<span id="siziaMangoPeachIce20mg"></span></kbd></p>
  </div>
- <div class="col-6 col-md-2">
+ <div class="col-6 col-md-2 search-item" data-keywords="vct 30mg salt">
  <span id="vct30mgR"></span>
  <h3><b>VCT 30mg salt</b></h3><br>
  <img src="https://vaporzonebd.com/admin_assats/product/f3401e7d73ed125c8b9fcd7a957e9ff1.ripe-vape-vct-salt-nic-30ml.webp" class="img-fluid" alt="VCT 30mg"><br>
  <p style="text-align:center;"><kbd>Qnty-<span id="vct30mg"></span></kbd></p>
  </div>
- <div class="col-6 col-md-2">
+ <div class="col-6 col-md-2 search-item" data-keywords="vct 50mg salt">
  <span id="vct50mgR"></span>
  <h3><b>VCT 50mg salt</b></h3><br>
  <img src="https://vaporzonebd.com/admin_assats/product/f3401e7d73ed125c8b9fcd7a957e9ff1.ripe-vape-vct-salt-nic-30ml.webp" class="img-fluid" alt="VCT 50mg"><br>
  <p style="text-align:center;"><kbd>Qnty-<span id="vct50mg"></span></kbd></p>
  </div>
- <div class="col-6 col-md-2">
+ <div class="col-6 col-md-2 search-item" data-keywords="banana bomb iced 25mg salt">
  <span id="banana25mgIcedR"></span>
  <h3><b>Banana Bomb Iced 25mg salt</b></h3><br>
  <img src="https://b3051526.smushcdn.com/3051526/wp-content/uploads/2023/10/VGOD-Iced-Banana-Bomb-25mg-30ml-1-600x600.png?lossy=1&strip=1&webp=1" class="img-fluid" alt="Banana Bomb Iced 25mg salt"><br>
@@ -224,7 +228,7 @@ div.header {
  
  
  <!-- The Modal -->
- <div class="modal fade" id="myModal3">
+ <div class="modal fade search-item" id="myModal3" data-keywords="apple bomb iced 25mg">
  <div class="modal-dialog modal-dialog-centered modal-sm">
  <div class="modal-content">
  
@@ -252,7 +256,7 @@ div.header {
  
  
  <!-- The Modal -->
- <div class="modal fade" id="myModal4">
+ <div class="modal fade search-item" id="myModal4" data-keywords="apple bomb non iced 25mg non-iced">
  <div class="modal-dialog modal-dialog-centered modal-sm">
  <div class="modal-content">
  
@@ -506,6 +510,28 @@ if(appleBomb25mgnonIced==0){
   if(appleBomb25mgnonIcedR=="R"){
   document.getElementById('appleBomb25mgnonIcedR').innerHTML=`<div class="card float-end mt-1"><div class="header"><p>Reserved</p></div></div>`;
   }
+  
+  //Search Engine
+  document.getElementById('searchBtn').addEventListener("click",function(){
+  let searchQuery=document.getElementById('searchInput').value.toLowerCase();
+  let items=document.querySelectorAll(".search-item");
+  let resultContainer=document.getElementById('searchResult');
+  resultContainer.innerHTML="Showing Results:\n";
+  
+  let found=false;
+  items.forEach(function(item){
+  let keywords=item.getAttribute("data-keywords").toLowerCase();
+  
+  if(keywords.includes(searchQuery)){
+  let clone=item.cloneNode(true);
+  resultContainer.appendChild(clone);
+  found=true;
+  }
+  });
+  if(!found){
+  resultContainer.innerHTML="<p>Result Not found</p>";
+  }
+  });
   </script>
   </body>
   </html>
