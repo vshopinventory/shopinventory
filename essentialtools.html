@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shop Inventory|Office Convenient tools</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://kit.fontawesome.com/c93013bf82.js" crossorigin="anonymous"></script>
+  <style type="text/css">
+  #formAria{
+  background-color:#B3B3B3;
+  padding:10px;
+  }
+  
+  #orderInput, #amountInput, #costInput, #productInput{
+  width:100%;
+  padding:10px 20px;
+  margin-bottom:10px;
+  border:none;
+  border-radius:6px;
+  }
+  
+  #orderSubmit{
+  width:100%;
+  padding:10px 20px;
+  margin-bottom:10px;
+  border:none;
+  border-radius:6px;
+  background-color:#3D426E;
+  color:white;
+  font-weight:bold;
+  }
+  
+  #orderSubmit:hover{
+  background-color:#585c80;
+  }
+  
+  #mainOutput{
+  overflow-x: auto;
+  overflow-y:hidden;
+  white-space: nowrap;
+  }
+  
+  #totalAccountings{
+  background-color:#84ADAD;
+  text-align:center;
+  font-size:30px;
+  font-weight:bold;
+  color:white;
+  border-radius:12px;
+  }
+  
+  #refreshPageBtn{
+  background-image: linear-gradient(to right, DodgerBlue, SlateBlue);
+  border:none;
+  border-radius:8px;
+  width:150px;
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+  text-align:center;
+  padding:8px;
+  margin-bottom:10px;
+  margin-top:80px;
+  }
+  
+  #refreshPageBtn:hover{
+  background-image: linear-gradient(to right, SlateBlue, DodgerBlue);
+  }
+  
+  #upperFooter{
+  color:white;
+  background-color:hsl(0, 0%, 20%);
+  padding:10px;
+  }
+  
+  #lowerFooter{
+  color:white;
+  background-color:YellowGreen;
+  text-align:center;
+  }
+  </style>
+  </head>
+  <body>
+  <!--navbar-->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="index.html"><img src="logo.png" alt="logo" style="width:60px;" class="rounded-pill"></a>
+  <span style="color:white;"><h1><b>Shop Inventory</b></h1></span>
+  <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"><span class="navbar-toggler-icon"></span></button>
+  <div id="collapsibleNavbar" class="collapse navbar-collapse">
+  <ul class="navbar-nav">
+  <li class="nav-item"><a class="nav-link" href="index.html" >Home</a></li>
+  <li class="nav-item"><a class="nav-link" href="saltnic.html" >Saltnic E-juice</a></li>
+  <li class="nav-item"><a class="nav-link" href="freebase.html" >Freebase E-juice</a></li>
+  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">Convenient Tools</a>
+  <ul class="dropdown-menu">
+  <li><a class="dropdown-item" href="bkash_calculator.html">Calculator: bKash Cashout charge</a></li>
+  <li><a class="dropdown-item" href="" disabled>VAT Calculation</a></li>
+  <li><a class="dropdown-item" href="essentialtools.html">Essential Tools</a></li>
+  </ul>
+  </li>
+  </ul>
+  <form class="d-flex">
+  <input id="searchInput" type="text" class="form-control me-2" placeholder="Search">
+  <button id="searchBtn" type="button" class="btn btn-primary">Search</button>
+  </form>
+  </div>
+  </div>
+  </nav>
+  <div style="margin-bottom:100px;">
+  <h1><ul><li style="color:#FFD500">Essential Tools</li><li style="color:#2378AD">Calculator</li><li style="color:#FF7373">Web Application</li></ul></h1>
+  </div>
+  
+  <div class="row">
+  <div class="col-12 col-md-4"></div>
+  <div id="formAria" class="col-12 col-md-4">
+  <!--Setting button-->
+  <!--Reset All button-->
+  <button type="button" class="btn" data-bs-toggle="collapse" data-bs-target="#setting" style="font-size:25px;"><i class="bi bi-gear-fill"></i></button>
+  <form id="setting" class="collapse">
+  <input id="settingInput" type="date" placeholder="Select Date">
+  <button type="submit">Done</button>
+  <button type="button" onclick="resetAll()">Reset All</button>
+  </form>
+  
+  <h3 style="text-align:center; margin-top:30px;">Daily Sell Entry/Sell Records</h3>
+  <form id="productEntryForm">
+  <input id="orderInput" type="number" name="orderId" placeholder="Order ID" required>
+  <input id="amountInput" type="number" name="amount" placeholder="Amount" required>
+  <input id="costInput" type="number" name="cost" placeholder="Cost" required>
+  <select id="productInput" multiple required>
+  <option value="Salt 30ml">Salt 30ml</option>
+  <option value="Freebase 60ml">Freebase 60ml</option>
+  <option value="Eir Pod System">Eir Pod system</option>
+  <option value="Vdon Pod System">Vdon Pod system</option>
+  <option value="Hera Mod">Hera Mod</option>
+  <option value="Converter Mod">Converter Mod</option>
+  <option value="Disposable">Disposable</option>
+  <option value="Cartridge">Cartridge</option>
+  <option value="Coil">Coil</option>
+  <option value="Cotton">Cotton</option>
+  <option value="Bishop MTL RTA">Bishop MTL RTA</option>
+  </select>
+  <button id="orderSubmit" type="submit">Add Order Details</button>
+  </form>
+  </div>
+  <div class="col-12 col-md-4"></div>
+  </div>
+  
+  
+  <!--Output Section-->
+  <div style="margin-top:100px; text-align:center;">
+  <h1>Monthly Sell Details:</h1>
+  <p id="dateOutput">Date from:<span id="dateFrom"></span>---<span id="dateTo"></span></p>
+  </div>
+  <div id="mainOutput"></div>
+  <div>
+  <center><button id="refreshPageBtn" type="button" onclick="refreshPage()">Refresh <i class="fa-solid fa-arrows-rotate"></i></button></center>
+  </div>
+  <div id="totalAccountings"></div>
+  
+  
+  <footer>
+  <div id="upperFooter" class="mt-5">
+  <a class="btn btn-light float-end" href="#"><i class="bi bi-chevron-double-up"></i></a><br>
+  <div class="mt-1" style="text-align:center; word-spacing:15px">
+  <p style="word-spacing:0px;"><strong>Follow us:</strong></p>
+  <i class="bi bi-facebook" style="font-size:26px; color:#1877F2;"></i>
+  <i class="bi bi-instagram" style="font-size:26px; color:#fa7e1e;"></i>
+  <i class="bi bi-pinterest" style="font-size:26px; color:#E60023;"></i>
+  <i class="bi bi-linkedin" style="font-size:26px; color:#0077B5;"></i>
+  <i class="bi bi-twitter-x" style="font-size:26px; color:#657786;"></i>
+  </div>
+  <div class="row mt-5">
+  <div class="col-3">
+  <p style="font-weight:bold;">About</p>
+  </div>
+  <div class="col-3">
+  <p style="font-weight:bold;">Contact</p>
+  </div>
+  <div class="col-3">
+  <p style="font-weight:bold;">Privacy Policy</p>
+  </div>
+  <div class="col-3">
+  <p style="font-weight:bold;">Navigation</p>
+  </div>
+  </div>
+  <div class="mt-2">
+  <a href="index.html"><img src="logo.png" width="60"height="45" alt="logo"></a><br>
+  <p>This is a products inventory website.<br>Where you can see how many products are available.<br> On the other hand You can calculate some necessary accountings like bKash payment cashout charges.<br> The cost of Merchant payment cashout charges as well.<br>You can also calculate Mushak(VAT) calculation on this website </p>
+  </div>
+  </div>
+  <div id="lowerFooter">
+  <p>All rights reserved | Copyright ©2024<br>Designed by Abdul Muktadir Nahid</p>
+  </div>
+  </footer>
+  
+  
+  <script type="text/javascript">
+  //Manually make the Today date format
+  let today=new Date();
+  let months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+  let day=today.getDate();
+  let month=months[today.getMonth()];
+  
+  //Manually make the Specific date format
+  document.getElementById('setting').addEventListener("submit",function(set){
+  set.preventDefault();
+  let dateValue=document.getElementById('settingInput').value;
+  let specificDate=new Date(dateValue);
+  let specificDay=specificDate.getDate();
+  let specificMonth=months[specificDate.getMonth()];
+  let getspDate=specificDay+" "+specificMonth;
+  document.getElementById('dateFrom').innerHTML=getspDate;
+  localStorage.setItem("spDate",getspDate);
+  });
+  
+  //Specific date formate storing as localStorage
+  window.onload=(function(){
+  let storedDate=localStorage.getItem("spDate");
+  document.getElementById('dateFrom').innerHTML=storedDate;
+  })();
+
+  //Today Date Format
+  document.getElementById('dateTo').innerHTML=day+" "+month;
+  
+  
+  //initial value for Accountings
+  if(localStorage.getItem("grossAmount")===null){
+  localStorage.setItem("grossAmount", 0);
+  }
+  
+  if(localStorage.getItem("grossCost")===null){
+  localStorage.setItem("grossCost", 0);
+  }
+  
+  if(localStorage.getItem("grossNet")===null){
+  localStorage.setItem("grossNet",0);
+  }
+  
+  let findGrossAmount=parseInt(localStorage.getItem("grossAmount"));
+  let findGrossCost=parseInt(localStorage.getItem("grossCost"));
+  let findGrossNet=parseInt(localStorage.getItem("grossNet"));
+  
+  
+  
+  //Entry Listener
+  document.getElementById('productEntryForm').addEventListener('submit', function(main){
+  main.preventDefault();
+  let orderNumber=parseInt(document.getElementById('orderInput').value);
+  let amount=parseInt(document.getElementById('amountInput').value);
+  let cost=parseInt(document.getElementById('costInput').value);
+  let perNetAmount=amount-cost;
+  let select = document.getElementById("productInput");
+  let selected = [];
+  for (let option of select.options) {
+  if (option.selected) {
+  selected.push(option.value); // Store the selected values
+  }
+  }
+  let products= selected.join(', ');
+  
+  
+  
+  let printOut=document.getElementById('mainOutput');
+  printOut.innerHTML+=`
+  <div style="font-size:25px;"><mark style="background-color:#B5BFC7; border-left:4px solid #8CBF84;">
+  ${day} ${month} / Order ID: <strong>#${orderNumber}</strong> - (${products}) | Amount: <strong>৳ ${amount}</strong> | Cost: <strong>৳ ${cost}</strong> | Net Amount: <strong>৳ ${perNetAmount}</strong>
+  </mark></div><br>
+  `;
+  let storedInnerHTML=printOut.innerHTML;
+  localStorage.setItem("mainOutput1", storedInnerHTML);
+  document.getElementById('productEntryForm').reset();
+  
+  
+  let currentGrossAmount=parseInt(localStorage.getItem("grossAmount"));
+  let grossAmounts=currentGrossAmount+amount;
+  localStorage.setItem("grossAmount",grossAmounts);
+  
+  let currentGrossCost=parseInt(localStorage.getItem("grossCost"));
+  let grossCosts=currentGrossCost+cost;
+  localStorage.setItem("grossCost",grossCosts);
+  
+  document.getElementById('totalAccountings').innerHTML=`
+  <div>
+  <p>Total sell: ৳ ${findGrossAmount}<br>
+  Total Cost: ৳ ${findGrossCost}<br>
+  Total Net Sell: ৳ ${findGrossNet}
+  </p>
+  </div>
+  `;
+  });
+  
+  let grossNets=findGrossAmount-findGrossCost;
+  localStorage.setItem("grossNet",grossNets);
+  
+  
+  window.onload=(function(){
+  let mainOutputs=localStorage.getItem("mainOutput1");
+  document.getElementById('mainOutput').innerHTML+=`
+  ${mainOutputs}<br>
+  `;
+  })();
+  
+  window.onload=function(){
+  document.getElementById('totalAccountings').innerHTML=`
+  <div>
+  <p>Total sell: ৳ ${findGrossAmount}<br>
+  Total Cost: ৳ ${findGrossCost}<br>
+  Total Net Sell: ৳ ${findGrossNet}
+  </p>
+  </div>
+  `;
+  }
+  
+  
+  //Reset All button
+  function resetAll(){
+  localStorage.clear();
+  }
+  
+  //Refresh page
+  function refreshPage(){
+  window.location.reload();
+  }
+  </script>
+  </body>
+  </html>
