@@ -27,6 +27,10 @@
   <button type="button" onclick="localStorageFinder()" style="margin-top:20px;">See All local Storage</button>
   <div id="localStorageFind">
   </div>
+
+    <button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
   
   <script type="text/javascript">
   let i;
@@ -37,6 +41,21 @@
       document.getElementById('localStorageFind').innerHTML+=x+"<br>";
   }
   }
+
+    const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
   </script>
   </body>
   </html>
