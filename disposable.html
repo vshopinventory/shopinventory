@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Disposable | Disposable vape</title>
+<link rel="icon" type="image/x-icon" href="logo.png">
+<meta http-equiv="refresh" content="300">
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+ <style type="text/css">
+.col-6{
+border:solid;
+border-color:powderblue;
+}
+#upperFooter{
+color:white;
+background-color:hsl(0, 0%, 20%);
+padding:10px;
+}
+
+#lowerFooter{
+color:white;
+background-color:YellowGreen;
+text-align:center;
+}
+ </style>
+ </head>
+ <body>
+ <!--navbar-->
+ <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+ <div class="container-fluid">
+ <a class="navbar-brand" href="index.html"><img src="logo.png" alt="logo" style="width:60px;" class="rounded-pill"></a>
+ <span style="color:white;"><h1><b>Shop Inventory</b></h1></span>
+ <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"><span class="navbar-toggler-icon"></span></button>
+ <div id="collapsibleNavbar" class="collapse navbar-collapse">
+ <ul class="navbar-nav">
+ <li class="nav-item"><a class="nav-link" href="index.html" >Home</a></li>
+ <li class="nav-item"><a class="nav-link" href="saltnic.html" >Saltnic E-juice</a></li>
+ <li class="nav-item"><a class="nav-link" href="freebase.html" >Freebase E-juice</a></li>
+ <li class="nav-item"><a class="nav-link" href="#" >Disposable</a></li>
+ <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">Convenient Tools</a>
+ <ul class="dropdown-menu">
+ <li><a class="dropdown-item" href="bkash_calculator.html">Calculator: bKash Cashout charge</a></li>
+ <li><a class="dropdown-item" href="">VAT Calculation</a></li>
+ <li><a class="dropdown-item" href="essentialtools.html">Essential Tools</a></li>
+ </ul>
+ </li>
+ </ul>
+ <form class="d-flex">
+ <input id="searchInput" type="text" class="form-control me-2" placeholder="Search">
+ <button id="searchBtn" type="button" class="btn btn-primary">Search</button>
+ </form>
+ </div>
+ </div>
+ </nav>
+ 
+ <div style="padding:5px;" class="container-fluid bg-info">
+ <h1 style="text-align:center;"><b>Disposable</b></h1>
+ </div>
+ 
+ <!--Search Result appear here-->
+ <p id="searchResult"></p>
+ 
+<div class="container mt-3">
+<div class="row">
+<div class="col-6 col-md-2 search-item" data-keywords="blueberry rasberry lemon">
+<h3><b>FLYTO SWITCH- BlueBerry Raspberry Lemon -6000 Puff</b></h3><br>
+<img src="https://royalpuff.com.bd/wp-content/uploads/2024/05/ABAC4202FLYTO-BLUEBERRY-RASPBERRY-LEMON-C.jpg" class="img-fluid" alt="Rasberry Green Apple Watermalon 100 ml 6mg"><br>
+<p style="text-align:center;"><kbd>Qnty-<span id="blueberryRasberryLemon"></span></kbd></p>
+</div>
+<div class="col-6 col-md-2 search-item" data-keywords="sour strawberry">
+<h3><b>FLYTO SWITCH- Sour Strawberry-6000 Puff</b></h3><br>
+<img src="https://royalpuff.com.bd/wp-content/uploads/2024/05/ABAC4202FLYTO-BLUEBERRY-RASPBERRY-LEMON-C.jpg" class="img-fluid" alt="Grape fruit Orange Mango 100 ml 6mg"><br>
+<p style="text-align:center;"><kbd>Qnty-<span id="sourStrawberry"></span></kbd></p>
+</div>
+<div class="col-6 col-md-2 search-item" data-keywords="mango berry">
+<h3><b>FLYTO SWITCH- Mango Berry-6000 Puff</b></h3><br>
+<img src="https://royalpuff.com.bd/wp-content/uploads/2024/05/ABAC4202FLYTO-MANGO-BERRY-C.jpg" class="img-fluid" alt="Orange Yuzu Tengerin 100 ml 6mg"><br>
+<p style="text-align:center;"><kbd>Qnty-<span id="mangoBerry"></span></kbd></p>
+</div>
+<div class="col-6 col-md-2 search-item" data-keywords="ice menthol">
+<h3><b>FLYTO SWITCH-Ice Menthol-6000 Puff</b></h3><br>
+<img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/4435437549181832.jpg" class="img-fluid" alt="Yellow Red Green Mango 100 ml 6mg"><br>
+<p style="text-align:center;"><kbd>Qnty-<span id="iceMenthol"></span></kbd></p>
+</div>
+<div class="col-6 col-md-2 search-item" data-keywords="mango peach guava">
+<h3><b>FLYTO SWITCH-Mango Peach Guava-6000 Puff</b></h3><br>
+<img src="https://royalpuff.com.bd/wp-content/uploads/2024/05/ABAC4202FLYTO-MANGO-PEACH-GUAVA-C.jpg" class="img-fluid" alt="Banana Cantaloup Honeydew 100 ml 6mg"><br>
+<p style="text-align:center;"><kbd>Qnty-<span id="mangoPeachGuava"></span></kbd></p>
+</div>
+<div class="col-6 col-md-2 search-item" data-keywords="watermalon">
+<h3><b>Watermalon</b></h3><br>
+<img src="https://royalpuff.com.bd/wp-content/uploads/2024/05/ABAC4202FLYTO-WATERMELON-C.jpg" class="img-fluid" alt="Lush Ice 3mg"><br>
+<p style="text-align:center;"><kbd>Qnty-<span id="watermalon"></span></kbd></p>
+</div>
+</div>
+<!--<div class="row">
+<div class="col-6 col-md-2 search-item" data-keywords="sour licious 6mg">
+<h3><b>Sour licious 6mg</b></h3><br>
+<img src="https://vapesdirect.pk/wp-content/uploads/2022/03/vgod_sourlicious_3mg.png" class="img-fluid" alt="Lush Ice 3mg"><br>
+<p style="text-align:center;"><kbd>Qnty-<span id="sourlicious3mg"></span></kbd></p>
+</div>
+<div class="col-6 col-md-2">
+<h3><b>Sizia Mango Peach Iced 20mg salt</b></h3><br>
+<img src="siziamango.jpeg" class="img-fluid" alt="Sizia Mango Peach iced 20mg"><br>
+<p style="text-align:center;"><kbd>Qnty-1</kbd></p>
+</div>
+<div class="col-6 col-md-2">
+<h3><b>VCT 30mg salt</b></h3><br>
+<img src="vct.webp" class="img-fluid" alt="VCT 30mg"><br>
+<p style="text-align:center;"><kbd>Qnty-4</kbd></p>
+</div>
+<div class="col-6 col-md-2">
+<h3><b>VCT 50mg salt</b></h3><br>
+<img src="vct.webp" class="img-fluid" alt="VCT 50mg"><br>
+<p style="text-align:center;"><kbd>Qnty-2</kbd></p>
+</div>
+</div>-->
+ </div>
+ 
+ <div style="border:gray 2px solid; border-radius:12px; background-color:powderblue;" class="container mt-3">
+ <h2 style="text-align:center;">Stock Summary</h2>
+ <center><h4 class="badge bg-info rounded-pill mt-3">Total Freebase items: <span id="sum"></span></h4></center>
+ </div>
+ 
+ <footer>
+ <div id="upperFooter" class="mt-5">
+ <a class="btn btn-light float-end" href="#"><i class="bi bi-chevron-double-up"></i></a><br>
+ <div class="mt-1" style="text-align:center; word-spacing:15px">
+ <p style="word-spacing:0px;"><strong>Follow us:</strong></p>
+ <i class="bi bi-facebook" style="font-size:26px; color:#1877F2;"></i>
+ <i class="bi bi-instagram" style="font-size:26px; color:#fa7e1e;"></i>
+ <i class="bi bi-pinterest" style="font-size:26px; color:#E60023;"></i>
+ <i class="bi bi-linkedin" style="font-size:26px; color:#0077B5;"></i>
+ <i class="bi bi-twitter-x" style="font-size:26px; color:#657786;"></i>
+ </div>
+ <div class="row mt-5">
+ <div class="col-3">
+ <p style="font-weight:bold;">About</p>
+ </div>
+ <div class="col-3">
+ <p style="font-weight:bold;">Contact</p>
+ </div>
+ <div class="col-3">
+ <p style="font-weight:bold;">Privacy Policy</p>
+ </div>
+ <div class="col-3">
+ <p style="font-weight:bold;">Navigation</p>
+ </div>
+ </div>
+ <div class="mt-2">
+ <a href="index.html"><img src="logo.png" width="60"height="45" alt="logo"></a><br>
+ <p>This is a products inventory website.<br>Where you can see how many products are available.<br> On the other hand You can calculate some necessary accountings like bKash payment cashout charges.<br> The cost of Merchant payment cashout charges as well.<br>You can also calculate Mushak(VAT) calculation on this website </p>
+ </div>
+ </div>
+ <div id="lowerFooter">
+ <p>All rights reserved | Copyright ©2024<br>Designed by Abdul Muktadir Nahid</p>
+ </div>
+ </footer>
+ 
+ <script type="text/javascript">
+ //item list
+ let blueberryRasberryLemon=;
+ let sourStrawberry=;
+ let mangoBerry=;
+ let iceMenthol=;
+ let mangoPeachGuava=;
+ let watermalon=;
+ 
+ 
+ if(blueberryRasberryLemon===0){
+ document.getElementById('blueberryRasberryLemon').innerHTML="Sold Out";
+ document.getElementById('blueberryRasberryLemon').style.color="#ff0000";
+ }else{
+  document.getElementById('blueberryRasberryLemon').innerHTML=blueberryRasberryLemon;
+ }
+ if(sourStrawberry===0){
+ document.getElementById('sourStrawberry').innerHTML="Sold Out";
+ document.getElementById('sourStrawberry').style.color="#ff0000";
+ }else{
+ document.getElementById('sourStrawberry').innerHTML=sourStrawberry;
+ }
+ if(mangoBerry===0){
+ document.getElementById('mangoBerry').innerHTML="Sold Out";
+ document.getElementById('mangoBerry').style.color="#ff0000";
+ }else{
+ document.getElementById('mangoBerry').innerHTML=mangoBerry;
+ }
+ if(iceMenthol===0){
+ document.getElementById('iceMenthol').innerHTML="Sold Out";
+ document.getElementById('iceMenthol').style.color="#ff0000";
+ }else{
+ document.getElementById('iceMenthol').innerHTML=iceMenthol;
+ }
+ if(mangoPeachGuava===0){
+ document.getElementById('mangoPeachGuava').innerHTML="Sold Out";
+ document.getElementById('mangoPeachGuava').style.color="#ff0000";
+ }else{
+ document.getElementById('mangoPeachGuava').innerHTML=mangoPeachGuava;
+ }
+ if(watermalon===0){
+ document.getElementById('watermalon').innerHTML="Sold Out";
+ document.getElementById('watermalon').style.color="#ff0000";
+ }else{
+ document.getElementById('watermalon').innerHTML=watermalon;
+ }
+
+
+
+ //Sum
+ let sum=blueberryRasberryLemon+sourStrawberry+mangoBerry+iceMenthol+mangoPeachGuava+watermalon;
+ document.getElementById('sum').innerHTML=sum;
+ 
+ 
+ //search Engine
+ document.getElementById('searchBtn').addEventListener("click",function(){
+ let searchQuery=document.getElementById('searchInput').value.toLowerCase();
+ let items=document.querySelectorAll(".search-item");
+ let resultContainer=document.getElementById('searchResult');
+ resultContainer.innerHTML="Showing results:\n";
+ let found=false;
+ 
+ items.forEach(function(item){
+ let keywords=item.getAttribute("data-keywords").toLowerCase();
+ if(keywords.includes(searchQuery)){
+ let clone=item.cloneNode(true);
+ resultContainer.appendChild(clone);
+ found=true;
+ }
+ });
+ if(!found){
+ resultContainer.innerHTML="<p>Result not found</p>";
+ }
+ });
+ </script>
+ </body>
+ </html>
