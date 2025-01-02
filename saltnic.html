@@ -10,29 +10,6 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <style type="text/css">
-  @media screen and (max-width:360px){
-      .cards{
-      width:16%;
-      height:auto;
-      padding:10px;
-      background-color:#fff;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      transition: height 0.3s ease, transform 0.3s ease;
-      }
-      
-      .cards h2{
-      text-align:center;
-      }
-      
-      .cards:not(.selected){
-      width: 48%;
-      }
-      
-      .selected{
-      width: 17%;
-      transform:scale(1.1);
-      }
-  }
 .products-cards{
     margin:0 5px;
     display:flex;
@@ -44,7 +21,7 @@
 }
 
 .cards{
-    width:48%;
+    width:16%;
     height:auto;
     padding:10px;
     background-color:#fff;
@@ -57,13 +34,33 @@
 }
 
 .cards:not(.selected){
-    width: 48%;
+    width: 16%;
 }
 
 .selected{
-    width: 49%;
+    width: 17%;
     transform:scale(1.1);
 }
+
+@media screen and (max-width:768px){
+      .cards{
+      width:48%;
+      height:auto;
+      padding:10px;
+      background-color:#fff;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      transition: height 0.3s ease, transform 0.3s ease;
+      }
+      
+      .cards:not(.selected){
+      width: 48%;
+      }
+      
+      .selected{
+      width: 49%;
+      transform:scale(1.1);
+      }
+  }
     
  #upperFooter{
  color:white;
