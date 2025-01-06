@@ -1233,7 +1233,14 @@ footer{
         document.getElementById("daze_Pineapple_Mango_Orange_30mg_Iced").innerHTML=items.daze_Pineapple_Mango_Orange_30mg_Iced.quantity;
     }
 
-
+    
+    //Total Quantity 
+    let sum=0;
+    Object.values(items).forEach(function (item){
+        sum+=item.quantity;
+    });
+    
+    document.getElementById('sum').innerHTML=sum;
 
     //Given CSS style with integration
   const cards=document.querySelectorAll('.cards');
