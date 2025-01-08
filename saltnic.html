@@ -710,10 +710,10 @@ footer{
   <script>
     //Item Lists
     const items={
-    kc_tabaco_dulce_35mg:{quantity:19, reserved:"Y"},
+    kc_tabaco_dulce_35mg:{quantity:19, reserved:"N"},
     kc_tabaco_dulce_50mg:{quantity:5, reserved:"N"},
     kc_bombo_aldonza_50mg:{quantity:15, reserved:"N"},
-    kc_bombo_aldonza_35mg:{quantity:14, reserved:"N"},
+    kc_bombo_aldonza_35mg:{quantity:13, reserved:"N"},
     kc_churro_35mg:{quantity:1, reserved:"N"},
     kc_don_juan_cafe_35mg :{quantity:0, reserved:"N"},
     kc_grape_ice_50mg :{quantity:1, reserved:"N"},
@@ -753,7 +753,7 @@ footer{
     pod_Juice_Jewel_Tobacco_35mg:{quantity:5, reserved:"N"},
     pod_Juice_Virginia_Tobacco_55mg:{quantity:3, reserved:"N"},
     pod_Juice_Peach_Berry_35mg:{quantity:1, reserved:"N"},
-    pod_Juice_Watermelon_Bubblegum_35mg:{quantity:1, reserved:"N"},
+    pod_Juice_Watermelon_Bubblegum_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Bangin_Blue_Razz_55mg:{quantity:2, reserved:"N"},
     pod_Juice_Fruity_Bears_35mg:{quantity:1, reserved:"N"},
     pod_Juice_Graham_Cracker_35mg:{quantity:1, reserved:"N"},
@@ -1249,23 +1249,6 @@ footer{
   card.addEventListener("click", ()=>{
   cards.forEach(c=>c.classList.remove('selected'));
   card.classList.add('selected');
-  });
-  });
-  
-  // Function to update reserved status on cards
-  document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".cards");
-  cards.forEach((card) => {
-  const productName = card.querySelector("h2").textContent.trim().toLowerCase().replace(/[^a-z0-9_]/g, "_");
-  if (items[productName]?.reserved === "Y") {
-  const reservedTag = document.createElement("span");
-  reservedTag.textContent = "Reserved";
-  reservedTag.style.color = "red";
-  reservedTag.style.fontWeight = "bold";
-  reservedTag.style.display = "block";
-  reservedTag.style.textAlign = "center";
-  card.appendChild(reservedTag);
-  }
   });
   });
   </script>
