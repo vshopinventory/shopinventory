@@ -10,21 +10,122 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
  <style type="text/css">
-.col-6{
-border:solid;
-border-color:powderblue;
-}
-#upperFooter{
-color:white;
-background-color:hsl(0, 0%, 20%);
-padding:10px;
+.products-cards{
+    margin:0 5px;
+    display:flex;
+    direction:row;
+    flex-wrap:wrap;
+    flex-direction:row;
+    gap:5px;
+    
 }
 
-#lowerFooter{
-color:white;
-background-color:YellowGreen;
-text-align:center;
+.cards{
+    width:16%;
+    height:auto;
+    padding:10px;
+    background-color:#fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: height 0.3s ease, transform 0.3s ease;
 }
+
+.cards h2{
+    text-align:center;
+}
+
+.post-h2{
+    width: 100%;
+    height: 190px;
+}
+
+.cards:not(.selected){
+    width: 16%;
+}
+
+.selected{
+    width: 17%;
+    transform:scale(1.1);
+}
+
+#searchResult{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+}
+
+#quickNavigator button{
+    height:35px;
+    border:none;
+    border-radius:4px;
+    padding:0 15px;
+    background-color:rgba(0,0,0,0.5);
+    color:white;
+    font-weight:bold;
+    }
+    
+#quickNavigator button:active{
+    background-color:rgba(0,0,0,0.2);
+}
+
+.spinner-overlay{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.5);
+    justify-content:center;
+    align-items:center;
+}
+
+.spinner-border{
+    color:white;
+    width:60px;
+    height:60px;
+}
+
+@media screen and (max-width:768px){
+      .cards{
+      width:48%;
+      height:auto;
+      padding:10px;
+      background-color:#fff;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      transition: height 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      }
+      
+      .cards:not(.selected){
+      width: 48%;
+      }
+      
+      .selected{
+      width: 49%;
+      transform:scale(1.1);
+      }
+
+      .post-h2{
+      width: 100%;
+      height: 140px;
+}
+  }
+
+footer{
+    width: 100%;
+}
+    
+ #upperFooter{
+ color:white;
+ background-color:hsl(0, 0%, 20%);
+ padding:10px;
+ }
+ 
+ #lowerFooter{
+ color:white;
+ background-color:YellowGreen;
+ text-align:center;
+ }
  </style>
  </head>
  <body>
@@ -39,7 +140,6 @@ text-align:center;
  <li class="nav-item"><a class="nav-link" href="index.html" >Home</a></li>
  <li class="nav-item"><a class="nav-link" href="saltnic.html" >Saltnic E-juice</a></li>
  <li class="nav-item"><a class="nav-link" href="freebase.html" >Freebase E-juice</a></li>
- <li class="nav-item"><a class="nav-link" href="disposable.html" >Disposable</a></li>
  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">Convenient Tools</a>
  <ul class="dropdown-menu">
  <li><a class="dropdown-item" href="bkash_calculator.html">Calculator: bKash Cashout charge</a></li>
@@ -63,62 +163,287 @@ text-align:center;
  <!--Search Result appear here-->
  <p id="searchResult"></p>
  
- <div class="container mt-3">
-<div class="row">
-<div class="col-6 col-md-2 search-item" data-keywords="rasberry green apple watermalon 6mg">
-<h3><b>Rasberry Green Apple Watermalon 100 ml 6mg</b></h3><br>
-<img src="https://www.e-cigclouds.co.uk/wp-content/uploads/2023/01/RASPBERRY-GREEN-APPLE-WATERMELON-100ML-E-LIQUID-7-DAZE-FUSION.jpg" class="img-fluid" alt="Rasberry Green Apple Watermalon 100 ml 6mg"><br>
-<p style="text-align:center;"><kbd>Qnty-<span id="raspberryGreenAppleWatermelon6mg"></span></kbd></p>
-</div>
-<div class="col-6 col-md-2 search-item" data-keywords="grape fruit orange mango 6mg">
-<h3><b>Grape fruit Orange Mango 100 ml 6mg</b></h3><br>
-<img src="https://vape-street.com/cdn/shop/files/7Daze-Fusion-Iced-Grapefruit-Orange-Mango.jpg?v=1708735249&width=1080" class="img-fluid" alt="Grape fruit Orange Mango 100 ml 6mg"><br>
-<p style="text-align:center;"><kbd>Qnty-<span id="grapefruitOrangeMango6mg"></span></kbd></p>
-</div>
-<div class="col-6 col-md-2 search-item" data-keywords="orange yuzu tengerin 6mg">
-<h3><b>Orange Yuzu Tengerin 100 ml 6mg</b></h3><br>
-<img src="https://bizweb.dktcdn.net/100/496/679/products/orange-yuzu-tanerine-100ml-vapetoyvn.jpg?v=1698845996480" class="img-fluid" alt="Orange Yuzu Tengerin 100 ml 6mg"><br>
-<p style="text-align:center;"><kbd>Qnty-<span id="orangeYuzuTengerin6mg"></span></kbd></p>
-</div>
-<div class="col-6 col-md-2 search-item" data-keywords="yellow red green mango 6mg">
-<h3><b>Yellow Red Green Mango 100 ml 6mg</b></h3><br>
-<img src="https://demandvape.com/image/cache/catalog/1_liquid_lines/Reds/Synthetic%20Nicotine/Fusion/100mL/DAZEFusion100mL_YellowGreenRedMango-800x800.png" class="img-fluid" alt="Yellow Red Green Mango 100 ml 6mg"><br>
-<p style="text-align:center;"><kbd>Qnty-<span id="yellowRedGreenMango6mg"></span></kbd></p>
-</div>
-<div class="col-6 col-md-2 search-item" data-keywords="banana cantaloup honeydew 6mg">
-<h3><b>Banana Cantaloup Honeydew 100 ml 6mg</b></h3><br>
-<img src="https://www.flawlessvapeshop.com/cdn/shop/products/banana-cantaloupe-honeydew-by-7-daze-e-liquid-100ml-956521.jpg?v=1655926197" class="img-fluid" alt="Banana Cantaloup Honeydew 100 ml 6mg"><br>
-<p style="text-align:center;"><kbd>Qnty-<span id="bananaCantaloupHoneydew6mg"></span></kbd></p>
-</div>
-<div class="col-6 col-md-2 search-item" data-keywords="lush ice 3mg">
-<h3><b>Lush Ice 3mg</b></h3><br>
-<img src="https://vapeshopsky.com/wp-content/uploads/2023/06/vgod-lush-ice-liquid.jpg" class="img-fluid" alt="Lush Ice 3mg"><br>
-<p style="text-align:center;"><kbd>Qnty-<span id="lushIce3mg"></span></kbd></p>
-</div>
-</div>
-<div class="row">
-<div class="col-6 col-md-2 search-item" data-keywords="sour licious 6mg">
-<h3><b>Sour licious 6mg</b></h3><br>
-<img src="https://vapesdirect.pk/wp-content/uploads/2022/03/vgod_sourlicious_3mg.png" class="img-fluid" alt="Lush Ice 3mg"><br>
-<p style="text-align:center;"><kbd>Qnty-<span id="sourlicious3mg"></span></kbd></p>
-</div>
-<!--<div class="col-6 col-md-2">
-<h3><b>Sizia Mango Peach Iced 20mg salt</b></h3><br>
-<img src="siziamango.jpeg" class="img-fluid" alt="Sizia Mango Peach iced 20mg"><br>
-<p style="text-align:center;"><kbd>Qnty-1</kbd></p>
-</div>
-<div class="col-6 col-md-2">
-<h3><b>VCT 30mg salt</b></h3><br>
-<img src="vct.webp" class="img-fluid" alt="VCT 30mg"><br>
-<p style="text-align:center;"><kbd>Qnty-4</kbd></p>
-</div>
-<div class="col-6 col-md-2">
-<h3><b>VCT 50mg salt</b></h3><br>
-<img src="vct.webp" class="img-fluid" alt="VCT 50mg"><br>
-<p style="text-align:center;"><kbd>Qnty-2</kbd></p>
-</div>-->
-</div>
+ <!--Post Start from Here-->
+ <h1 style="margin-top: 50px;">Kings Crest:</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+ <!--KC Posts Start from here-->
+    <div class="cards" data-keywords="King Crests Don Juan Tabaco Honey 6mg">
+        <div class="post-h2">
+        <h2>King Crests Don Juan Tabaco Honey 6mg</h2>
+        </div>
+        <img src="https://bestvapebr.com/wp-content/uploads/2024/09/cd942a1573b0d70efb497f283310b0f4.jpg" class="img-fluid" alt="King Crests Don Juan Tabaco Honey 6mg"><br>
+        <center><kbd>Qnty-<span id="king_Crests_Don_Juan_Tabaco_Honey_6mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Kings Crest Don Juan Cafe 6mg">
+        <div class="post-h2">
+        <h2>Kings Crest Don Juan Cafe 6mg</h2>
+        </div>
+        <img src="https://vaporworldbd.com/wp-content/webp-express/webp-images/uploads/2020/04/e-liquid-kings-crest-don-juan-cafe-13460555202649-800x800.jpg.webp" class="img-fluid" alt="Kings Crest Don Juan Cafe 6mg"><br>
+        <center><kbd>Qnty-<span id="kings_Crest_Don_Juan_Cafe_6mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Kings Crest Don Juan Bombo Aldonza 6mg">
+        <div class="post-h2">
+        <h2>Kings Crest Don Juan Bombo Aldonza 6mg</h2>
+        </div>
+        <img src="https://avsworld.shop/wp-content/uploads/2023/04/Don-Juan-Aldonza-Bombo-120ml-Kings-Crest-Premium-Eliquid.jpg" class="img-fluid" alt="Kings Crest Don Juan Bombo Aldonza 6mg"><br>
+        <center><kbd>Qnty-<span id="kings_Crest_Don_Juan_Bombo_Aldonza_6mg"></span></kbd></center>
+    </div>
  </div>
+
+ <h1 style="margin-top: 50px;">Skwezed:</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+ <!--Skwezed Posts Start from here-->
+    <div class="cards" data-keywords="Skwezed Mango Iced 6mg">
+        <div class="post-h2">
+        <h2>Skwezed Mango Iced 6mg</h2>
+        </div>
+        <img src="https://vaporworldbd.com/wp-content/webp-express/webp-images/uploads/2021/10/iced_mango_-_skwezed_e-liquid_-_100ml_-_box_and_bottle-800x800.jpg.webp" class="img-fluid" alt="Skwezed Mango Iced 6mg"><br>
+        <center><kbd>Qnty-<span id="skwezed_Mango_Iced_6mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Mango Iced 3mg">
+        <div class="post-h2">
+        <h2>Skwezed Mango Iced 3mg</h2>
+        </div>
+        <img src="https://vaporworldbd.com/wp-content/webp-express/webp-images/uploads/2021/10/iced_mango_-_skwezed_e-liquid_-_100ml_-_box_and_bottle-800x800.jpg.webp" class="img-fluid" alt="Skwezed Mango Iced 3mg"><br>
+        <center><kbd>Qnty-<span id="skwezed_Mango_Iced_3mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Green Apple 6mg">
+        <div class="post-h2">
+        <h2>Skwezed Green Apple 6mg</h2>
+        </div>
+        <img src="https://vaporworldbd.com/wp-content/webp-express/webp-images/uploads/2021/10/iced_green_apple_-_skwezed_e-liquid_-_100ml_-_box_and_bottle-800x800.jpg.webp" class="img-fluid" alt="Skwezed Green Apple 6mg"><br>
+        <center><kbd>Qnty-<span id="skwezed_Green_Apple_6mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Mixed Berries 3mg">
+        <div class="post-h2">
+        <h2>Skwezed Mixed Berries 3mg</h2>
+        </div>
+        <img src="https://www.skwezed.com/cdn/shop/files/MixedBerries.png?v=1697528950&width=823" class="img-fluid" alt="Skwezed Mixed Berries 3mg"><br>
+        <center><kbd>Qnty-<span id="skwezed_Mixed_Berries_3mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Watermelon Grape 3mg Iced">
+        <div class="post-h2">
+        <h2>Skwezed Watermelon Grape 3mg Iced</h2>
+        </div>
+        <img src="https://vapemall.pk/cdn/shop/files/skwezed-watermelon-white-grape-ice-skwezed-884654.webp?v=1684406405&width=823" class="img-fluid" alt="Skwezed Watermelon Grape 3mg Iced"><br>
+        <center><kbd>Qnty-<span id="skwezed_Watermelon_Grape_3mg_Iced"></span></kbd></center>
+    </div>
+ </div>
+
+ <h1 style="margin-top: 50px;">Cream Team:</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+ <!--Cream Team Posts Start from here-->
+ <div class="cards" data-keywords="Cream Team Butter Cream 6mg">
+    <div class="post-h2">
+        <h2>Cream Team Butter Cream 6mg</h2>
+        </div>
+        <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_500/https://vapeshopsky.com/wp-content/uploads/2021/03/creme-team-vss.jpg" class="img-fluid" alt="Cream Team Butter Cream 6mg"><br>
+        <center><kbd>Qnty-<span id="cream_Team_Butter_Cream_6mg"></span></kbd></center>
+    </div>
+ </div>
+
+ <h1 style="margin-top: 50px;">Daze (Fusion):</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+ <!--Daze (Fusion) Posts Start from here-->
+    <div class="cards" data-keywords="Daze Fusion Pineapple Coconut Banana 6mg Iced">
+        <div class="post-h2">
+        <h2>Daze Fusion Pineapple Coconut Banana 6mg Iced</h2>
+        </div>
+        <img src="https://www.huffandpuffers.com/cdn/shop/products/daze-fusion-pineapple-coconut-banana-iced.jpg?v=1656221761&width=800" class="img-fluid" alt="Daze Fusion Pineapple Coconut Banana 6mg Iced"><br>
+        <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Coconut_Banana_6mg_Iced"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Daze Fusion Pineapple Coconut Banana 3mg Iced">
+        <div class="post-h2">
+        <h2>Daze Fusion Pineapple Coconut Banana 3mg Iced</h2>
+        </div>
+        <img src="https://www.huffandpuffers.com/cdn/shop/products/daze-fusion-pineapple-coconut-banana-iced.jpg?v=1656221761&width=800" class="img-fluid" alt="Daze Fusion Pineapple Coconut Banana 3mg Iced"><br>
+        <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Coconut_Banana_3mg_Iced"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Daze Fusion Pineapple Mango Orange 6mg">
+        <div class="post-h2">
+        <h2>Daze Fusion Pineapple Mango Orange 6mg</h2>
+        </div>
+        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/pineapple_mango_orange_100ml_81ea17d2557d4fffaf557fc4f764f874.jpg" class="img-fluid" alt="Daze Fusion Pineapple Mango Orange 6mg"><br>
+        <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Mango_Orange_6mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Daze Fusion Pineapple Mango Orange 3mg">
+        <div class="post-h2">
+        <h2>Daze Fusion Pineapple Mango Orange 3mg</h2>
+        </div>
+        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/pineapple_mango_orange_100ml_81ea17d2557d4fffaf557fc4f764f874.jpg" class="img-fluid" alt="Daze Fusion Pineapple Mango Orange 3mg"><br>
+        <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Mango_Orange_3mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Daze Fusion Raspberry Green Apple Watermelon 6mg">
+        <div class="post-h2">
+        <h2>Daze Fusion Raspberry Green Apple Watermelon 6mg</h2>
+        </div>
+        <img src="https://vapordna.com/cdn/shop/products/DazeFusionR.G.W.Gallery.webp?v=1705747331&width=580" class="img-fluid" alt="Daze Fusion Raspberry Green Apple Watermelon 6mg"><br>
+        <center><kbd>Qnty-<span id="daze_Fusion_Raspberry_Green_Apple_Watermelon_6mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Daze Fusion Raspberry Green Apple Watermelon 3mg">
+        <div class="post-h2">
+        <h2>Daze Fusion Raspberry Green Apple Watermelon 3mg</h2>
+        </div>
+        <img src="https://vapordna.com/cdn/shop/products/DazeFusionR.G.W.Gallery.webp?v=1705747331&width=580" class="img-fluid" alt="Daze Fusion Raspberry Green Apple Watermelon 3mg"><br>
+        <center><kbd>Qnty-<span id="daze_Fusion_Raspberry_Green_Apple_Watermelon_3mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Daze Fusion Lemon Passionfruit Blueberry 3mg">
+        <div class="post-h2">
+        <h2>Daze Fusion Lemon Passionfruit Blueberry 3mg</h2>
+        </div>
+        <img src="https://vapordna.com/cdn/shop/products/DazeFusionIceL.P.B.Gallery.webp?v=1705747578&width=580" class="img-fluid" alt="Daze Fusion Lemon Passionfruit Blueberry 3mg"><br>
+        <center><kbd>Qnty-<span id="daze_Fusion_Lemon_Passionfruit_Blueberry_3mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Daze Fusion Lemon Passionfruit Blueberry 3mg Iced">
+        <div class="post-h2">
+        <h2>Daze Fusion Lemon Passionfruit Blueberry 3mg Iced</h2>
+        </div>
+        <img src="https://vapordna.com/cdn/shop/products/DazeFusionIceL.P.B.Gallery.webp?v=1705747578&width=580" class="img-fluid" alt="Daze Fusion Lemon Passionfruit Blueberry 3mg Iced"><br>
+        <center><kbd>Qnty-<span id="daze_Fusion_Lemon_Passionfruit_Blueberry_3mg_Iced"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Daze Fusion Lemon Passionfruit Blueberry 6mg">
+        <div class="post-h2">
+        <h2>Daze Fusion Lemon Passionfruit Blueberry 6mg</h2>
+        </div>
+        <img src="https://vapordna.com/cdn/shop/products/DazeFusionIceL.P.B.Gallery.webp?v=1705747578&width=580" class="img-fluid" alt="Daze Fusion Lemon Passionfruit Blueberry 6mg"><br>
+        <center><kbd>Qnty-<span id="daze_Fusion_Lemon_Passionfruit_Blueberry_6mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Daze Fusion Banana Cantaloupe Honeydew 6mg Iced">
+        <div class="post-h2">
+        <h2>Daze Fusion Banana Cantaloupe Honeydew 6mg Iced</h2>
+        </div>
+        <img src="https://ejuicedirect.com/cdn/shop/files/7-daze-fusion-banana-cantaloupe-honeydew-iced_500x500.jpg?v=1689043656" class="img-fluid" alt="Daze Fusion Banana Cantaloupe Honeydew 6mg Iced"><br>
+        <center><kbd>Qnty-<span id="daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Daze Fusion Banana Cantaloupe Honeydew 3mg Iced">
+        <div class="post-h2">
+        <h2>Daze Fusion Banana Cantaloupe Honeydew 3mg Iced</h2>
+        </div>
+        <img src="https://ejuicedirect.com/cdn/shop/files/7-daze-fusion-banana-cantaloupe-honeydew-iced_500x500.jpg?v=1689043656" class="img-fluid" alt="Daze Fusion Banana Cantaloupe Honeydew 3mg Iced"><br>
+        <center><kbd>Qnty-<span id="daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Daze Fusion Orange Yuzu Tangerine 6mg">
+        <div class="post-h2">
+        <h2>Daze Fusion Orange Yuzu Tangerine 6mg</h2>
+        </div>
+        <img src="https://www.vaporauthority.com/cdn/shop/products/Orange-Yuzu-Tangerine-Iced-7-Daze-E-Juice.jpg?v=1660084352" class="img-fluid" alt="Daze Fusion Orange Yuzu Tangerine 6mg"><br>
+        <center><kbd>Qnty-<span id="daze_Fusion_Orange_Yuzu_Tangerine_6mg"></span></kbd></center>
+    </div>
+ </div>
+
+ <h1 style="margin-top: 50px;">Daze (Reds):</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+ <!--Daze (Reds) Posts Start from here-->
+    <div class="cards" data-keywords="Reds Apple Grape 6mg">
+        <div class="post-h2">
+        <h2>Reds Apple Grape 6mg</h2>
+        </div>
+        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/Screenshot-2024-09-27-200505.png" class="img-fluid" alt="Reds Apple Grape 6mg"><br>
+        <center><kbd>Qnty-<span id="Reds_Apple_Grape_6mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Original 3mg Iced">
+        <div class="post-h2">
+        <h2>Reds Apple Original 3mg Iced</h2>
+        </div>
+        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/7-Daze-Vape-Juices-for-Sale-in-Pakistan-Welcome-to-The-Vape-Town-your-go-to-destination-for-all-your-vaping-needs.-We-are-thrilled-to-introduce-you-to-our-exceptional-collection-of-7-Daze-E-Liqui-1.jpg" class="img-fluid" alt="Reds Apple Original 3mg Iced"><br>
+        <center><kbd>Qnty-<span id="Reds_Apple_Original_3mg_Iced"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Original 6mg Iced">
+        <div class="post-h2">
+        <h2>Reds Apple Original 6mg Iced</h2>
+        </div>
+        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/7-Daze-Vape-Juices-for-Sale-in-Pakistan-Welcome-to-The-Vape-Town-your-go-to-destination-for-all-your-vaping-needs.-We-are-thrilled-to-introduce-you-to-our-exceptional-collection-of-7-Daze-E-Liqui-1.jpg" class="img-fluid" alt="Reds Apple Original 6mg Iced"><br>
+        <center><kbd>Qnty-<span id="Reds_Apple_Original_6mg_Iced"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Original 6mg">
+        <div class="post-h2">
+        <h2>Reds Apple Original 6mg</h2>
+        </div>
+        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/7-Daze-Vape-Juices-for-Sale-in-Pakistan-Welcome-to-The-Vape-Town-your-go-to-destination-for-all-your-vaping-needs.-We-are-thrilled-to-introduce-you-to-our-exceptional-collection-of-7-Daze-E-Liqui-1.jpg" class="img-fluid" alt="Reds Apple Original 6mg"><br>
+        <center><kbd>Qnty-<span id="Reds_Apple_Original_6mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Original 3mg">
+        <div class="post-h2">
+        <h2>Reds Apple Original 3mg</h2>
+        </div>
+        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/7-Daze-Vape-Juices-for-Sale-in-Pakistan-Welcome-to-The-Vape-Town-your-go-to-destination-for-all-your-vaping-needs.-We-are-thrilled-to-introduce-you-to-our-exceptional-collection-of-7-Daze-E-Liqui-1.jpg" class="img-fluid" alt="Reds Apple Original 3mg"><br>
+        <center><kbd>Qnty-<span id="Reds_Apple_Original_3mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Berries 6mg Iced">
+        <div class="post-h2">
+        <h2>Reds Apple Berries 6mg Iced</h2>
+        </div>
+        <img src="https://ejuicedirect.com/cdn/shop/files/Reds-Berries-iced_100mL-0mg_ProductShot-both_502x502.png?v=1697470728" class="img-fluid" alt="Reds Apple Berries 6mg Iced"><br>
+        <center><kbd>Qnty-<span id="Reds_Apple_Berries_6mg_Iced"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Berries 3mg Iced">
+        <div class="post-h2">
+        <h2>Reds Apple Berries 3mg Iced</h2>
+        </div>
+        <img src="https://ejuicedirect.com/cdn/shop/files/Reds-Berries-iced_100mL-0mg_ProductShot-both_502x502.png?v=1697470728" class="img-fluid" alt="Reds Apple Berries 3mg Iced"><br>
+        <center><kbd>Qnty-<span id="Reds_Apple_Berries_3mg_Iced"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Berries 6mg">
+        <div class="post-h2">
+        <h2>Reds Apple Berries 6mg</h2>
+        </div>
+        <img src="https://ejuicedirect.com/cdn/shop/files/Reds-Berries-iced_100mL-0mg_ProductShot-both_502x502.png?v=1697470728" class="img-fluid" alt="Reds Apple Berries 6mg"><br>
+        <center><kbd>Qnty-<span id="Reds_Apple_Berries_6mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Berries 3mg">
+        <div class="post-h2">
+        <h2>Reds Apple Berries 3mg</h2>
+        </div>
+        <img src="https://ejuicedirect.com/cdn/shop/files/Reds-Berries-iced_100mL-0mg_ProductShot-both_502x502.png?v=1697470728" class="img-fluid" alt="Reds Apple Berries 3mg"><br>
+        <center><kbd>Qnty-<span id="Reds_Apple_Berries_3mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Gold Kiwi 6mg">
+        <div class="post-h2">
+        <h2>Reds Apple Gold Kiwi 6mg</h2>
+        </div>
+        <img src="https://ejuicedirect.com/cdn/shop/files/lighter_502x502.webp?v=1696514996" class="img-fluid" alt="Reds Apple Gold Kiwi 6mg"><br>
+        <center><kbd>Qnty-<span id="Reds_Apple_Gold_Kiwi_6mg"></span></kbd></center>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Gold Kiwi 3mg">
+        <div class="post-h2">
+        <h2>Reds Apple Gold Kiwi 3mg</h2>
+        </div>
+        <img src="https://ejuicedirect.com/cdn/shop/files/lighter_502x502.webp?v=1696514996" class="img-fluid" alt="Reds Apple Gold Kiwi 3mg"><br>
+        <center><kbd>Qnty-<span id="Reds_Apple_Gold_Kiwi_3mg"></span></kbd></center>
+    </div>
+
+
+ </div>
+
+<!--Post End-->
+
  
  <div style="border:gray 2px solid; border-radius:12px; background-color:powderblue;" class="container mt-3">
  <h2 style="text-align:center;">Stock Summary</h2>
@@ -161,89 +486,287 @@ text-align:center;
  </footer>
  
  <script type="text/javascript">
- //item list
- let raspberryGreenAppleWatermelon6mg=0;
- let grapefruitOrangeMango6mg=0;
- let orangeYuzuTengerin6mg=0;
- let yellowRedGreenMango6mg=0;
- let bananaCantaloupHoneydew6mg=0;
- let lushIce3mg=2;
- let sourlicious3mg=0;
- 
- 
- if(raspberryGreenAppleWatermelon6mg==0){
- document.getElementById('raspberryGreenAppleWatermelon6mg').innerHTML="Sold Out";
- document.getElementById('raspberryGreenAppleWatermelon6mg').style.color="#ff0000";
- }else{
-  document.getElementById('raspberryGreenAppleWatermelon6mg').innerHTML=raspberryGreenAppleWatermelon6mg;
- }
- if(grapefruitOrangeMango6mg==0){
- document.getElementById('grapefruitOrangeMango6mg').innerHTML="Sold Out";
- document.getElementById('grapefruitOrangeMango6mg').style.color="#ff0000";
- }else{
- document.getElementById('grapefruitOrangeMango6mg').innerHTML=grapefruitOrangeMango6mg;
- }
- if(orangeYuzuTengerin6mg==0){
- document.getElementById('orangeYuzuTengerin6mg').innerHTML="Sold Out";
- document.getElementById('orangeYuzuTengerin6mg').style.color="#ff0000";
- }else{
- document.getElementById('orangeYuzuTengerin6mg').innerHTML=orangeYuzuTengerin6mg;
- }
- if(yellowRedGreenMango6mg==0){
- document.getElementById('yellowRedGreenMango6mg').innerHTML="Sold Out";
- document.getElementById('yellowRedGreenMango6mg').style.color="#ff0000";
- }else{
- document.getElementById('yellowRedGreenMango6mg').innerHTML=yellowRedGreenMango6mg;
- }
- if(bananaCantaloupHoneydew6mg==0){
- document.getElementById('bananaCantaloupHoneydew6mg').innerHTML="Sold Out";
- document.getElementById('bananaCantaloupHoneydew6mg').style.color="#ff0000";
- }else{
- document.getElementById('bananaCantaloupHoneydew6mg').innerHTML=bananaCantaloupHoneydew6mg;
- }
- if(lushIce3mg==0){
- document.getElementById('lushIce3mg').innerHTML="Sold Out";
- document.getElementById('lushIce3mg').style.color="#ff0000";
- }else{
- document.getElementById('lushIce3mg').innerHTML=lushIce3mg;
- }
- if(sourlicious3mg==0){
- document.getElementById('sourlicious3mg').innerHTML="Sold Out";
- document.getElementById('sourlicious3mg').style.color="#ff0000";
- }else{
- document.getElementById('sourlicious3mg').innerHTML=sourlicious3mg;
- }
- 
- let sum=raspberryGreenAppleWatermelon6mg+
- grapefruitOrangeMango6mg+
- orangeYuzuTengerin6mg+
- yellowRedGreenMango6mg+
- bananaCantaloupHoneydew6mg+
- lushIce3mg+
- sourlicious3mg;
- document.getElementById('sum').innerHTML=sum;
- 
- 
- //search Engine
- document.getElementById('searchBtn').addEventListener("click",function(){
- let searchQuery=document.getElementById('searchInput').value.toLowerCase();
- let items=document.querySelectorAll(".search-item");
- let resultContainer=document.getElementById('searchResult');
- resultContainer.innerHTML="Showing results:\n";
- let found=false;
- 
- items.forEach(function(item){
- let keywords=item.getAttribute("data-keywords").toLowerCase();
- if(keywords.includes(searchQuery)){
- let clone=item.cloneNode(true);
- resultContainer.appendChild(clone);
- found=true;
- }
- });
- if(!found){
- resultContainer.innerHTML="<p>Result not found</p>";
- }
- });
+    //Item Lists
+    const items={
+    king_Crests_Don_Juan_Tabaco_Honey_6mg:{quantity:4, reserved:"N"},
+    kings_Crest_Don_Juan_Cafe_6mg:{quantity:4, reserved:"N"},
+    kings_Crest_Don_Juan_Bombo_Aldonza_6mg:{quantity:12, reserved:"N"},
+    //skwezed Start from here
+    skwezed_Mango_Iced_6mg:{quantity:3, reserved:"N"},
+    skwezed_Mango_Iced_3mg:{quantity:2, reserved:"N"},
+    skwezed_Green_Apple_6mg:{quantity:3, reserved:"N"},
+    skwezed_Mixed_Berries_3mg:{quantity:1, reserved:"N"},
+    skwezed_Watermelon_Grape_3mg_Iced:{quantity:1, reserved:"N"},
+    cream_Team_Butter_Cream_6mg:{quantity:4, reserved:"N"},
+    //Daze (Fusion) Start from here
+    daze_Fusion_Pineapple_Coconut_Banana_6mg_Iced:{quantity:1, reserved:"N"},
+    daze_Fusion_Pineapple_Coconut_Banana_3mg_Iced:{quantity:1, reserved:"N"},
+    daze_Fusion_Pineapple_Mango_Orange_6mg:{quantity:7, reserved:"N"},
+    daze_Fusion_Pineapple_Mango_Orange_3mg:{quantity:1, reserved:"N"},
+    daze_Fusion_Raspberry_Green_Apple_Watermelon_6mg:{quantity:2, reserved:"N"},
+    daze_Fusion_Raspberry_Green_Apple_Watermelon_3mg:{quantity:1, reserved:"N"},
+    daze_Fusion_Lemon_Passionfruit_Blueberry_3mg:{quantity:2, reserved:"N"},
+    daze_Fusion_Lemon_Passionfruit_Blueberry_3mg_Iced:{quantity:1, reserved:"N"},
+    daze_Fusion_Lemon_Passionfruit_Blueberry_6mg:{quantity:8, reserved:"N"},
+    daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced:{quantity:2, reserved:"N"},
+    daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced:{quantity:1, reserved:"N"},
+    daze_Fusion_Orange_Yuzu_Tangerine_6mg:{quantity:1, reserved:"N"},
+    //Daze (Reds) Start from here
+    Reds_Apple_Grape_6mg:{quantity:8, reserved:"N"},
+    Reds_Apple_Original_3mg_Iced:{quantity:1, reserved:"N"},
+    Reds_Apple_Original_6mg_Iced:{quantity:1, reserved:"N"},
+    Reds_Apple_Original_6mg:{quantity:4, reserved:"N"},
+    Reds_Apple_Original_3mg:{quantity:1, reserved:"N"},
+    Reds_Apple_Berries_6mg_Iced:{quantity:1, reserved:"N"},
+    Reds_Apple_Berries_3mg_Iced:{quantity:1, reserved:"N"},
+    Reds_Apple_Berries_6mg:{quantity:5, reserved:"N"},
+    Reds_Apple_Berries_3mg:{quantity:1, reserved:"N"},
+    Reds_Apple_Gold_Kiwi_6mg:{quantity:7, reserved:"N"},
+    Reds_Apple_Gold_Kiwi_3mg:{quantity:1, reserved:"N"},
+    }
+
+    //Check items Sold out or not
+    if(items.king_Crests_Don_Juan_Tabaco_Honey_6mg.quantity===0){
+        document.getElementById("king_Crests_Don_Juan_Tabaco_Honey_6mg").innerHTML="Sold Out";
+        document.getElementById("king_Crests_Don_Juan_Tabaco_Honey_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("king_Crests_Don_Juan_Tabaco_Honey_6mg").innerHTML=items.king_Crests_Don_Juan_Tabaco_Honey_6mg.quantity;
+    }
+
+    if(items.kings_Crest_Don_Juan_Cafe_6mg.quantity===0){
+        document.getElementById("kings_Crest_Don_Juan_Cafe_6mg").innerHTML="Sold Out";
+        document.getElementById("kings_Crest_Don_Juan_Cafe_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("kings_Crest_Don_Juan_Cafe_6mg").innerHTML=items.kings_Crest_Don_Juan_Cafe_6mg.quantity;
+    }
+
+    if(items.kings_Crest_Don_Juan_Bombo_Aldonza_6mg.quantity===0){
+        document.getElementById("kings_Crest_Don_Juan_Bombo_Aldonza_6mg").innerHTML="Sold Out";
+        document.getElementById("kings_Crest_Don_Juan_Bombo_Aldonza_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("kings_Crest_Don_Juan_Bombo_Aldonza_6mg").innerHTML=items.kings_Crest_Don_Juan_Bombo_Aldonza_6mg.quantity;
+    }
+
+    if(items.skwezed_Mango_Iced_6mg.quantity===0){
+        document.getElementById("skwezed_Mango_Iced_6mg").innerHTML="Sold Out";
+        document.getElementById("skwezed_Mango_Iced_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("skwezed_Mango_Iced_6mg").innerHTML=items.skwezed_Mango_Iced_6mg.quantity;
+    }
+
+    if(items.skwezed_Mango_Iced_3mg.quantity===0){
+        document.getElementById("skwezed_Mango_Iced_3mg").innerHTML="Sold Out";
+        document.getElementById("skwezed_Mango_Iced_3mg").style.color="#ff0000";
+    }else{
+        document.getElementById("skwezed_Mango_Iced_3mg").innerHTML=items.skwezed_Mango_Iced_3mg.quantity;
+    }
+
+    if(items.skwezed_Green_Apple_6mg.quantity===0){
+        document.getElementById("skwezed_Green_Apple_6mg").innerHTML="Sold Out";
+        document.getElementById("skwezed_Green_Apple_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("skwezed_Green_Apple_6mg").innerHTML=items.skwezed_Green_Apple_6mg.quantity;
+    }
+
+    if(items.skwezed_Mixed_Berries_3mg.quantity===0){
+        document.getElementById("skwezed_Mixed_Berries_3mg").innerHTML="Sold Out";
+        document.getElementById("skwezed_Mixed_Berries_3mg").style.color="#ff0000";
+    }else{
+        document.getElementById("skwezed_Mixed_Berries_3mg").innerHTML=items.skwezed_Mixed_Berries_3mg.quantity;
+    }
+
+    if(items.skwezed_Watermelon_Grape_3mg_Iced.quantity===0){
+        document.getElementById("skwezed_Watermelon_Grape_3mg_Iced").innerHTML="Sold Out";
+        document.getElementById("skwezed_Watermelon_Grape_3mg_Iced").style.color="#ff0000";
+    }else{
+        document.getElementById("skwezed_Watermelon_Grape_3mg_Iced").innerHTML=items.skwezed_Watermelon_Grape_3mg_Iced.quantity;
+    }
+
+    if(items.cream_Team_Butter_Cream_6mg.quantity===0){
+        document.getElementById("cream_Team_Butter_Cream_6mg").innerHTML="Sold Out";
+        document.getElementById("cream_Team_Butter_Cream_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("cream_Team_Butter_Cream_6mg").innerHTML=items.cream_Team_Butter_Cream_6mg.quantity;
+    }
+
+    if(items.daze_Fusion_Pineapple_Coconut_Banana_6mg_Iced.quantity===0){
+        document.getElementById("daze_Fusion_Pineapple_Coconut_Banana_6mg_Iced").innerHTML="Sold Out";
+        document.getElementById("daze_Fusion_Pineapple_Coconut_Banana_6mg_Iced").style.color="#ff0000";
+    }else{
+        document.getElementById("daze_Fusion_Pineapple_Coconut_Banana_6mg_Iced").innerHTML=items.daze_Fusion_Pineapple_Coconut_Banana_6mg_Iced.quantity;
+    }
+
+    if(items.daze_Fusion_Pineapple_Coconut_Banana_3mg_Iced.quantity===0){
+        document.getElementById("daze_Fusion_Pineapple_Coconut_Banana_3mg_Iced").innerHTML="Sold Out";
+        document.getElementById("daze_Fusion_Pineapple_Coconut_Banana_3mg_Iced").style.color="#ff0000";
+    }else{
+        document.getElementById("daze_Fusion_Pineapple_Coconut_Banana_3mg_Iced").innerHTML=items.daze_Fusion_Pineapple_Coconut_Banana_3mg_Iced.quantity;
+    }
+
+    if(items.daze_Fusion_Pineapple_Mango_Orange_6mg.quantity===0){
+        document.getElementById("daze_Fusion_Pineapple_Mango_Orange_6mg").innerHTML="Sold Out";
+        document.getElementById("daze_Fusion_Pineapple_Mango_Orange_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("daze_Fusion_Pineapple_Mango_Orange_6mg").innerHTML=items.daze_Fusion_Pineapple_Mango_Orange_6mg.quantity;
+    }
+
+    if(items.daze_Fusion_Pineapple_Mango_Orange_3mg.quantity===0){
+        document.getElementById("daze_Fusion_Pineapple_Mango_Orange_3mg").innerHTML="Sold Out";
+        document.getElementById("daze_Fusion_Pineapple_Mango_Orange_3mg").style.color="#ff0000";
+    }else{
+        document.getElementById("daze_Fusion_Pineapple_Mango_Orange_3mg").innerHTML=items.daze_Fusion_Pineapple_Mango_Orange_3mg.quantity;
+    }
+
+    if(items.daze_Fusion_Raspberry_Green_Apple_Watermelon_6mg.quantity===0){
+        document.getElementById("daze_Fusion_Raspberry_Green_Apple_Watermelon_6mg").innerHTML="Sold Out";
+        document.getElementById("daze_Fusion_Raspberry_Green_Apple_Watermelon_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("daze_Fusion_Raspberry_Green_Apple_Watermelon_6mg").innerHTML=items.daze_Fusion_Raspberry_Green_Apple_Watermelon_6mg.quantity;
+    }
+
+    if(items.daze_Fusion_Raspberry_Green_Apple_Watermelon_3mg.quantity===0){
+        document.getElementById("daze_Fusion_Raspberry_Green_Apple_Watermelon_3mg").innerHTML="Sold Out";
+        document.getElementById("daze_Fusion_Raspberry_Green_Apple_Watermelon_3mg").style.color="#ff0000";
+    }else{
+        document.getElementById("daze_Fusion_Raspberry_Green_Apple_Watermelon_3mg").innerHTML=items.daze_Fusion_Raspberry_Green_Apple_Watermelon_3mg.quantity;
+    }
+
+    if(items.daze_Fusion_Lemon_Passionfruit_Blueberry_3mg.quantity===0){
+        document.getElementById("daze_Fusion_Lemon_Passionfruit_Blueberry_3mg").innerHTML="Sold Out";
+        document.getElementById("daze_Fusion_Lemon_Passionfruit_Blueberry_3mg").style.color="#ff0000";
+    }else{
+        document.getElementById("daze_Fusion_Lemon_Passionfruit_Blueberry_3mg").innerHTML=items.daze_Fusion_Lemon_Passionfruit_Blueberry_3mg.quantity;
+    }
+
+    if(items.daze_Fusion_Lemon_Passionfruit_Blueberry_3mg_Iced.quantity===0){
+        document.getElementById("daze_Fusion_Lemon_Passionfruit_Blueberry_3mg_Iced").innerHTML="Sold Out";
+        document.getElementById("daze_Fusion_Lemon_Passionfruit_Blueberry_3mg_Iced").style.color="#ff0000";
+    }else{
+        document.getElementById("daze_Fusion_Lemon_Passionfruit_Blueberry_3mg_Iced").innerHTML=items.daze_Fusion_Lemon_Passionfruit_Blueberry_3mg_Iced.quantity;
+    }
+
+    if(items.daze_Fusion_Lemon_Passionfruit_Blueberry_6mg.quantity===0){
+        document.getElementById("daze_Fusion_Lemon_Passionfruit_Blueberry_6mg").innerHTML="Sold Out";
+        document.getElementById("daze_Fusion_Lemon_Passionfruit_Blueberry_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("daze_Fusion_Lemon_Passionfruit_Blueberry_6mg").innerHTML=items.daze_Fusion_Lemon_Passionfruit_Blueberry_6mg.quantity;
+    }
+
+    if(items.daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced.quantity===0){
+        document.getElementById("daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced").innerHTML="Sold Out";
+        document.getElementById("daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced").style.color="#ff0000";
+    }else{
+        document.getElementById("daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced").innerHTML=items.daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced.quantity;
+    }
+
+    if(items.daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced.quantity===0){
+        document.getElementById("daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced").innerHTML="Sold Out";
+        document.getElementById("daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced").style.color="#ff0000";
+    }else{
+        document.getElementById("daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced").innerHTML=items.daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced.quantity;
+    }
+
+    if(items.daze_Fusion_Orange_Yuzu_Tangerine_6mg.quantity===0){
+        document.getElementById("daze_Fusion_Orange_Yuzu_Tangerine_6mg").innerHTML="Sold Out";
+        document.getElementById("daze_Fusion_Orange_Yuzu_Tangerine_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("daze_Fusion_Orange_Yuzu_Tangerine_6mg").innerHTML=items.daze_Fusion_Orange_Yuzu_Tangerine_6mg.quantity;
+    }
+
+    if(items.Reds_Apple_Grape_6mg.quantity===0){
+        document.getElementById("Reds_Apple_Grape_6mg").innerHTML="Sold Out";
+        document.getElementById("Reds_Apple_Grape_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("Reds_Apple_Grape_6mg").innerHTML=items.Reds_Apple_Grape_6mg.quantity;
+    }
+
+    if(items.Reds_Apple_Original_3mg_Iced.quantity===0){
+        document.getElementById("Reds_Apple_Original_3mg_Iced").innerHTML="Sold Out";
+        document.getElementById("Reds_Apple_Original_3mg_Iced").style.color="#ff0000";
+    }else{
+        document.getElementById("Reds_Apple_Original_3mg_Iced").innerHTML=items.Reds_Apple_Original_3mg_Iced.quantity;
+    }
+
+    if(items.Reds_Apple_Original_6mg_Iced.quantity===0){
+        document.getElementById("Reds_Apple_Original_6mg_Iced").innerHTML="Sold Out";
+        document.getElementById("Reds_Apple_Original_6mg_Iced").style.color="#ff0000";
+    }else{
+        document.getElementById("Reds_Apple_Original_6mg_Iced").innerHTML=items.Reds_Apple_Original_6mg_Iced.quantity;
+    }
+
+    if(items.Reds_Apple_Original_6mg.quantity===0){
+        document.getElementById("Reds_Apple_Original_6mg").innerHTML="Sold Out";
+        document.getElementById("Reds_Apple_Original_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("Reds_Apple_Original_6mg").innerHTML=items.Reds_Apple_Original_6mg.quantity;
+    }
+
+    if(items.Reds_Apple_Original_3mg.quantity===0){
+        document.getElementById("Reds_Apple_Original_3mg").innerHTML="Sold Out";
+        document.getElementById("Reds_Apple_Original_3mg").style.color="#ff0000";
+    }else{
+        document.getElementById("Reds_Apple_Original_3mg").innerHTML=items.Reds_Apple_Original_3mg.quantity;
+    }
+
+    if(items.Reds_Apple_Berries_6mg_Iced.quantity===0){
+        document.getElementById("Reds_Apple_Berries_6mg_Iced").innerHTML="Sold Out";
+        document.getElementById("Reds_Apple_Berries_6mg_Iced").style.color="#ff0000";
+    }else{
+        document.getElementById("Reds_Apple_Berries_6mg_Iced").innerHTML=items.Reds_Apple_Berries_6mg_Iced.quantity;
+    }
+
+    if(items.Reds_Apple_Berries_3mg_Iced.quantity===0){
+        document.getElementById("Reds_Apple_Berries_3mg_Iced").innerHTML="Sold Out";
+        document.getElementById("Reds_Apple_Berries_3mg_Iced").style.color="#ff0000";
+    }else{
+        document.getElementById("Reds_Apple_Berries_3mg_Iced").innerHTML=items.Reds_Apple_Berries_3mg_Iced.quantity;
+    }
+
+    if(items.Reds_Apple_Berries_6mg.quantity===0){
+        document.getElementById("Reds_Apple_Berries_6mg").innerHTML="Sold Out";
+        document.getElementById("Reds_Apple_Berries_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("Reds_Apple_Berries_6mg").innerHTML=items.Reds_Apple_Berries_6mg.quantity;
+    }
+
+    if(items.Reds_Apple_Berries_3mg.quantity===0){
+        document.getElementById("Reds_Apple_Berries_3mg").innerHTML="Sold Out";
+        document.getElementById("Reds_Apple_Berries_3mg").style.color="#ff0000";
+    }else{
+        document.getElementById("Reds_Apple_Berries_3mg").innerHTML=items.Reds_Apple_Berries_3mg.quantity;
+    }
+
+    if(items.Reds_Apple_Gold_Kiwi_6mg.quantity===0){
+        document.getElementById("Reds_Apple_Gold_Kiwi_6mg").innerHTML="Sold Out";
+        document.getElementById("Reds_Apple_Gold_Kiwi_6mg").style.color="#ff0000";
+    }else{
+        document.getElementById("Reds_Apple_Gold_Kiwi_6mg").innerHTML=items.Reds_Apple_Gold_Kiwi_6mg.quantity;
+    }
+
+    if(items.Reds_Apple_Gold_Kiwi_3mg.quantity===0){
+        document.getElementById("Reds_Apple_Gold_Kiwi_3mg").innerHTML="Sold Out";
+        document.getElementById("Reds_Apple_Gold_Kiwi_3mg").style.color="#ff0000";
+    }else{
+        document.getElementById("Reds_Apple_Gold_Kiwi_3mg").innerHTML=items.Reds_Apple_Gold_Kiwi_3mg.quantity;
+    }
+
+    //Total Quantity 
+    let sum=0;
+    Object.values(items).forEach(function (item){
+        sum+=item.quantity;
+    });
+    
+    document.getElementById('sum').innerHTML=sum;
+
+    //Given CSS style with integration
+  const cards=document.querySelectorAll('.cards');
+  
+  cards.forEach(card=>{
+  card.addEventListener("click", ()=>{
+  cards.forEach(c=>c.classList.remove('selected'));
+  card.classList.add('selected');
+  });
+  });
  </script>
  </body>
  </html>
