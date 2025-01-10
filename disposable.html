@@ -173,7 +173,7 @@ footer{
         <h2>That That 18K puff Disposable- Apple</h2>
         </div>
         <img src="apple.jpg" class="img-fluid" alt="That That 18K puff Disposable- Apple"><br>
-        <center><kbd>Qnty-<span id="skwezed_watermelon_25mg_iced"></span></kbd></center>
+        <center><kbd>Qnty-<span id="apple"></span></kbd></center>
     </div>
 
     <div class="cards" data-keywords="That That 18K puff Disposable- Mixed Berries">
@@ -181,7 +181,7 @@ footer{
         <h2>That That 18K puff Disposable- Mixed Berries</h2>
         </div>
         <img src="mixed_berries.jpg" class="img-fluid" alt="That That 18K puff Disposable- Mixed Berries"><br>
-        <center><kbd>Qnty-<span id="skwezed_watermelon_25mg_iced"></span></kbd></center>
+        <center><kbd>Qnty-<span id="mixed_berries"></span></kbd></center>
     </div>
 
     <div class="cards" data-keywords="That That 18K puff Disposable- Blue Berry">
@@ -189,7 +189,7 @@ footer{
         <h2>That That 18K puff Disposable- Blue Berry</h2>
         </div>
         <img src="blueberry.jpg" class="img-fluid" alt="That That 18K puff Disposable- Blue Berry"><br>
-        <center><kbd>Qnty-<span id="skwezed_watermelon_25mg_iced"></span></kbd></center>
+        <center><kbd>Qnty-<span id="blueberry"></span></kbd></center>
     </div>
 
     <div class="cards" data-keywords="That That 18K puff Disposable- Pineapple">
@@ -197,7 +197,7 @@ footer{
         <h2>That That 18K puff Disposable- Pineapple</h2>
         </div>
         <img src="pineapple.jpg" class="img-fluid" alt="That That 18K puff Disposable- Pineapple"><br>
-        <center><kbd>Qnty-<span id="skwezed_watermelon_25mg_iced"></span></kbd></center>
+        <center><kbd>Qnty-<span id="pineapple"></span></kbd></center>
     </div>
 
     <div class="cards" data-keywords="That That 18K puff Disposable- Watermelon">
@@ -205,7 +205,7 @@ footer{
         <h2>That That 18K puff Disposable- Watermelon</h2>
         </div>
         <img src="watermelon.jpg" class="img-fluid" alt="That That 18K puff Disposable- Watermelon"><br>
-        <center><kbd>Qnty-<span id="skwezed_watermelon_25mg_iced"></span></kbd></center>
+        <center><kbd>Qnty-<span id="watermelon"></span></kbd></center>
     </div>
 
     <div class="cards" data-keywords="That That 18K puff Disposable- Mango">
@@ -213,7 +213,7 @@ footer{
         <h2>That That 18K puff Disposable- Mango</h2>
         </div>
         <img src="mango.jpg" class="img-fluid" alt="That That 18K puff Disposable- Mango"><br>
-        <center><kbd>Qnty-<span id="skwezed_watermelon_25mg_iced"></span></kbd></center>
+        <center><kbd>Qnty-<span id="mango"></span></kbd></center>
     </div>
 
     <div class="cards" data-keywords="That That 18K puff Disposable- Grape">
@@ -221,10 +221,11 @@ footer{
         <h2>That That 18K puff Disposable- Grape</h2>
         </div>
         <img src="grape.jpg" class="img-fluid" alt="That That 18K puff Disposable- Grape"><br>
-        <center><kbd>Qnty-<span id="skwezed_watermelon_25mg_iced"></span></kbd></center>
+        <center><kbd>Qnty-<span id="grape"></span></kbd></center>
     </div>
 
 </div>
+<p>Picture Qualiy very bad🥴😂😂</p>
  
  <div style="border:gray 2px solid; border-radius:12px; background-color:powderblue;" class="container mt-3">
  <h2 style="text-align:center;">Stock Summary</h2>
@@ -279,11 +280,53 @@ footer{
  }
 
  //Check items Sold out or not
- if(items.kc_tabaco_dulce_35mg.quantity===0){
-        document.getElementById("kc_tabaco_dulce_35mg").innerHTML="Sold Out";
-        document.getElementById("kc_tabaco_dulce_35mg").style.color="#ff0000";
+ if(items.apple.quantity===0){
+        document.getElementById("apple").innerHTML="Sold Out";
+        document.getElementById("apple").style.color="#ff0000";
     }else{
-        document.getElementById("kc_tabaco_dulce_35mg").innerHTML=items.kc_tabaco_dulce_35mg.quantity;
+        document.getElementById("apple").innerHTML=items.apple.quantity;
+    }
+    
+    if(items.mixed_berries.quantity===0){
+    document.getElementById("mixed_berries").innerHTML="Sold Out";
+    document.getElementById("mixed_berries").style.color="#ff0000";
+    }else{
+    document.getElementById("mixed_berries").innerHTML=items.mixed_berries.quantity;
+    }
+    
+    if(items.blueberry.quantity===0){
+    document.getElementById("blueberry").innerHTML="Sold Out";
+    document.getElementById("blueberry").style.color="#ff0000";
+    }else{
+    document.getElementById("blueberry").innerHTML=items.blueberry.quantity;
+    }
+    
+    if(items.pineapple.quantity===0){
+    document.getElementById("pineapple").innerHTML="Sold Out";
+    document.getElementById("pineapple").style.color="#ff0000";
+    }else{
+    document.getElementById("pineapple").innerHTML=items.pineapple.quantity;
+    }
+    
+    if(items.watermelon.quantity===0){
+    document.getElementById("watermelon").innerHTML="Sold Out";
+    document.getElementById("watermelon").style.color="#ff0000";
+    }else{
+    document.getElementById("watermelon").innerHTML=items.watermelon.quantity;
+    }
+    
+    if(items.mango.quantity===0){
+    document.getElementById("mango").innerHTML="Sold Out";
+    document.getElementById("mango").style.color="#ff0000";
+    }else{
+    document.getElementById("mango").innerHTML=items.mango.quantity;
+    }
+    
+    if(items.grape.quantity===0){
+    document.getElementById("grape").innerHTML="Sold Out";
+    document.getElementById("grape").style.color="#ff0000";
+    }else{
+    document.getElementById("grape").innerHTML=items.grape.quantity;
     }
 
     //Total Quantity 
