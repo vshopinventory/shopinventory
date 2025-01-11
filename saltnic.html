@@ -161,6 +161,19 @@ footer{
   
   <!--Search Result appear here-->
   <div id="searchResult"></div>
+  
+  <svg id="svg" style="display:none; margin:100px 0 40px 0;" width="100%" height="20" xmlns="http://www.w3.org/2000/svg" style="margin: 20px 0;">
+  <!-- Gradient definition -->
+  <defs>
+  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%" style="stop-color: #3498db; stop-opacity: 1;" />
+  <stop offset="50%" style="stop-color: #e74c3c; stop-opacity: 1;" />
+  <stop offset="100%" style="stop-color: #f1c40f; stop-opacity: 1;" />
+  </linearGradient>
+  </defs>
+  <!-- Line -->
+  <rect x="0" y="9" width="100%" height="2" rx="5" fill="url(#gradient)" />
+  </svg>
 
 
   <div id="quickNavigator">
@@ -169,9 +182,10 @@ footer{
     <button type="button" onclick="salt55mg()">55mg Salt</button>
     <button type="button" onclick="salt50mg()">50mg Salt</button>
     <button type="button" onclick="salt35mg()">35mg Salt</button><br>
+    <button type="button" onclick="salt30mg()">30mg Salt</button>
     <button type="button" onclick="salt25mg()" style="margin-top:5px;">25mg Salt</button>
     <button type="button" onclick="saltIced()">Iced</button>
-    <button type="button" disabled class="btn btn-muted disabled">Non-Iced</button>
+    <button type="button" onclick="saltNonIced()" style="margin-top:5px;">Non-Iced</button>
   </div>
   
   <div class="spinner-overlay" id="spinnerOverlay">
@@ -183,7 +197,7 @@ footer{
  <h1 style="margin-top: 50px;">Kings Crest:</h1>
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
  <!--KC Posts Start from here-->
-    <div class="cards" data-keywords="Kings Crest Tabaco Dulce 35mg">
+    <div class="cards" data-keywords="Kings Crest Tabaco Dulce 35mg NonIced">
     <div class="post-h2">
     <h2>Kings Crest Tabaco Dulce 35mg</h2>
     </div>
@@ -191,7 +205,7 @@ footer{
     <center><kbd>Qnty-<span id="kc_tabaco_dulce_35mg"></span></kbd></center>
     </div>
 
- <div class="cards" data-keywords="Kings Crest Tabaco Dulce 50mg">
+ <div class="cards" data-keywords="Kings Crest Tabaco Dulce 50mg NonIced">
  <div class="post-h2">
  <h2>Kings Crest Tabaco Dulce 50mg</h2>
  </div>
@@ -199,7 +213,7 @@ footer{
  <center><kbd>Qnty-<span id="kc_tabaco_dulce_50mg"></span></kbd></center>
  </div>
 
- <div class="cards" data-keywords="Kings Crest Bombo Aldonza 50mg">
+ <div class="cards" data-keywords="Kings Crest Bombo Aldonza 50mg NonIced">
  <div class="post-h2">
  <h2>Kings Crest Bombo Aldonza 50mg</h2>
  </div>
@@ -207,7 +221,7 @@ footer{
  <center><kbd>Qnty-<span id="kc_bombo_aldonza_50mg"></span></kbd></center>
  </div>
 
- <div class="cards" data-keywords="Kings Crest Bombo Aldonza 35mg">
+ <div class="cards" data-keywords="Kings Crest Bombo Aldonza 35mg NonIced">
  <div class="post-h2">
  <h2>Kings Crest Bombo Aldonza 35mg</h2>
  </div>
@@ -215,7 +229,7 @@ footer{
  <center><kbd>Qnty-<span id="kc_bombo_aldonza_35mg"></span></kbd></center>
  </div>
 
- <div class="cards" data-keywords="Kings Crest Churro 35mg">
+ <div class="cards" data-keywords="Kings Crest Churro 35mg NonIced">
  <div class="post-h2">
  <h2>Kings Crest Churro 35mg</h2>
  </div>
@@ -223,7 +237,7 @@ footer{
  <center><kbd>Qnty-<span id="kc_churro_35mg"></span></kbd></center>
  </div>
 
- <div class="cards" data-keywords="Kings Crest Don juan Cafe 35mg">
+ <div class="cards" data-keywords="Kings Crest Don juan Cafe 35mg NonIced">
     <div class="post-h2">
     <h2>Kings Crest Don juan Cafe 35mg</h2>
     </div>
@@ -283,7 +297,7 @@ footer{
  <h1 style="margin-top: 50px;">Skwezed:</h1>
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
     <!--Skwezed Posts Start from here-->
-    <div class="cards" data-keywords="Skwezed Green Apple 25mg">
+    <div class="cards" data-keywords="Skwezed Green Apple 25mg NonIced">
         <div class="post-h2">
         <h2>Skwezed Green Apple 25mg</h2>
         </div>
@@ -307,7 +321,7 @@ footer{
         <center><kbd>Qnty-<span id="skwezed_green_apple_50mg_iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Skwezed Watermelon 25mg">
+    <div class="cards" data-keywords="Skwezed Watermelon 25mg NonIced">
         <div class="post-h2">
         <h2>Skwezed Watermelon 25mg</h2>
         </div>
@@ -315,7 +329,7 @@ footer{
         <center><kbd>Qnty-<span id="skwezed_watermelon_25mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Skwezed Watermelon 50mg">
+    <div class="cards" data-keywords="Skwezed Watermelon 50mg NonIced">
         <div class="post-h2">
         <h2>Skwezed Watermelon 50mg</h2>
         </div>
@@ -331,7 +345,7 @@ footer{
         <center><kbd>Qnty-<span id="skwezed_watermelon_25mg_iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Skwezed Mango 25mg">
+    <div class="cards" data-keywords="Skwezed Mango 25mg NonIced">
         <div class="post-h2">
         <h2>Skwezed Mango 25mg</h2>
         </div>
@@ -355,7 +369,7 @@ footer{
         <center><kbd>Qnty-<span id="skwezed_mango_50mg_iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Skwezed Watermelon Green Apple 25mg">
+    <div class="cards" data-keywords="Skwezed Watermelon Green Apple 25mg NonIced">
         <div class="post-h2">
         <h2>Skwezed Watermelon Green Apple 25mg</h2>
         </div>
@@ -379,7 +393,7 @@ footer{
         <center><kbd>Qnty-<span id="skwezed_watermelon_green_apple_50mg_iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Skwezed Watermelon Strawberry 25mg">
+    <div class="cards" data-keywords="Skwezed Watermelon Strawberry 25mg NonIced">
         <div class="post-h2">
         <h2>Skwezed Watermelon Strawberry 25mg</h2>
         </div>
@@ -403,7 +417,7 @@ footer{
         <center><kbd>Qnty-<span id="skwezed_watermelon_strawberry_50mg_iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Skwezed Mixed Berry 25mg">
+    <div class="cards" data-keywords="Skwezed Mixed Berry 25mg NonIced">
         <div class="post-h2">
         <h2>Skwezed Mixed Berry 25mg</h2>
         </div>
@@ -411,7 +425,7 @@ footer{
         <center><kbd>Qnty-<span id="skwezed_mixed_berry_25mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Skwezed Strawberry 25mg">
+    <div class="cards" data-keywords="Skwezed Strawberry 25mg NonIced">
         <div class="post-h2">
         <h2>Skwezed Strawberry 25mg</h2>
         </div>
@@ -427,7 +441,7 @@ footer{
         <center><kbd>Qnty-<span id="skwezed_watermelon_white_grapev25mg_iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Skwezed Banana 50mg">
+    <div class="cards" data-keywords="Skwezed Banana 50mg NonIced">
         <div class="post-h2">
         <h2>Skwezed Banana 50mg</h2>
         </div>
@@ -456,7 +470,7 @@ footer{
 <h1 style="margin-top: 50px;">Pacha:</h1>
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
     <!--Pacha Posts Start from here-->
-    <div class="cards" data-keywords="Pacha Apple Tobacco 25mg">
+    <div class="cards" data-keywords="Pacha Apple Tobacco 25mg NonIced">
         <div class="post-h2">
         <h2>Pacha Apple Tobacco 25mg</h2>
         </div>
@@ -464,7 +478,7 @@ footer{
         <center><kbd>Qnty-<span id="pacha_apple_tobacco_25mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Pacha Fuji 50mg">
+    <div class="cards" data-keywords="Pacha Fuji 50mg NonIced">
         <div class="post-h2">
         <h2>Pacha Fuji 50mg</h2>
         </div>
@@ -472,7 +486,7 @@ footer{
         <center><kbd>Qnty-<span id="pacha_fuji_50mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Pacha Fuji 25mg">
+    <div class="cards" data-keywords="Pacha Fuji 25mg NonIced">
         <div class="post-h2">
         <h2>Pacha Fuji 25mg</h2>
         </div>
@@ -494,15 +508,16 @@ footer{
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
     <!--Pod Juice Posts Start from here-->
 
-    <div class="cards" data-keywords="Pod Juice Jewel Tobacco 35mg">
+    <div class="cards" data-keywords="Pod Juice Jewel Tobacco 35mg NonIced">
         <div class="post-h2">
         <h2>Pod Juice Jewel Tobacco 35mg</h2>
+        <p class="flavour" style="disply:none;"></p>
         </div>
         <img src="https://podjuice55.com/cdn/shop/products/PJ-JT-30ML-Assets_800x.jpg?v=1643478530" class="img-fluid" alt="Pod Juice Jewel Tobacco 35mg"><br>
         <center><kbd>Qnty-<span id="pod_Juice_Jewel_Tobacco_35mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Pod Juice Virginia Tobacco 55mg">
+    <div class="cards" data-keywords="Pod Juice Virginia Tobacco 55mg NonIced">
         <div class="post-h2">
         <h2>Pod Juice Virginia Tobacco 55mg</h2>
         </div>
@@ -510,7 +525,7 @@ footer{
         <center><kbd>Qnty-<span id="pod_Juice_Virginia_Tobacco_55mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Pod Juice Peach Berry 35 mg">
+    <div class="cards" data-keywords="Pod Juice Peach Berry 35 mg NonIced">
         <div class="post-h2">
         <h2>Pod Juice Peach Berry 35 mg</h2>
         </div>
@@ -518,7 +533,7 @@ footer{
         <center><kbd>Qnty-<span id="pod_Juice_Peach_Berry_35mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Pod Juice Watermelon Bubblegum 35mg">
+    <div class="cards" data-keywords="Pod Juice Watermelon Bubblegum 35mg NonIced">
         <div class="post-h2">
         <h2>Pod Juice Watermelon Bubblegum 35mg</h2>
         </div>
@@ -526,7 +541,7 @@ footer{
         <center><kbd>Qnty-<span id="pod_Juice_Watermelon_Bubblegum_35mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Pod Juice Bangin Blue Razz 55mg">
+    <div class="cards" data-keywords="Pod Juice Bangin Blue Razz 55mg NonIced">
         <div class="post-h2">
         <h2>Pod Juice Bangin Blue Razz 55mg</h2>
         </div>
@@ -534,7 +549,7 @@ footer{
         <center><kbd>Qnty-<span id="pod_Juice_Bangin_Blue_Razz_55mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Pod Juice Fruity Bears 35mg">
+    <div class="cards" data-keywords="Pod Juice Fruity Bears 35mg NonIced">
         <div class="post-h2">
         <h2>Pod Juice Fruity Bears 35mg</h2>
         </div>
@@ -542,7 +557,7 @@ footer{
         <center><kbd>Qnty-<span id="pod_Juice_Fruity_Bears_35mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Pod Juice Graham Cracker 35mg">
+    <div class="cards" data-keywords="Pod Juice Graham Cracker 35mg NonIced">
         <div class="post-h2">
         <h2>Pod Juice Graham Cracker 35mg</h2>
         </div>
@@ -563,7 +578,7 @@ footer{
  <h1 style="margin-top: 50px;">Daze (Reds):</h1>
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
     <!--Reds Posts Start from here-->
-    <div class="cards" data-keywords="Reds Apple Berries 30mg">
+    <div class="cards" data-keywords="Reds Apple Berries 30mg NonIced">
         <div class="post-h2">
         <h2>Reds Apple Berries 30mg</h2>
         </div>
@@ -595,7 +610,7 @@ footer{
         <center><kbd>Qnty-<span id="reds_Apple_Gold_Kiwi_30mg_Iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Reds Apple Gold Kiwi 30mg">
+    <div class="cards" data-keywords="Reds Apple Gold Kiwi 30mg NonIced">
         <div class="post-h2">
         <h2>Reds Apple Gold Kiwi 30mg</h2>
         </div>
@@ -603,7 +618,7 @@ footer{
         <center><kbd>Qnty-<span id="reds_Apple_Gold_Kiwi_30mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Reds Apple Grape 30mg">
+    <div class="cards" data-keywords="Reds Apple Grape 30mg NonIced">
         <div class="post-h2">
         <h2>Reds Apple Grape 30mg</h2>
         </div>
@@ -619,7 +634,7 @@ footer{
         <center><kbd>Qnty-<span id="reds_Apple_Grape_30mg_Iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Reds Apple Grape 50mg">
+    <div class="cards" data-keywords="Reds Apple Grape 50mg NonIced">
         <div class="post-h2">
         <h2>Reds Apple Grape 50mg</h2>
         </div>
@@ -627,7 +642,7 @@ footer{
         <center><kbd>Qnty-<span id="reds_Apple_Grape_50mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Reds Apple Original 30mg">
+    <div class="cards" data-keywords="Reds Apple Original 30mg NonIced">
         <div class="post-h2">
         <h2>Reds Apple Original 30mg</h2>
         </div>
@@ -635,7 +650,7 @@ footer{
         <center><kbd>Qnty-<span id="reds_Apple_Original_30mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Reds Apple Original 50mg">
+    <div class="cards" data-keywords="Reds Apple Original 50mg NonIced">
         <div class="post-h2">
         <h2>Reds Apple Original 50mg</h2>
         </div>
@@ -655,8 +670,8 @@ footer{
 
  <h1 style="margin-top: 50px;">Daze (Fusion):</h1>
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
-    <!--Pod Juice Posts Start from here-->
-    <div class="cards" data-keywords="Daze Lemon Passionfruit Blueberry 30mg">
+    <!--Daze Juice Posts Start from here-->
+    <div class="cards" data-keywords="Daze Lemon Passionfruit Blueberry 30mg NonIced">
         <div class="post-h2">
         <h2>Daze Lemon Passionfruit Blueberry 30mg</h2>
         </div>
@@ -672,7 +687,7 @@ footer{
         <center><kbd>Qnty-<span id="daze_Lemon_Passionfruit_Blueberry_30mg_Iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Daze Raspberry Green Apple Watermelon 30mg">
+    <div class="cards" data-keywords="Daze Raspberry Green Apple Watermelon 30mg NonIced">
         <div class="post-h2">
         <h2>Daze Raspberry Green Apple Watermelon 30mg</h2>
         </div>
@@ -1299,12 +1314,13 @@ footer{
 
     //Given CSS style with integration
   const cards=document.querySelectorAll('.cards');
+  const flavour=document.querySelectorAll('.flavour');
   
   cards.forEach(card=>{
-  card.addEventListener("click", ()=>{
-  cards.forEach(c=>c.classList.remove('selected'));
-  card.classList.add('selected');
-  });
+      card.addEventListener("click", ()=>{
+      cards.forEach(c=>c.classList.remove('selected'));
+      card.classList.add('selected');
+      });
   });
 
   //Quick Navigator Functions
@@ -1326,6 +1342,7 @@ footer{
       let clone = item.cloneNode(true);
       resultContainer.appendChild(clone);
       found = true;
+      document.getElementById('svg').style.display="block";
       }
       });
       
@@ -1354,6 +1371,7 @@ footer{
   let clone = item.cloneNode(true);
   resultContainer.appendChild(clone);
   found = true;
+  document.getElementById('svg').style.display="block";
   }
   });
   
@@ -1381,6 +1399,7 @@ footer{
   let clone = item.cloneNode(true);
   resultContainer.appendChild(clone);
   found = true;
+  document.getElementById('svg').style.display="block";
   }
   });
   
@@ -1408,6 +1427,7 @@ footer{
   let clone = item.cloneNode(true);
   resultContainer.appendChild(clone);
   found = true;
+  document.getElementById('svg').style.display="block";
   }
   });
   
@@ -1435,6 +1455,63 @@ footer{
   let clone = item.cloneNode(true);
   resultContainer.appendChild(clone);
   found = true;
+  document.getElementById('svg').style.display="block";
+  }
+  });
+  
+  if (!found) {
+  resultContainer.innerHTML = "Result Not found.";
+  }
+  }, 1000);
+  }
+  
+  function salt30mg() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "30mg"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+  spinnerOverlay.style.display="none";
+  items.forEach((item) => {
+  let keywords = item.getAttribute('data-keywords');
+  if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+  let clone = item.cloneNode(true);
+  resultContainer.appendChild(clone);
+  found = true;
+  document.getElementById('svg').style.display="block";
+  }
+  });
+  
+  if (!found) {
+  resultContainer.innerHTML = "Result Not found.";
+  }
+  }, 1000);
+  }
+  
+  function saltNonIced() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "NonIced"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+  spinnerOverlay.style.display="none";
+  items.forEach((item) => {
+  let keywords = item.getAttribute('data-keywords');
+  if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+  let clone = item.cloneNode(true);
+  resultContainer.appendChild(clone);
+  found = true;
+  document.getElementById('svg').style.display="block";
   }
   });
   
