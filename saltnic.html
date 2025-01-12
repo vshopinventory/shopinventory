@@ -195,7 +195,12 @@
     <div class="spinner-border" id="spinner"></div>
   </div>
   
-  
+
+<!--Update Status-->
+<div style="display: flex; justify-content: end;">
+    <p style="font-weight: bold; font-size: 18px;">Last Update: <span id="date"></span> <span id="time"> </span></p>
+</div>
+
  <!--Post Start From Here-->
  <h1 style="margin-top: 50px;">Kings Crest:</h1>
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
@@ -514,7 +519,6 @@
     <div class="cards" data-keywords="Pod Juice Jewel Tobacco 35mg NonI">
         <div class="post-h2">
         <h2>Pod Juice Jewel Tobacco 35mg</h2>
-        <p class="flavour" style="disply:none;"></p>
         </div>
         <img src="https://podjuice55.com/cdn/shop/products/PJ-JT-30ML-Assets_800x.jpg?v=1643478530" class="img-fluid" alt="Pod Juice Jewel Tobacco 35mg"><br>
         <center><kbd>Qnty-<span id="pod_Juice_Jewel_Tobacco_35mg"></span></kbd></center>
@@ -1084,6 +1088,12 @@
   }
   }, 1000);
   }
+
+  //Update Status
+  let date="11/12/2025";
+  let time="11:30 PM";
+  document.getElementById("date").innerHTML=date;
+  document.getElementById("time").innerHTML=time;
   </script>
   </body>
   </html>
