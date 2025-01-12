@@ -191,6 +191,13 @@ footer{
    <div class="spinner-border" id="spinner"></div>
  </div>
  
+
+ <!--Update Status-->
+<div style="display: flex; justify-content: end;">
+    <p style="font-weight: bold; font-size: 18px;">Last Update: <span id="date"></span> <span id="time"> </span></p>
+</div>
+
+
  <!--Post Start from Here-->
  <h1 style="margin-top: 50px;">Kings Crest:</h1>
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
@@ -722,6 +729,12 @@ footer{
       }
   }, 1000);
   }
+
+  //Update Status
+  let date="11/12/2025";
+  let time="11:30 PM";
+  document.getElementById("date").innerHTML=date;
+  document.getElementById("time").innerHTML=time;
  </script>
  </body>
  </html>
