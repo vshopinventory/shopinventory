@@ -161,13 +161,41 @@ footer{
  </div>
  
  <!--Search Result appear here-->
- <p id="searchResult"></p>
+ <div id="searchResult"></div>
+  
+ <svg id="svg" style="display:none; margin:100px 0 40px 0;" width="100%" height="20" xmlns="http://www.w3.org/2000/svg" style="margin: 20px 0;">
+ <!-- Gradient definition -->
+ <defs>
+ <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+ <stop offset="0%" style="stop-color: #3498db; stop-opacity: 1;" />
+ <stop offset="50%" style="stop-color: #e74c3c; stop-opacity: 1;" />
+ <stop offset="100%" style="stop-color: #f1c40f; stop-opacity: 1;" />
+ </linearGradient>
+ </defs>
+ <!-- Line -->
+ <rect x="0" y="9" width="100%" height="2" rx="5" fill="url(#gradient)" />
+ </svg>
+
+
+ <div id="quickNavigator">
+   <h4 style="margin:0;">Quick Navigator:</h4>
+   <small>For quick search</small><br>
+   <button type="button" onclick="freebase6mg()">6mg</button>
+   <button type="button" onclick="freebase3mg()">3mg</button>
+   <button type="button" onclick="freebaseIced()">Iced</button><br>
+   <button type="button" onclick="freebaseNonI()">Non-Iced</button>
+   <button type="button" onclick="freebase120ml()" style="margin-top:5px;">120ml</button>
+ </div>
+ 
+ <div class="spinner-overlay" id="spinnerOverlay">
+   <div class="spinner-border" id="spinner"></div>
+ </div>
  
  <!--Post Start from Here-->
  <h1 style="margin-top: 50px;">Kings Crest:</h1>
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
  <!--KC Posts Start from here-->
-    <div class="cards" data-keywords="King Crests Don Juan Tabaco Honey 6mg">
+    <div class="cards" data-keywords="King Crests Don Juan Tabaco Honey 6mg NonI 120ml">
         <div class="post-h2">
         <h2>King Crests Don Juan Tabaco Honey 6mg/120ml</h2>
         </div>
@@ -175,7 +203,7 @@ footer{
         <center><kbd>Qnty-<span id="king_Crests_Don_Juan_Tabaco_Honey_6mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Kings Crest Don Juan Cafe 6mg">
+    <div class="cards" data-keywords="Kings Crest Don Juan Cafe 6mg NonI 120ml">
         <div class="post-h2">
         <h2>Kings Crest Don Juan Cafe 6mg/120ml</h2>
         </div>
@@ -183,7 +211,7 @@ footer{
         <center><kbd>Qnty-<span id="kings_Crest_Don_Juan_Cafe_6mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Kings Crest Don Juan Bombo Aldonza 6mg">
+    <div class="cards" data-keywords="Kings Crest Don Juan Bombo Aldonza 6mg NonI 120ml">
         <div class="post-h2">
         <h2>Kings Crest Don Juan Bombo Aldonza 6mg/120ml</h2>
         </div>
@@ -211,7 +239,7 @@ footer{
         <center><kbd>Qnty-<span id="skwezed_Mango_Iced_3mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Skwezed Green Apple 6mg">
+    <div class="cards" data-keywords="Skwezed Green Apple 6mg NonI">
         <div class="post-h2">
         <h2>Skwezed Green Apple 6mg/100ml</h2>
         </div>
@@ -219,7 +247,7 @@ footer{
         <center><kbd>Qnty-<span id="skwezed_Green_Apple_6mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Skwezed Mixed Berries 3mg">
+    <div class="cards" data-keywords="Skwezed Mixed Berries 3mg NonI">
         <div class="post-h2">
         <h2>Skwezed Mixed Berries 3mg/100ml</h2>
         </div>
@@ -239,7 +267,7 @@ footer{
  <h1 style="margin-top: 50px;">Cream Team:</h1>
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
  <!--Cream Team Posts Start from here-->
- <div class="cards" data-keywords="Cream Team Butter Cream 6mg">
+ <div class="cards" data-keywords="Cream Team Butter Cream 6mg NonI">
     <div class="post-h2">
         <h2>Cream Team Butter Cream 6mg/100ml</h2>
         </div>
@@ -267,7 +295,7 @@ footer{
         <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Coconut_Banana_3mg_Iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Daze Fusion Pineapple Mango Orange 6mg">
+    <div class="cards" data-keywords="Daze Fusion Pineapple Mango Orange 6mg NonI">
         <div class="post-h2">
         <h2>Daze Fusion Pineapple Mango Orange 6mg/100ml</h2>
         </div>
@@ -275,7 +303,7 @@ footer{
         <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Mango_Orange_6mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Daze Fusion Pineapple Mango Orange 3mg">
+    <div class="cards" data-keywords="Daze Fusion Pineapple Mango Orange 3mg NonI">
         <div class="post-h2">
         <h2>Daze Fusion Pineapple Mango Orange 3mg/100ml</h2>
         </div>
@@ -283,7 +311,7 @@ footer{
         <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Mango_Orange_3mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Daze Fusion Raspberry Green Apple Watermelon 6mg">
+    <div class="cards" data-keywords="Daze Fusion Raspberry Green Apple Watermelon 6mg NonI">
         <div class="post-h2">
         <h2>Daze Fusion Raspberry Green Apple Watermelon 6mg/100ml</h2>
         </div>
@@ -291,7 +319,7 @@ footer{
         <center><kbd>Qnty-<span id="daze_Fusion_Raspberry_Green_Apple_Watermelon_6mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Daze Fusion Raspberry Green Apple Watermelon 3mg">
+    <div class="cards" data-keywords="Daze Fusion Raspberry Green Apple Watermelon 3mg NonI">
         <div class="post-h2">
         <h2>Daze Fusion Raspberry Green Apple Watermelon 3mg/100ml</h2>
         </div>
@@ -299,7 +327,7 @@ footer{
         <center><kbd>Qnty-<span id="daze_Fusion_Raspberry_Green_Apple_Watermelon_3mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Daze Fusion Lemon Passionfruit Blueberry 3mg">
+    <div class="cards" data-keywords="Daze Fusion Lemon Passionfruit Blueberry 3mg NonI">
         <div class="post-h2">
         <h2>Daze Fusion Lemon Passionfruit Blueberry 3mg/100ml</h2>
         </div>
@@ -315,7 +343,7 @@ footer{
         <center><kbd>Qnty-<span id="daze_Fusion_Lemon_Passionfruit_Blueberry_3mg_Iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Daze Fusion Lemon Passionfruit Blueberry 6mg">
+    <div class="cards" data-keywords="Daze Fusion Lemon Passionfruit Blueberry 6mg NonI">
         <div class="post-h2">
         <h2>Daze Fusion Lemon Passionfruit Blueberry 6mg/100ml</h2>
         </div>
@@ -339,7 +367,7 @@ footer{
         <center><kbd>Qnty-<span id="daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Daze Fusion Orange Yuzu Tangerine 6mg">
+    <div class="cards" data-keywords="Daze Fusion Orange Yuzu Tangerine 6mg NonI">
         <div class="post-h2">
         <h2>Daze Fusion Orange Yuzu Tangerine 6mg/100ml</h2>
         </div>
@@ -351,7 +379,7 @@ footer{
  <h1 style="margin-top: 50px;">Daze (Reds):</h1>
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
  <!--Daze (Reds) Posts Start from here-->
-    <div class="cards" data-keywords="Reds Apple Grape 6mg">
+    <div class="cards" data-keywords="Reds Apple Grape 6mg NonI">
         <div class="post-h2">
         <h2>Reds Apple Grape 6mg/100ml</h2>
         </div>
@@ -375,7 +403,7 @@ footer{
         <center><kbd>Qnty-<span id="Reds_Apple_Original_6mg_Iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Reds Apple Original 6mg">
+    <div class="cards" data-keywords="Reds Apple Original 6mg NonI">
         <div class="post-h2">
         <h2>Reds Apple Original 6mg/100ml</h2>
         </div>
@@ -383,7 +411,7 @@ footer{
         <center><kbd>Qnty-<span id="Reds_Apple_Original_6mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Reds Apple Original 3mg">
+    <div class="cards" data-keywords="Reds Apple Original 3mg NonI">
         <div class="post-h2">
         <h2>Reds Apple Original 3mg/100ml</h2>
         </div>
@@ -407,7 +435,7 @@ footer{
         <center><kbd>Qnty-<span id="Reds_Apple_Berries_3mg_Iced"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Reds Apple Berries 6mg">
+    <div class="cards" data-keywords="Reds Apple Berries 6mg NonI">
         <div class="post-h2">
         <h2>Reds Apple Berries 6mg/100ml</h2>
         </div>
@@ -415,7 +443,7 @@ footer{
         <center><kbd>Qnty-<span id="Reds_Apple_Berries_6mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Reds Apple Berries 3mg">
+    <div class="cards" data-keywords="Reds Apple Berries 3mg NonI">
         <div class="post-h2">
         <h2>Reds Apple Berries 3mg/100ml</h2>
         </div>
@@ -423,7 +451,7 @@ footer{
         <center><kbd>Qnty-<span id="Reds_Apple_Berries_3mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Reds Apple Gold Kiwi 6mg">
+    <div class="cards" data-keywords="Reds Apple Gold Kiwi 6mg NonI">
         <div class="post-h2">
         <h2>Reds Apple Gold Kiwi 6mg/100ml</h2>
         </div>
@@ -431,15 +459,13 @@ footer{
         <center><kbd>Qnty-<span id="Reds_Apple_Gold_Kiwi_6mg"></span></kbd></center>
     </div>
 
-    <div class="cards" data-keywords="Reds Apple Gold Kiwi 3mg">
+    <div class="cards" data-keywords="Reds Apple Gold Kiwi 3mg NonI">
         <div class="post-h2">
         <h2>Reds Apple Gold Kiwi 3mg/100ml</h2>
         </div>
         <img src="https://ejuicedirect.com/cdn/shop/files/lighter_502x502.webp?v=1696514996" class="img-fluid" alt="Reds Apple Gold Kiwi 3mg"><br>
         <center><kbd>Qnty-<span id="Reds_Apple_Gold_Kiwi_3mg"></span></kbd></center>
     </div>
-
-
  </div>
 
 <!--Post End-->
@@ -555,6 +581,147 @@ footer{
   card.classList.add('selected');
   });
   });
+
+  //Quick Navigator Functions
+  function freebase6mg() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "6mg"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+      spinnerOverlay.style.display="none";
+      items.forEach((item) => {
+      let keywords = item.getAttribute('data-keywords');
+      if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+      let clone = item.cloneNode(true);
+      resultContainer.appendChild(clone);
+      found = true;
+      document.getElementById('svg').style.display="block";
+      }
+      });
+      
+      if (!found) {
+      resultContainer.innerHTML = "Result Not found.";
+      }
+  }, 1000);
+  }
+
+  function freebase3mg() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "3mg"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+      spinnerOverlay.style.display="none";
+      items.forEach((item) => {
+      let keywords = item.getAttribute('data-keywords');
+      if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+      let clone = item.cloneNode(true);
+      resultContainer.appendChild(clone);
+      found = true;
+      document.getElementById('svg').style.display="block";
+      }
+      });
+      
+      if (!found) {
+      resultContainer.innerHTML = "Result Not found.";
+      }
+  }, 1000);
+  }
+
+  function freebaseIced() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "Iced"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+      spinnerOverlay.style.display="none";
+      items.forEach((item) => {
+      let keywords = item.getAttribute('data-keywords');
+      if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+      let clone = item.cloneNode(true);
+      resultContainer.appendChild(clone);
+      found = true;
+      document.getElementById('svg').style.display="block";
+      }
+      });
+      
+      if (!found) {
+      resultContainer.innerHTML = "Result Not found.";
+      }
+  }, 1000);
+  }
+
+  function freebaseNonI() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "NonI"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+      spinnerOverlay.style.display="none";
+      items.forEach((item) => {
+      let keywords = item.getAttribute('data-keywords');
+      if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+      let clone = item.cloneNode(true);
+      resultContainer.appendChild(clone);
+      found = true;
+      document.getElementById('svg').style.display="block";
+      }
+      });
+      
+      if (!found) {
+      resultContainer.innerHTML = "Result Not found.";
+      }
+  }, 1000);
+  }
+
+  function freebase120ml() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "120ml"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+      spinnerOverlay.style.display="none";
+      items.forEach((item) => {
+      let keywords = item.getAttribute('data-keywords');
+      if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+      let clone = item.cloneNode(true);
+      resultContainer.appendChild(clone);
+      found = true;
+      document.getElementById('svg').style.display="block";
+      }
+      });
+      
+      if (!found) {
+      resultContainer.innerHTML = "Result Not found.";
+      }
+  }, 1000);
+  }
  </script>
  </body>
  </html>
