@@ -13,21 +13,44 @@
 .products-cards{
     margin:0 5px;
     display:flex;
-    direction:row;
     flex-wrap:wrap;
     flex-direction:row;
     gap:5px;
-    
+    width:100%;
+    perspective: 1000px;
 }
 
 .cards{
     width:16%;
-    height:auto;
-    padding:10px;
-    background-color:#fff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: height 0.3s ease, transform 0.3s ease;
+    height:450px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.6s ease;
 }
+
+.cards .front,
+    .cards .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      padding:10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.cards .front {
+      background: white;
+    }
+
+.cards .back {
+      background: #e74c3c;
+      transform: rotateY(180deg);
+    }
+
+.flipped {
+      transform: rotateY(180deg);
+    }
 
 .cards h2{
     text-align:center;
@@ -35,16 +58,7 @@
 
 .post-h2{
     width: 100%;
-    height: 190px;
-}
-
-.cards:not(.selected){
-    width: 16%;
-}
-
-.selected{
-    width: 17%;
-    transform:scale(1.1);
+    height: 200px;
 }
 
 #searchResult{
@@ -87,27 +101,13 @@
 
 @media screen and (max-width:768px){
       .cards{
-      width:48%;
-      height:auto;
-      padding:10px;
-      background-color:#fff;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      transition: height 0.3s ease, transform 0.3s ease;
-      cursor: pointer;
-      }
-      
-      .cards:not(.selected){
-      width: 48%;
-      }
-      
-      .selected{
-      width: 49%;
-      transform:scale(1.1);
+      width:49%;
+      height:400px;
       }
 
       .post-h2{
       width: 100%;
-      height: 150px;
+      height: 140px;
 }
   }
 
@@ -204,27 +204,48 @@ footer{
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
  <!--KC Posts Start from here-->
     <div class="cards" data-keywords="King Crests Don Juan Tabaco Honey 6mg NonI 120ml">
+        <div class="front">
         <div class="post-h2">
         <h2>King Crests Don Juan Tabaco Honey 6mg/120ml</h2>
         </div>
         <img src="https://bestvapebr.com/wp-content/uploads/2024/09/cd942a1573b0d70efb497f283310b0f4.jpg" class="img-fluid" alt="King Crests Don Juan Tabaco Honey 6mg"><br>
         <center><kbd>Qnty-<span id="king_Crests_Don_Juan_Tabaco_Honey_6mg"></span></kbd></center>
+        </div>
+
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Kings Crest Don Juan Cafe 6mg NonI 120ml">
+        <div class="front">
         <div class="post-h2">
         <h2>Kings Crest Don Juan Cafe 6mg/120ml</h2>
         </div>
         <img src="https://vaporworldbd.com/wp-content/webp-express/webp-images/uploads/2020/04/e-liquid-kings-crest-don-juan-cafe-13460555202649-800x800.jpg.webp" class="img-fluid" alt="Kings Crest Don Juan Cafe 6mg"><br>
         <center><kbd>Qnty-<span id="kings_Crest_Don_Juan_Cafe_6mg"></span></kbd></center>
+        </div>
+
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Kings Crest Don Juan Bombo Aldonza 6mg NonI 120ml">
+        <div class="front">
         <div class="post-h2">
         <h2>Kings Crest Don Juan Bombo Aldonza 6mg/120ml</h2>
         </div>
         <img src="https://avsworld.shop/wp-content/uploads/2023/04/Don-Juan-Aldonza-Bombo-120ml-Kings-Crest-Premium-Eliquid.jpg" class="img-fluid" alt="Kings Crest Don Juan Bombo Aldonza 6mg"><br>
         <center><kbd>Qnty-<span id="kings_Crest_Don_Juan_Bombo_Aldonza_6mg"></span></kbd></center>
+    </div>
+
+    <div class="back">
+        <h2>This is back Size</h2>
+        <p>Flavour Note:Apple</p>
+    </div>
     </div>
  </div>
 
@@ -232,6 +253,7 @@ footer{
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
  <!--Skwezed Posts Start from here-->
     <div class="cards" data-keywords="Skwezed Mango Iced 6mg">
+        <div class="front">
         <div class="post-h2">
         <h2>Skwezed Mango Iced 6mg/100ml</h2>
         </div>
@@ -239,7 +261,14 @@ footer{
         <center><kbd>Qnty-<span id="skwezed_Mango_Iced_6mg"></span></kbd></center>
     </div>
 
+    <div class="back">
+        <h2>This is back Size</h2>
+        <p>Flavour Note:Apple</p>
+    </div>
+    </div>
+
     <div class="cards" data-keywords="Skwezed Mango Iced 3mg">
+        <div class="front">
         <div class="post-h2">
         <h2>Skwezed Mango Iced 3mg/100ml</h2>
         </div>
@@ -247,28 +276,52 @@ footer{
         <center><kbd>Qnty-<span id="skwezed_Mango_Iced_3mg"></span></kbd></center>
     </div>
 
+    <div class="back">
+        <h2>This is back Size</h2>
+        <p>Flavour Note:Apple</p>
+    </div>
+    </div>
+
     <div class="cards" data-keywords="Skwezed Green Apple 6mg NonI">
-        <div class="post-h2">
-        <h2>Skwezed Green Apple 6mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Green Apple 6mg/100ml</h2>
+                </div>
+                <img src="https://vaporworldbd.com/wp-content/webp-express/webp-images/uploads/2021/10/iced_green_apple_-_skwezed_e-liquid_-_100ml_-_box_and_bottle-800x800.jpg.webp" class="img-fluid" alt="Skwezed Green Apple 6mg"><br>
+                <center><kbd>Qnty-<span id="skwezed_Green_Apple_6mg"></span></kbd></center>
         </div>
-        <img src="https://vaporworldbd.com/wp-content/webp-express/webp-images/uploads/2021/10/iced_green_apple_-_skwezed_e-liquid_-_100ml_-_box_and_bottle-800x800.jpg.webp" class="img-fluid" alt="Skwezed Green Apple 6mg"><br>
-        <center><kbd>Qnty-<span id="skwezed_Green_Apple_6mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Skwezed Mixed Berries 3mg NonI">
-        <div class="post-h2">
-        <h2>Skwezed Mixed Berries 3mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Mixed Berries 3mg/100ml</h2>
+                </div>
+                <img src="https://www.skwezed.com/cdn/shop/files/MixedBerries.png?v=1697528950&width=823" class="img-fluid" alt="Skwezed Mixed Berries 3mg"><br>
+                <center><kbd>Qnty-<span id="skwezed_Mixed_Berries_3mg"></span></kbd></center>
         </div>
-        <img src="https://www.skwezed.com/cdn/shop/files/MixedBerries.png?v=1697528950&width=823" class="img-fluid" alt="Skwezed Mixed Berries 3mg"><br>
-        <center><kbd>Qnty-<span id="skwezed_Mixed_Berries_3mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Skwezed Watermelon Grape 3mg Iced">
-        <div class="post-h2">
-        <h2>Skwezed Watermelon Grape 3mg Iced 100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Watermelon Grape 3mg Iced 100ml</h2>
+                </div>
+                <img src="https://vapemall.pk/cdn/shop/files/skwezed-watermelon-white-grape-ice-skwezed-884654.webp?v=1684406405&width=823" class="img-fluid" alt="Skwezed Watermelon Grape 3mg Iced"><br>
+                <center><kbd>Qnty-<span id="skwezed_Watermelon_Grape_3mg_Iced"></span></kbd></center>
         </div>
-        <img src="https://vapemall.pk/cdn/shop/files/skwezed-watermelon-white-grape-ice-skwezed-884654.webp?v=1684406405&width=823" class="img-fluid" alt="Skwezed Watermelon Grape 3mg Iced"><br>
-        <center><kbd>Qnty-<span id="skwezed_Watermelon_Grape_3mg_Iced"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
  </div>
 
@@ -276,11 +329,17 @@ footer{
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
  <!--Cream Team Posts Start from here-->
  <div class="cards" data-keywords="Cream Team Butter Cream 6mg NonI">
-    <div class="post-h2">
-        <h2>Cream Team Butter Cream 6mg/100ml</h2>
-        </div>
-        <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_500/https://vapeshopsky.com/wp-content/uploads/2021/03/creme-team-vss.jpg" class="img-fluid" alt="Cream Team Butter Cream 6mg"><br>
-        <center><kbd>Qnty-<span id="cream_Team_Butter_Cream_6mg"></span></kbd></center>
+    <div class="front">
+        <div class="post-h2">
+            <h2>Cream Team Butter Cream 6mg/100ml</h2>
+            </div>
+            <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_500/https://vapeshopsky.com/wp-content/uploads/2021/03/creme-team-vss.jpg" class="img-fluid" alt="Cream Team Butter Cream 6mg"><br>
+            <center><kbd>Qnty-<span id="cream_Team_Butter_Cream_6mg"></span></kbd></center>
+    </div>
+    <div class="back">
+        <h2>This is back Size</h2>
+        <p>Flavour Note:Apple</p>
+    </div>
     </div>
  </div>
 
@@ -288,99 +347,171 @@ footer{
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
  <!--Daze (Fusion) Posts Start from here-->
     <div class="cards" data-keywords="Daze Fusion Pineapple Coconut Banana 6mg Iced">
-        <div class="post-h2">
-        <h2>Daze Fusion Pineapple Coconut Banana 6mg Iced 100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Fusion Pineapple Coconut Banana 6mg Iced 100ml</h2>
+                </div>
+                <img src="https://www.huffandpuffers.com/cdn/shop/products/daze-fusion-pineapple-coconut-banana-iced.jpg?v=1656221761&width=800" class="img-fluid" alt="Daze Fusion Pineapple Coconut Banana 6mg Iced"><br>
+                <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Coconut_Banana_6mg_Iced"></span></kbd></center>
         </div>
-        <img src="https://www.huffandpuffers.com/cdn/shop/products/daze-fusion-pineapple-coconut-banana-iced.jpg?v=1656221761&width=800" class="img-fluid" alt="Daze Fusion Pineapple Coconut Banana 6mg Iced"><br>
-        <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Coconut_Banana_6mg_Iced"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Daze Fusion Pineapple Coconut Banana 3mg Iced">
-        <div class="post-h2">
-        <h2>Daze Fusion Pineapple Coconut Banana 3mg Iced 100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Fusion Pineapple Coconut Banana 3mg Iced 100ml</h2>
+                </div>
+                <img src="https://www.huffandpuffers.com/cdn/shop/products/daze-fusion-pineapple-coconut-banana-iced.jpg?v=1656221761&width=800" class="img-fluid" alt="Daze Fusion Pineapple Coconut Banana 3mg Iced"><br>
+                <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Coconut_Banana_3mg_Iced"></span></kbd></center>
         </div>
-        <img src="https://www.huffandpuffers.com/cdn/shop/products/daze-fusion-pineapple-coconut-banana-iced.jpg?v=1656221761&width=800" class="img-fluid" alt="Daze Fusion Pineapple Coconut Banana 3mg Iced"><br>
-        <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Coconut_Banana_3mg_Iced"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Daze Fusion Pineapple Mango Orange 6mg NonI">
-        <div class="post-h2">
-        <h2>Daze Fusion Pineapple Mango Orange 6mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Fusion Pineapple Mango Orange 6mg/100ml</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/pineapple_mango_orange_100ml_81ea17d2557d4fffaf557fc4f764f874.jpg" class="img-fluid" alt="Daze Fusion Pineapple Mango Orange 6mg"><br>
+                <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Mango_Orange_6mg"></span></kbd></center>
         </div>
-        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/pineapple_mango_orange_100ml_81ea17d2557d4fffaf557fc4f764f874.jpg" class="img-fluid" alt="Daze Fusion Pineapple Mango Orange 6mg"><br>
-        <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Mango_Orange_6mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Daze Fusion Pineapple Mango Orange 3mg NonI">
-        <div class="post-h2">
-        <h2>Daze Fusion Pineapple Mango Orange 3mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Fusion Pineapple Mango Orange 3mg/100ml</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/pineapple_mango_orange_100ml_81ea17d2557d4fffaf557fc4f764f874.jpg" class="img-fluid" alt="Daze Fusion Pineapple Mango Orange 3mg"><br>
+                <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Mango_Orange_3mg"></span></kbd></center>
         </div>
-        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/pineapple_mango_orange_100ml_81ea17d2557d4fffaf557fc4f764f874.jpg" class="img-fluid" alt="Daze Fusion Pineapple Mango Orange 3mg"><br>
-        <center><kbd>Qnty-<span id="daze_Fusion_Pineapple_Mango_Orange_3mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Daze Fusion Raspberry Green Apple Watermelon 6mg NonI">
-        <div class="post-h2">
-        <h2>Daze Fusion Raspberry Green Apple Watermelon 6mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Fusion Raspberry Green Apple Watermelon 6mg/100ml</h2>
+                </div>
+                <img src="https://vapordna.com/cdn/shop/products/DazeFusionR.G.W.Gallery.webp?v=1705747331&width=580" class="img-fluid" alt="Daze Fusion Raspberry Green Apple Watermelon 6mg"><br>
+                <center><kbd>Qnty-<span id="daze_Fusion_Raspberry_Green_Apple_Watermelon_6mg"></span></kbd></center>
         </div>
-        <img src="https://vapordna.com/cdn/shop/products/DazeFusionR.G.W.Gallery.webp?v=1705747331&width=580" class="img-fluid" alt="Daze Fusion Raspberry Green Apple Watermelon 6mg"><br>
-        <center><kbd>Qnty-<span id="daze_Fusion_Raspberry_Green_Apple_Watermelon_6mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Daze Fusion Raspberry Green Apple Watermelon 3mg NonI">
-        <div class="post-h2">
-        <h2>Daze Fusion Raspberry Green Apple Watermelon 3mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Fusion Raspberry Green Apple Watermelon 3mg/100ml</h2>
+                </div>
+                <img src="https://vapordna.com/cdn/shop/products/DazeFusionR.G.W.Gallery.webp?v=1705747331&width=580" class="img-fluid" alt="Daze Fusion Raspberry Green Apple Watermelon 3mg"><br>
+                <center><kbd>Qnty-<span id="daze_Fusion_Raspberry_Green_Apple_Watermelon_3mg"></span></kbd></center>
         </div>
-        <img src="https://vapordna.com/cdn/shop/products/DazeFusionR.G.W.Gallery.webp?v=1705747331&width=580" class="img-fluid" alt="Daze Fusion Raspberry Green Apple Watermelon 3mg"><br>
-        <center><kbd>Qnty-<span id="daze_Fusion_Raspberry_Green_Apple_Watermelon_3mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Daze Fusion Lemon Passionfruit Blueberry 3mg NonI">
-        <div class="post-h2">
-        <h2>Daze Fusion Lemon Passionfruit Blueberry 3mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Fusion Lemon Passionfruit Blueberry 3mg/100ml</h2>
+                </div>
+                <img src="https://vapordna.com/cdn/shop/products/DazeFusionIceL.P.B.Gallery.webp?v=1705747578&width=580" class="img-fluid" alt="Daze Fusion Lemon Passionfruit Blueberry 3mg"><br>
+                <center><kbd>Qnty-<span id="daze_Fusion_Lemon_Passionfruit_Blueberry_3mg"></span></kbd></center> 
         </div>
-        <img src="https://vapordna.com/cdn/shop/products/DazeFusionIceL.P.B.Gallery.webp?v=1705747578&width=580" class="img-fluid" alt="Daze Fusion Lemon Passionfruit Blueberry 3mg"><br>
-        <center><kbd>Qnty-<span id="daze_Fusion_Lemon_Passionfruit_Blueberry_3mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Daze Fusion Lemon Passionfruit Blueberry 3mg Iced 100ml">
-        <div class="post-h2">
-        <h4>Daze Fusion Lemon Passionfruit Blueberry 3mg Iced 100ml</h4>
+        <div class="front">
+            <div class="post-h2">
+                <h4>Daze Fusion Lemon Passionfruit Blueberry 3mg Iced 100ml</h4>
+                </div>
+                <img src="https://vapordna.com/cdn/shop/products/DazeFusionIceL.P.B.Gallery.webp?v=1705747578&width=580" class="img-fluid" alt="Daze Fusion Lemon Passionfruit Blueberry 3mg Iced"><br>
+                <center><kbd>Qnty-<span id="daze_Fusion_Lemon_Passionfruit_Blueberry_3mg_Iced"></span></kbd></center>
         </div>
-        <img src="https://vapordna.com/cdn/shop/products/DazeFusionIceL.P.B.Gallery.webp?v=1705747578&width=580" class="img-fluid" alt="Daze Fusion Lemon Passionfruit Blueberry 3mg Iced"><br>
-        <center><kbd>Qnty-<span id="daze_Fusion_Lemon_Passionfruit_Blueberry_3mg_Iced"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Daze Fusion Lemon Passionfruit Blueberry 6mg NonI">
-        <div class="post-h2">
-        <h2>Daze Fusion Lemon Passionfruit Blueberry 6mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Fusion Lemon Passionfruit Blueberry 6mg/100ml</h2>
+                </div>
+                <img src="https://vapordna.com/cdn/shop/products/DazeFusionIceL.P.B.Gallery.webp?v=1705747578&width=580" class="img-fluid" alt="Daze Fusion Lemon Passionfruit Blueberry 6mg"><br>
+                <center><kbd>Qnty-<span id="daze_Fusion_Lemon_Passionfruit_Blueberry_6mg"></span></kbd></center>
         </div>
-        <img src="https://vapordna.com/cdn/shop/products/DazeFusionIceL.P.B.Gallery.webp?v=1705747578&width=580" class="img-fluid" alt="Daze Fusion Lemon Passionfruit Blueberry 6mg"><br>
-        <center><kbd>Qnty-<span id="daze_Fusion_Lemon_Passionfruit_Blueberry_6mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Daze Fusion Banana Cantaloupe Honeydew 6mg Iced">
-        <div class="post-h2">
-        <h4>Daze Fusion Banana Cantaloupe Honeydew 6mg Iced 100ml</h4>
+        <div class="front">
+            <div class="post-h2">
+                <h4>Daze Fusion Banana Cantaloupe Honeydew 6mg Iced 100ml</h4>
+                </div>
+                <img src="https://ejuicedirect.com/cdn/shop/files/7-daze-fusion-banana-cantaloupe-honeydew-iced_500x500.jpg?v=1689043656" class="img-fluid" alt="Daze Fusion Banana Cantaloupe Honeydew 6mg Iced"><br>
+                <center><kbd>Qnty-<span id="daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced"></span></kbd></center>
         </div>
-        <img src="https://ejuicedirect.com/cdn/shop/files/7-daze-fusion-banana-cantaloupe-honeydew-iced_500x500.jpg?v=1689043656" class="img-fluid" alt="Daze Fusion Banana Cantaloupe Honeydew 6mg Iced"><br>
-        <center><kbd>Qnty-<span id="daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Daze Fusion Banana Cantaloupe Honeydew 3mg Iced">
-        <div class="post-h2">
-        <h4>Daze Fusion Banana Cantaloupe Honeydew 3mg Iced 100ml</h4>
+        <div class="front">
+            <div class="post-h2">
+                <h4>Daze Fusion Banana Cantaloupe Honeydew 3mg Iced 100ml</h4>
+                </div>
+                <img src="https://ejuicedirect.com/cdn/shop/files/7-daze-fusion-banana-cantaloupe-honeydew-iced_500x500.jpg?v=1689043656" class="img-fluid" alt="Daze Fusion Banana Cantaloupe Honeydew 3mg Iced"><br>
+                <center><kbd>Qnty-<span id="daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced"></span></kbd></center>
         </div>
-        <img src="https://ejuicedirect.com/cdn/shop/files/7-daze-fusion-banana-cantaloupe-honeydew-iced_500x500.jpg?v=1689043656" class="img-fluid" alt="Daze Fusion Banana Cantaloupe Honeydew 3mg Iced"><br>
-        <center><kbd>Qnty-<span id="daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Daze Fusion Orange Yuzu Tangerine 6mg NonI">
-        <div class="post-h2">
-        <h2>Daze Fusion Orange Yuzu Tangerine 6mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Fusion Orange Yuzu Tangerine 6mg/100ml</h2>
+                </div>
+                <img src="https://www.vaporauthority.com/cdn/shop/products/Orange-Yuzu-Tangerine-Iced-7-Daze-E-Juice.jpg?v=1660084352" class="img-fluid" alt="Daze Fusion Orange Yuzu Tangerine 6mg"><br>
+                <center><kbd>Qnty-<span id="daze_Fusion_Orange_Yuzu_Tangerine_6mg"></span></kbd></center>
         </div>
-        <img src="https://www.vaporauthority.com/cdn/shop/products/Orange-Yuzu-Tangerine-Iced-7-Daze-E-Juice.jpg?v=1660084352" class="img-fluid" alt="Daze Fusion Orange Yuzu Tangerine 6mg"><br>
-        <center><kbd>Qnty-<span id="daze_Fusion_Orange_Yuzu_Tangerine_6mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
  </div>
 
@@ -388,91 +519,157 @@ footer{
  <div class="products-cards">  <!--This is Flex Container that contains posts-->
  <!--Daze (Reds) Posts Start from here-->
     <div class="cards" data-keywords="Reds Apple Grape 6mg NonI">
-        <div class="post-h2">
-        <h2>Reds Apple Grape 6mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Grape 6mg/100ml</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/Screenshot-2024-09-27-200505.png" class="img-fluid" alt="Reds Apple Grape 6mg"><br>
+                <center><kbd>Qnty-<span id="Reds_Apple_Grape_6mg"></span></kbd></center>
         </div>
-        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/Screenshot-2024-09-27-200505.png" class="img-fluid" alt="Reds Apple Grape 6mg"><br>
-        <center><kbd>Qnty-<span id="Reds_Apple_Grape_6mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Reds Apple Original 3mg Iced">
-        <div class="post-h2">
-        <h2>Reds Apple Original 3mg Iced 100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Original 3mg Iced 100ml</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/7-Daze-Vape-Juices-for-Sale-in-Pakistan-Welcome-to-The-Vape-Town-your-go-to-destination-for-all-your-vaping-needs.-We-are-thrilled-to-introduce-you-to-our-exceptional-collection-of-7-Daze-E-Liqui-1.jpg" class="img-fluid" alt="Reds Apple Original 3mg Iced"><br>
+                <center><kbd>Qnty-<span id="Reds_Apple_Original_3mg_Iced"></span></kbd></center>
         </div>
-        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/7-Daze-Vape-Juices-for-Sale-in-Pakistan-Welcome-to-The-Vape-Town-your-go-to-destination-for-all-your-vaping-needs.-We-are-thrilled-to-introduce-you-to-our-exceptional-collection-of-7-Daze-E-Liqui-1.jpg" class="img-fluid" alt="Reds Apple Original 3mg Iced"><br>
-        <center><kbd>Qnty-<span id="Reds_Apple_Original_3mg_Iced"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Reds Apple Original 6mg Iced">
-        <div class="post-h2">
-        <h2>Reds Apple Original 6mg Iced 100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Original 6mg Iced 100ml</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/7-Daze-Vape-Juices-for-Sale-in-Pakistan-Welcome-to-The-Vape-Town-your-go-to-destination-for-all-your-vaping-needs.-We-are-thrilled-to-introduce-you-to-our-exceptional-collection-of-7-Daze-E-Liqui-1.jpg" class="img-fluid" alt="Reds Apple Original 6mg Iced"><br>
+                <center><kbd>Qnty-<span id="Reds_Apple_Original_6mg_Iced"></span></kbd></center>
         </div>
-        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/7-Daze-Vape-Juices-for-Sale-in-Pakistan-Welcome-to-The-Vape-Town-your-go-to-destination-for-all-your-vaping-needs.-We-are-thrilled-to-introduce-you-to-our-exceptional-collection-of-7-Daze-E-Liqui-1.jpg" class="img-fluid" alt="Reds Apple Original 6mg Iced"><br>
-        <center><kbd>Qnty-<span id="Reds_Apple_Original_6mg_Iced"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Reds Apple Original 6mg NonI">
-        <div class="post-h2">
-        <h2>Reds Apple Original 6mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Original 6mg/100ml</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/7-Daze-Vape-Juices-for-Sale-in-Pakistan-Welcome-to-The-Vape-Town-your-go-to-destination-for-all-your-vaping-needs.-We-are-thrilled-to-introduce-you-to-our-exceptional-collection-of-7-Daze-E-Liqui-1.jpg" class="img-fluid" alt="Reds Apple Original 6mg"><br>
+                <center><kbd>Qnty-<span id="Reds_Apple_Original_6mg"></span></kbd></center>
         </div>
-        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/7-Daze-Vape-Juices-for-Sale-in-Pakistan-Welcome-to-The-Vape-Town-your-go-to-destination-for-all-your-vaping-needs.-We-are-thrilled-to-introduce-you-to-our-exceptional-collection-of-7-Daze-E-Liqui-1.jpg" class="img-fluid" alt="Reds Apple Original 6mg"><br>
-        <center><kbd>Qnty-<span id="Reds_Apple_Original_6mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Reds Apple Original 3mg NonI">
-        <div class="post-h2">
-        <h2>Reds Apple Original 3mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Original 3mg/100ml</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/7-Daze-Vape-Juices-for-Sale-in-Pakistan-Welcome-to-The-Vape-Town-your-go-to-destination-for-all-your-vaping-needs.-We-are-thrilled-to-introduce-you-to-our-exceptional-collection-of-7-Daze-E-Liqui-1.jpg" class="img-fluid" alt="Reds Apple Original 3mg"><br>
+                <center><kbd>Qnty-<span id="Reds_Apple_Original_3mg"></span></kbd></center>
         </div>
-        <img src="https://royalpuff.com.bd/wp-content/uploads/2024/09/7-Daze-Vape-Juices-for-Sale-in-Pakistan-Welcome-to-The-Vape-Town-your-go-to-destination-for-all-your-vaping-needs.-We-are-thrilled-to-introduce-you-to-our-exceptional-collection-of-7-Daze-E-Liqui-1.jpg" class="img-fluid" alt="Reds Apple Original 3mg"><br>
-        <center><kbd>Qnty-<span id="Reds_Apple_Original_3mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Reds Apple Berries 6mg Iced">
-        <div class="post-h2">
-        <h2>Reds Apple Berries 6mg Iced 100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Berries 6mg Iced 100ml</h2>
+                </div>
+                <img src="https://ejuicedirect.com/cdn/shop/files/Reds-Berries-iced_100mL-0mg_ProductShot-both_502x502.png?v=1697470728" class="img-fluid" alt="Reds Apple Berries 6mg Iced"><br>
+                <center><kbd>Qnty-<span id="Reds_Apple_Berries_6mg_Iced"></span></kbd></center>
         </div>
-        <img src="https://ejuicedirect.com/cdn/shop/files/Reds-Berries-iced_100mL-0mg_ProductShot-both_502x502.png?v=1697470728" class="img-fluid" alt="Reds Apple Berries 6mg Iced"><br>
-        <center><kbd>Qnty-<span id="Reds_Apple_Berries_6mg_Iced"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Reds Apple Berries 3mg Iced">
-        <div class="post-h2">
-        <h2>Reds Apple Berries 3mg Iced 100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Berries 3mg Iced 100ml</h2>
+                </div>
+                <img src="https://ejuicedirect.com/cdn/shop/files/Reds-Berries-iced_100mL-0mg_ProductShot-both_502x502.png?v=1697470728" class="img-fluid" alt="Reds Apple Berries 3mg Iced"><br>
+                <center><kbd>Qnty-<span id="Reds_Apple_Berries_3mg_Iced"></span></kbd></center>
         </div>
-        <img src="https://ejuicedirect.com/cdn/shop/files/Reds-Berries-iced_100mL-0mg_ProductShot-both_502x502.png?v=1697470728" class="img-fluid" alt="Reds Apple Berries 3mg Iced"><br>
-        <center><kbd>Qnty-<span id="Reds_Apple_Berries_3mg_Iced"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Reds Apple Berries 6mg NonI">
-        <div class="post-h2">
-        <h2>Reds Apple Berries 6mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Berries 6mg/100ml</h2>
+                </div>
+                <img src="https://ejuicedirect.com/cdn/shop/files/Reds-Berries-iced_100mL-0mg_ProductShot-both_502x502.png?v=1697470728" class="img-fluid" alt="Reds Apple Berries 6mg"><br>
+                <center><kbd>Qnty-<span id="Reds_Apple_Berries_6mg"></span></kbd></center>
         </div>
-        <img src="https://ejuicedirect.com/cdn/shop/files/Reds-Berries-iced_100mL-0mg_ProductShot-both_502x502.png?v=1697470728" class="img-fluid" alt="Reds Apple Berries 6mg"><br>
-        <center><kbd>Qnty-<span id="Reds_Apple_Berries_6mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Reds Apple Berries 3mg NonI">
-        <div class="post-h2">
-        <h2>Reds Apple Berries 3mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Berries 3mg/100ml</h2>
+                </div>
+                <img src="https://ejuicedirect.com/cdn/shop/files/Reds-Berries-iced_100mL-0mg_ProductShot-both_502x502.png?v=1697470728" class="img-fluid" alt="Reds Apple Berries 3mg"><br>
+                <center><kbd>Qnty-<span id="Reds_Apple_Berries_3mg"></span></kbd></center>
         </div>
-        <img src="https://ejuicedirect.com/cdn/shop/files/Reds-Berries-iced_100mL-0mg_ProductShot-both_502x502.png?v=1697470728" class="img-fluid" alt="Reds Apple Berries 3mg"><br>
-        <center><kbd>Qnty-<span id="Reds_Apple_Berries_3mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Reds Apple Gold Kiwi 6mg NonI">
-        <div class="post-h2">
-        <h2>Reds Apple Gold Kiwi 6mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Gold Kiwi 6mg/100ml</h2>
+                </div>
+                <img src="https://ejuicedirect.com/cdn/shop/files/lighter_502x502.webp?v=1696514996" class="img-fluid" alt="Reds Apple Gold Kiwi 6mg"><br>
+                <center><kbd>Qnty-<span id="Reds_Apple_Gold_Kiwi_6mg"></span></kbd></center>
         </div>
-        <img src="https://ejuicedirect.com/cdn/shop/files/lighter_502x502.webp?v=1696514996" class="img-fluid" alt="Reds Apple Gold Kiwi 6mg"><br>
-        <center><kbd>Qnty-<span id="Reds_Apple_Gold_Kiwi_6mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
 
     <div class="cards" data-keywords="Reds Apple Gold Kiwi 3mg NonI">
-        <div class="post-h2">
-        <h2>Reds Apple Gold Kiwi 3mg/100ml</h2>
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Gold Kiwi 3mg/100ml</h2>
+                </div>
+                <img src="https://ejuicedirect.com/cdn/shop/files/lighter_502x502.webp?v=1696514996" class="img-fluid" alt="Reds Apple Gold Kiwi 3mg"><br>
+                <center><kbd>Qnty-<span id="Reds_Apple_Gold_Kiwi_3mg"></span></kbd></center>
         </div>
-        <img src="https://ejuicedirect.com/cdn/shop/files/lighter_502x502.webp?v=1696514996" class="img-fluid" alt="Reds Apple Gold Kiwi 3mg"><br>
-        <center><kbd>Qnty-<span id="Reds_Apple_Gold_Kiwi_3mg"></span></kbd></center>
+        <div class="back">
+            <h2>This is back Size</h2>
+            <p>Flavour Note:Apple</p>
+        </div>
     </div>
  </div>
 
@@ -583,11 +780,14 @@ footer{
     //Given CSS style with integration
   const cards=document.querySelectorAll('.cards');
   
-  cards.forEach(card=>{
-  card.addEventListener("click", ()=>{
-  cards.forEach(c=>c.classList.remove('selected'));
-  card.classList.add('selected');
-  });
+  cards.forEach((card)=>{
+      card.addEventListener("click", function(){
+          card.classList.add("flipped");
+          
+          setTimeout(()=>{
+              card.classList.remove("flipped");
+          }, 2000);
+      });
   });
 
   //Quick Navigator Functions
@@ -732,8 +932,8 @@ footer{
   }
 
   //Update Status
-  let date="12/01/2025";
-  let time="06:10 PM";
+  let date="11/12/2025";
+  let time="11:30 PM";
   document.getElementById("date").innerHTML=date;
   document.getElementById("time").innerHTML=time;
  </script>
