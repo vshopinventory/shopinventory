@@ -37,28 +37,22 @@ const items={
     Reds_Apple_Gold_Kiwi_3mg:{quantity:1, reserved:"N"},
     }
 
-    //Check items Sold out or not
-    Object.keys(items).forEach((key)=>{
-        const quantity=items[key].quantity;
-        const element=document.getElementById(key);
-
-        if(quantity===0){
-            element.innerHTML="Sold Out";
-            element.style.color="#ff0000";
-        }else{
-            element.innerHTML=quantity;
-        }
-    });
+    // Check items Sold Out or Reserved
+    Object.keys(items).forEach((key) => {
+    const { quantity, reserved } = items[key]; // Destructure properties
+    const element = document.getElementById(key); // Get the element
     
-    //Check items Reserved or not
-    Object.keys(items).forEach((key){
-        const reserved=items[key].reserved;
-        const element=document.getElementById(key);
-        
-        if(reserved==="Y"){
-            element.innerHTML="Reserved";
-            element.style.color="#ff0000";
-        }
+    if (element) { // Ensure the element exists
+    if (quantity === 0) {
+    element.innerHTML = "Sold Out";
+    element.style.color = "#ff0000";
+    } else if (reserved === "Y") {
+    element.innerHTML = "Reserved";
+    element.style.color = "#ff0000";
+    } else {
+    element.innerHTML = quantity;
+    }
+    }
     });
 
     //Total Quantity 
