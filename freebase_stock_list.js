@@ -57,8 +57,6 @@ const items={
         if(reserved==="Y"){
             element.innerHTML="Reserved";
             element.style.color="#ff0000";
-        }else{
-        element.innerHTML=quantity;
         }
     });
 
