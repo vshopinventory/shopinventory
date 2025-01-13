@@ -51,8 +51,9 @@ const items={
     });
     
     //Check items Reserved or not
-    Object.keys(items).forEach((key)=>{
+    Object.keys(items).forEach((key){
         const reserved=items[key].reserved;
+        const element=document.getElementById(key);
         
         if(reserved==="Y"){
             element.innerHTML="Reserved";
