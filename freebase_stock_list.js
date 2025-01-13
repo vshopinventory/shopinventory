@@ -22,7 +22,7 @@ const items={
     daze_Fusion_Lemon_Passionfruit_Blueberry_6mg:{quantity:8, reserved:"N"},
     daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced:{quantity:2, reserved:"N"},
     daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced:{quantity:1, reserved:"N"},
-    daze_Fusion_Orange_Yuzu_Tangerine_6mg:{quantity:1, reserved:"N"},
+    daze_Fusion_Orange_Yuzu_Tangerine_6mg:{quantity:1, reserved:"Y"},
     //Daze (Reds) Start from here
     Reds_Apple_Grape_6mg:{quantity:8, reserved:"N"},
     Reds_Apple_Original_3mg_Iced:{quantity:1, reserved:"N"},
@@ -47,6 +47,18 @@ const items={
             element.style.color="#ff0000";
         }else{
             element.innerHTML=quantity;
+        }
+    });
+    
+    //Check items Reserved or not
+    Object.keys(items).forEach((key){
+        const reserved=items[key].reserved;
+        
+        if(reserved==="Y"){
+            element.innerHTML="Reserved";
+            element.style.color="#ff0000";
+        }else{
+        element.innerHTML=quantity;
         }
     });
 
