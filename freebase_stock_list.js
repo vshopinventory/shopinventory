@@ -22,7 +22,7 @@ const items={
     daze_Fusion_Lemon_Passionfruit_Blueberry_6mg:{quantity:8, reserved:"N"},
     daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced:{quantity:2, reserved:"N"},
     daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced:{quantity:1, reserved:"N"},
-    daze_Fusion_Orange_Yuzu_Tangerine_6mg:{quantity:1, reserved:"Y"},
+    daze_Fusion_Orange_Yuzu_Tangerine_6mg:{quantity:0, reserved:"N"},
     //Daze (Reds) Start from here
     Reds_Apple_Grape_6mg:{quantity:8, reserved:"N"},
     Reds_Apple_Original_3mg_Iced:{quantity:1, reserved:"N"},
@@ -64,7 +64,7 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="13/01/2025";
-    let time="11:30 AM";
+    let date="14/01/2025";
+    let time="1:53 PM";
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
