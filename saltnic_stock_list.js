@@ -40,7 +40,7 @@ const items={
     pacha_fuji_25mg:{quantity:2, reserved:"N"},
     pacha_fuji_25mg_iced:{quantity:2, reserved:"N"},
     //Pod Juice Start from here
-    pod_Juice_Jewel_Tobacco_35mg:{quantity:5, reserved:"N"},
+    pod_Juice_Jewel_Tobacco_35mg:{quantity:4, reserved:"N"},
     pod_Juice_Virginia_Tobacco_55mg:{quantity:3, reserved:"N"},
     pod_Juice_Peach_Berry_35mg:{quantity:1, reserved:"N"},
     pod_Juice_Watermelon_Bubblegum_35mg:{quantity:0, reserved:"N"},
@@ -94,7 +94,28 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="13/01/2025";
-    let time="7:07 PM";
+    let date="16/01/2025";
+    let time="12:26 PM";
+    let updatedProducts=`<strong>Last updated Product(s):</strong>
+Pod Juice Juwel Tobacco`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
+    document.getElementById('updatedProducts').innerHTML=updatedProducts;
+    
+    //updated products show for some seconds
+    document.addEventListener("DOMContentLoaded", function(){
+        let container=document.getElementById('updatedProductsContainer');
+        setInterval(()=>{
+            container.style.display="block";
+            container.classList.remove("hide");
+            container.classList.add("show");
+            //container.style.display="block";
+            
+            setTimeout(()=>{
+            container.classList.remove("show");
+            container.classList.add("hide");
+            //container.style.display="none";
+            },4000);
+        }, 30000);
+        
+    });
