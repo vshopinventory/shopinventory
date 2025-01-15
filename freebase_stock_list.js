@@ -64,7 +64,7 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="14/01/2025";
-    let time="1:53 PM";
+    let date="15/01/2025";
+    let time="10:23 PM";
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
