@@ -1,7 +1,7 @@
 //Item Lists
 const items={
     king_Crests_Don_Juan_Tabaco_Honey_6mg:{quantity:4, reserved:"N"},
-    kings_Crest_Don_Juan_Cafe_6mg:{quantity:4, reserved:"N"},
+    kings_Crest_Don_Juan_Cafe_6mg:{quantity:3, reserved:"N"},
     kings_Crest_Don_Juan_Bombo_Aldonza_6mg:{quantity:12, reserved:"N"},
     //skwezed Start from here
     skwezed_Mango_Iced_6mg:{quantity:3, reserved:"N"},
