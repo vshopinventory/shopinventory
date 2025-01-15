@@ -65,6 +65,6 @@ const items={
 
     //Update Status
     let date="15/01/2025";
-    let time="10:23 PM";
+    let time="10:29 PM";
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
