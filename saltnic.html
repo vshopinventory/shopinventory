@@ -117,6 +117,32 @@
       height: 140px;
 }
   }
+  
+  .updatedProducts-Container{
+      display:none; 
+      position:fixed; 
+      top:30%; 
+      left:50%; 
+      transform:translate(-50%, -70%); 
+      z-index:1000; 
+      width:65%; 
+      background-color:rgb(255, 140, 140); 
+      margin-right:5px; 
+      padding:8px; 
+      border-radius:6px; 
+      border:0.5px solid rgba(255,0,0,0.2); 
+      transition: all 1s ease;
+  }
+  
+ .hide{
+     opacity:0;
+     left:100%;
+ }
+ 
+ .show{
+     opacity:1;
+     left:50%;
+ }
     
  #upperFooter{
  color:white;
@@ -204,9 +230,17 @@
   
 
 <!--Update Status-->
-<div style="display: flex; justify-content: end;">
+<div style="display: flex; justify-content: end; flex-wrap:wrap;">
+    <div style="width:55%; height:70px; margin-right:5px; padding:8px; background-color:rgba(25, 135, 84, 0.20); margin-bottom:5px; border-radius:6px; border:0.5px solid green;">
     <p style="font-weight: bold; font-size: 18px;">Last Update:<br><span id="date"></span> <span id="time"> </span></p>
+    </div>
+    
+    <div class="updatedProducts-Container" id="updatedProductsContainer">
+    <pre style="font-family:arial; font-size:16px; padding:0;"><span id="updatedProducts"></span></pre>
+    </div>
 </div>
+
+
 
  <!--Post Start From Here-->
  <h1 style="margin-top: 50px;">Kings Crest:</h1>
