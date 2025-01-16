@@ -67,7 +67,7 @@ const items={
     let date="16/01/2025";
     let time="6:15 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Don Juan Cafe 6mg`;
+Kings Crest Don Juan Cafe 6mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
