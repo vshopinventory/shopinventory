@@ -64,7 +64,28 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="15/01/2025";
-    let time="10:29 PM";
+    let date="16/01/2025";
+    let time="6:15 PM";
+    let updatedProducts=`<strong>Last updated Product(s):</strong>
+    Pod Juice Juwel Tobacco`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
+    document.getElementById('updatedProducts').innerHTML=updatedProducts;
+    
+    //updated products show for some seconds
+    document.addEventListener("DOMContentLoaded", function(){
+    let container=document.getElementById('updatedProductsContainer');
+    setInterval(()=>{
+    container.style.display="block";
+    container.classList.remove("hide");
+    container.classList.add("show");
+    //container.style.display="block";
+    
+    setTimeout(()=>{
+    container.classList.remove("show");
+    container.classList.add("hide");
+    //container.style.display="none";
+    },4000);
+    }, 30000);
+    
+    });
