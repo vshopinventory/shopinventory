@@ -185,7 +185,7 @@
   </ul>
   <form class="d-flex">
   <input id="searchInput" type="text" class="form-control me-2" placeholder="Search">
-  <button id="searchBtn" type="button" class="btn btn-primary">Search</button>
+  <button id="searchBtn" type="button" class="btn btn-primary" onclick="searchEngine()">Search</button>
   </form>
   </div>
   </div>
@@ -1367,6 +1367,29 @@
   resultContainer.innerHTML = "Result Not found.";
   }
   }, 1000);
+  }
+  
+  //Search Engine
+  function searchEngine(){
+      let items=document.querySelectorAll('.cards');
+      let searchQuery=document.getElementById('searchInput').value.trim().toLowerCase();
+      let resultContainer=document.getElementById('searchResult');
+      resultContainer.innerHTML="";
+      let found=false;
+      
+      items.forEach((item)=>{
+          let keywords=item.getAttribute('data-keywords');
+          if(keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())){
+              let clone=item.cloneNode(true);
+              resultContainer.appendChild(clone);
+              found=true;
+              document.getElementById('svg').style.display="block";
+              document.getElementById('showingResultMessage').style.display="block";
+          }
+      });
+      if(!found){
+      resultContainer.innerHTML="Result Not found";
+      }
   }
   </script>
   </body>
