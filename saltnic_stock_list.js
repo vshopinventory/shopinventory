@@ -49,7 +49,7 @@ const items={
     pod_Juice_Graham_Cracker_35mg:{quantity:1, reserved:"N"},
     pod_Juice_Jewel_Mint_35mg:{quantity:1, reserved:"N"},
     //Daze (Reds) Start from here
-    reds_Apple_Berries_30mg:{quantity:3, reserved:"N"},
+    reds_Apple_Berries_30mg:{quantity:2, reserved:"N"},
     reds_Apple_Berries_30mg_iced:{quantity:4, reserved:"N"},
     reds_Apple_Berries_50mg_iced:{quantity:1, reserved:"N"},
     reds_Apple_Gold_Kiwi_30mg_Iced:{quantity:7, reserved:"N"},
@@ -94,8 +94,8 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="17/01/2025";
-    let time="4:35 PM";
+    let date="18/01/2025";
+    let time="8:30 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
 Kings Crest Bombo Aldonza 35mg`;
     document.getElementById("date").innerHTML=date;
