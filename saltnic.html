@@ -106,6 +106,15 @@
     height:60px;
 }
 
+#stock_summary_box{
+    width: 400px;
+    margin: 30px auto 15px;
+    padding: 10px;
+    border:gray 2px solid; 
+    border-radius:12px; 
+    background-color:powderblue;
+ }
+
 @media screen and (max-width:768px){
     .cards{
       width:49%;
@@ -144,9 +153,9 @@
       transition: all 1s ease;
     }
 
-    .stock_summary-container{
-    width: 100%;
-    margin: 30px 5px 15px;
+    #stock_summary_box{
+    width: 95%;
+    margin: 30px auto 15px;
     padding: 10px;
     border:gray 2px solid; 
     border-radius:12px; 
@@ -190,15 +199,6 @@
  .show{
      opacity:1;
      left:50%;
- }
-
- .stock_summary-container{
-    width: 400px;
-    margin: 30px auto 15px;
-    padding: 10px;
-    border:gray 2px solid; 
-    border-radius:12px; 
-    background-color:powderblue;
  }
     
  #upperFooter{
@@ -1168,10 +1168,11 @@
 
 
   <!--Stock Summary-->
-  <div class="stock_summary-container">
-  <h2 style="text-align:center;">Stock Summary</h2>
-  <center><p class="badge bg-info rounded-pill mt-3">Total saltnic items: <span id="sum"></span></p></center>
-  </div>
+<div id="stock_summary_box">
+<h2 style="text-align:center;">Stock Summary</h2>
+<p style="text-align:center; background-color:rgb(36,154,232); width:180px; border-radius:12px; margin:auto; color:white;">Total saltnic items: <span id="sum"></span></p>
+</div>
+
   
   <footer>
   <div id="upperFooter">
