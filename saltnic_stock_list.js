@@ -16,7 +16,7 @@ const items={
     skwezed_green_apple_25mg:{quantity:1, reserved:"N"},
     skwezed_green_apple_25mg_iced:{quantity:5, reserved:"N"},
     skwezed_green_apple_50mg_iced:{quantity:3, reserved:"N"},
-    skwezed_watermelon_25mg:{quantity:4, reserved:"N"},
+    skwezed_watermelon_25mg:{quantity:3, reserved:"N"},
     skwezed_watermelon_25mg_iced:{quantity:2, reserved:"N"},
     skwezed_mango_25mg:{quantity:7, reserved:"N"},
     skwezed_mango_25mg_iced:{quantity:1, reserved:"N"},
@@ -42,7 +42,7 @@ const items={
     //Pod Juice Start from here
     pod_Juice_Jewel_Tobacco_35mg:{quantity:4, reserved:"N"},
     pod_Juice_Virginia_Tobacco_55mg:{quantity:3, reserved:"N"},
-    pod_Juice_Peach_Berry_35mg:{quantity:1, reserved:"N"},
+    pod_Juice_Peach_Berry_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Watermelon_Bubblegum_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Bangin_Blue_Razz_55mg:{quantity:1, reserved:"N"},
     pod_Juice_Fruity_Bears_35mg:{quantity:1, reserved:"N"},
@@ -95,9 +95,10 @@ const items={
 
     //Update Status
     let date="18/01/2025";
-    let time="8:30 PM";
+    let time="10:05 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Kings Crest Bombo Aldonza 35mg`;
+Skwezed Watermelon 25mg,
+Pod Juice Peach Berry 35mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
