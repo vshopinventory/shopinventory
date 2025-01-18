@@ -35,6 +35,13 @@ const items={
     Reds_Apple_Berries_3mg:{quantity:1, reserved:"N"},
     Reds_Apple_Gold_Kiwi_6mg:{quantity:7, reserved:"N"},
     Reds_Apple_Gold_Kiwi_3mg:{quantity:1, reserved:"N"},
+    //Bali Fruits Start from here
+    bali_Fruits_Watermelon_Kiwi_Strawberry_3mg:{quantity:13, reserved:"N"},
+    bali_Fruits_Watermelon_Kiwi_Strawberry_6mg:{quantity:4, reserved:"N"},
+    bali_Fruits_Watermelon_Kiwi_Strawberry_3mg_Iced:{quantity:4, reserved:"N"},
+    bali_Fruits_Pear_Mango_Guava_6mg:{quantity:27, reserved:"N"},
+    bali_Fruits_Pear_Mango_Guava_3mg:{quantity:9, reserved:"N"},
+    bali_Fruits_Pear_Mango_Guava_3mg_Iced:{quantity:19, reserved:"N"},
     }
 
     // Check items Sold Out or Reserved
@@ -64,8 +71,8 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="16/01/2025";
-    let time="10:46 PM";
+    let date="18/01/2025";
+    let time="8:01 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
 Don Juan Cafe 6mg`;
     document.getElementById("date").innerHTML=date;
