@@ -71,8 +71,8 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="18/01/2025";
-    let time="8:01 PM";
+    let date="19/01/2025";
+    let time="1:51 AM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
 Don Juan Cafe 6mg`;
     document.getElementById("date").innerHTML=date;
