@@ -115,32 +115,6 @@
       height: 140px;
 }
   }
-  
-.updatedProducts-Container{
-      display:none; 
-      position:fixed; 
-      top:30%; 
-      left:50%; 
-      transform:translate(-50%, -70%); 
-      z-index:1000; 
-      width:65%; 
-      background-color:rgb(255, 140, 140); 
-      margin-right:5px; 
-      padding:8px; 
-      border-radius:6px; 
-      border:0.5px solid rgba(255,0,0,0.2); 
-      transition: all 1s ease;
-  }
-  
- .hide{
-     opacity:0;
-     left:100%;
- }
- 
- .show{
-     opacity:1;
-     left:50%;
- }
 
 footer{
     width: 100%;
@@ -182,7 +156,7 @@ footer{
     </ul>
     <form class="d-flex">
     <input id="searchInput" type="text" class="form-control me-2" placeholder="Search">
-    <button id="searchBtn" type="button" class="btn btn-primary" onclick="searchEngine()">Search</button>
+    <button id="searchBtn" type="button" class="btn btn-primary">Search</button>
     </form>
     </div>
     </div>
@@ -193,8 +167,7 @@ footer{
  </div>
  
  <!--Search Result appear here-->
-  <div id="showingResultMessage" style="display:none;">Showing Result:</div>
-  <div id="searchResult"></div>
+ <div id="searchResult"></div>
   
  <svg id="svg" style="display:none; margin:100px 0 40px 0;" width="100%" height="20" xmlns="http://www.w3.org/2000/svg" style="margin: 20px 0;">
  <!-- Gradient definition -->
@@ -226,15 +199,9 @@ footer{
  
 
  <!--Update Status-->
- <div style="display: flex; justify-content: end; flex-wrap:wrap; margin-top:5px;">
- <div style="width:55%; height:70px; margin-right:5px; padding:8px; background-color:rgba(25, 135, 84, 0.20); margin-bottom:5px; border-radius:6px; border:0.5px solid green;">
- <p style="font-weight: bold; font-size: 18px;">Last Update:<br><span id="date"></span> <span id="time"> </span></p>
- </div>
- 
- <div class="updatedProducts-Container" id="updatedProductsContainer">
- <pre style="font-family:arial; font-size:16px; padding:0;"><span id="updatedProducts"></span></pre>
- </div>
- </div>
+<div style="display: flex; justify-content: end;">
+    <p style="font-weight: bold; font-size: 18px;">Last Update:<br><span id="date"></span> <span id="time"> </span></p>
+</div>
 
 
  <!--Post Start from Here-->
@@ -679,6 +646,88 @@ footer{
     </div>
  </div>
 
+ <h1 style="margin-top: 50px;">Bali Fruits:</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+ <!--Daze (Reds) Posts Start from here-->
+    <div class="cards" data-keywords="Bali Fruits Watermelon Kiwi Strawberry 3mg">
+        <div class="front">
+            <div class="post-h2">
+            <h2>Bali Fruits Watermelon Kiwi Strawberry 3mg</h2>
+            </div>
+            <img src="https://vssmohammadpur.com/wp-content/uploads/2022/11/watermelon-kiwi-strawberry-de-bali-fruits-by-kings-crest.jpg" class="img-fluid" alt="Bali Fruits Watermelon Kiwi Strawberry 3mg"><br>
+            <center><kbd>Qnty-<span id="bali_Fruits_Watermelon_Kiwi_Strawberry_3mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br></h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Bali Fruits Watermelon Kiwi Strawberry 6mg">
+        <div class="front">
+            <div class="post-h2">
+            <h2>Bali Fruits Watermelon Kiwi Strawberry 6mg</h2>
+            </div>
+            <img src="https://vssmohammadpur.com/wp-content/uploads/2022/11/watermelon-kiwi-strawberry-de-bali-fruits-by-kings-crest.jpg" class="img-fluid" alt="Bali Fruits Watermelon Kiwi Strawberry 6mg"><br>
+            <center><kbd>Qnty-<span id="bali_Fruits_Watermelon_Kiwi_Strawberry_6mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br></h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Bali Fruits Watermelon Kiwi Strawberry 3mg Iced">
+        <div class="front">
+            <div class="post-h2">
+            <h2>Bali Fruits Watermelon Kiwi Strawberry 3mg Iced</h2>
+            </div>
+            <img src="https://vapeshopsky.com/wp-content/uploads/2023/04/Bali-Fruits-by-Kings-Crest-WATERMELON-KIWI-STRAWBERRY-ICE-100ml-Nicokits-Gratis_grande.webp" class="img-fluid" alt="Bali Fruits Watermelon Kiwi Strawberry 3mg Iced"><br>
+            <center><kbd>Qnty-<span id="bali_Fruits_Watermelon_Kiwi_Strawberry_3mg_Iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br></h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Bali Fruits Pear Mango Guava 6mg">
+        <div class="front">
+            <div class="post-h2">
+            <h2>Bali Fruits Pear Mango Guava 6mg</h2>
+            </div>
+            <img src="https://vapeshopsky.com/wp-content/uploads/2023/04/pear-mango-guava-de-bali-fruits-by-kings-crest.jpg" class="img-fluid" alt="Bali Fruits Pear Mango Guava 6mg"><br>
+            <center><kbd>Qnty-<span id="bali_Fruits_Pear_Mango_Guava_6mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br></h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Bali Fruits Pear Mango Guava 3mg">
+        <div class="front">
+            <div class="post-h2">
+            <h2>Bali Fruits Pear Mango Guava 3mg</h2>
+            </div>
+            <img src="https://vapeshopsky.com/wp-content/uploads/2023/04/pear-mango-guava-de-bali-fruits-by-kings-crest.jpg" class="img-fluid" alt="Bali Fruits Pear Mango Guava 3mg"><br>
+            <center><kbd>Qnty-<span id="bali_Fruits_Pear_Mango_Guava_3mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br></h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Bali Fruits Pear Mango Guava 3mg Iced">
+        <div class="front">
+            <div class="post-h2">
+            <h2>Bali Fruits Pear Mango Guava 3mg Iced</h2>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Ca4rHXCgIa7bN8FhK6Fg2SB9kxVZUyM4HA&s" class="img-fluid" alt="Bali Fruits Pear Mango Guava 3mg Iced"><br>
+            <center><kbd>Qnty-<span id="bali_Fruits_Pear_Mango_Guava_3mg_Iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br></h4>
+        </div>
+    </div>
+ </div>
+
 <!--Post End-->
 
  
@@ -757,7 +806,6 @@ footer{
       resultContainer.appendChild(clone);
       found = true;
       document.getElementById('svg').style.display="block";
-      document.getElementById('showingResultMessage').style.display="block";
       }
       });
       
@@ -786,7 +834,6 @@ footer{
       resultContainer.appendChild(clone);
       found = true;
       document.getElementById('svg').style.display="block";
-      document.getElementById('showingResultMessage').style.display="block";
       }
       });
       
@@ -815,7 +862,6 @@ footer{
       resultContainer.appendChild(clone);
       found = true;
       document.getElementById('svg').style.display="block";
-      document.getElementById('showingResultMessage').style.display="block";
       }
       });
       
@@ -844,7 +890,6 @@ footer{
       resultContainer.appendChild(clone);
       found = true;
       document.getElementById('svg').style.display="block";
-      document.getElementById('showingResultMessage').style.display="block";
       }
       });
       
@@ -873,7 +918,6 @@ footer{
       resultContainer.appendChild(clone);
       found = true;
       document.getElementById('svg').style.display="block";
-      document.getElementById('showingResultMessage').style.display="block";
       }
       });
       
@@ -881,29 +925,6 @@ footer{
       resultContainer.innerHTML = "Result Not found.";
       }
   }, 1000);
-  }
-  
-  //Search Engine
-  function searchEngine(){
-  let items=document.querySelectorAll('.cards');
-  let searchQuery=document.getElementById('searchInput').value.trim().toLowerCase();
-  let resultContainer=document.getElementById('searchResult');
-  resultContainer.innerHTML="";
-  let found=false;
-  
-  items.forEach((item)=>{
-  let keywords=item.getAttribute('data-keywords');
-  if(keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())){
-  let clone=item.cloneNode(true);
-  resultContainer.appendChild(clone);
-  found=true;
-  document.getElementById('svg').style.display="block";
-  document.getElementById('showingResultMessage').style.display="block";
-  }
-  });
-  if(!found){
-  resultContainer.innerHTML="Result Not found";
-  }
   }
  </script>
  </body>
