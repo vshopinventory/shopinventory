@@ -46,7 +46,7 @@ const items={
     pod_Juice_Watermelon_Bubblegum_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Bangin_Blue_Razz_55mg:{quantity:1, reserved:"N"},
     pod_Juice_Fruity_Bears_35mg:{quantity:1, reserved:"N"},
-    pod_Juice_Graham_Cracker_35mg:{quantity:1, reserved:"N"},
+    pod_Juice_Graham_Cracker_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Jewel_Mint_35mg:{quantity:1, reserved:"N"},
     //Daze (Reds) Start from here
     reds_Apple_Berries_30mg:{quantity:2, reserved:"N"},
@@ -232,10 +232,9 @@ const items={
 
     //Update Status
     let date="19/01/2025";
-    let time="2:45 PM";
+    let time="4:35 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Kings Crest Bombo Aldonza 50mg,
-Pod Juice Peach Berry 35mg`;
+Pod Juice Graham Cracker 35mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
