@@ -2,7 +2,7 @@
 const items={
     kc_tabaco_dulce_35mg:{quantity:19, reserved:"N"},
     kc_tabaco_dulce_50mg:{quantity:5, reserved:"N"},
-    kc_bombo_aldonza_50mg:{quantity:15, reserved:"N"},
+    kc_bombo_aldonza_50mg:{quantity:14, reserved:"N"},
     kc_bombo_aldonza_35mg:{quantity:11, reserved:"N"},
     kc_churro_35mg:{quantity:1, reserved:"N"},
     kc_don_juan_cafe_35mg :{quantity:0, reserved:"N"},
@@ -231,10 +231,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="18/01/2025";
-    let time="10:05 PM";
+    let date="19/01/2025";
+    let time="2:45 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Skwezed Watermelon 25mg,
+Kings Crest Bombo Aldonza 50mg,
 Pod Juice Peach Berry 35mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
