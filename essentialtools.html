@@ -14,7 +14,7 @@
   padding:20px;
   }
   
-  #orderInput, #amountInput, #costInput, #productInput{
+  #orderInput, #amountInput, #costInput, #othersCostInput, #othersCostDescription, #productInput{
   width:100%;
   padding:10px 20px;
   margin-bottom:10px;
@@ -140,9 +140,10 @@
   <input id="orderInput" type="number" name="orderId" placeholder="Order ID" required>
   <input id="amountInput" type="number" name="amount" placeholder="Amount" required>
   <input id="costInput" type="number" name="cost" placeholder="Cost" required>
+  <input id="othersCostInput" type="number" name="others" placeholder="Others Cost" required>
   <select id="productInput" multiple required>
   <option value="Salt 30ml">Salt 30ml</option>
-  <option value="Freebase 60ml">Freebase 60ml</option>
+  <option value="Freebase 100ml/120ml">Freebase 100ml/120ml</option>
   <option value="Eir Pod System">Eir Pod system</option>
   <option value="Vdon Pod System">Vdon Pod system</option>
   <option value="Hera Mod">Hera Mod</option>
@@ -151,7 +152,6 @@
   <option value="Cartridge">Cartridge</option>
   <option value="Coil">Coil</option>
   <option value="Cotton">Cotton</option>
-  <option value="Bishop MTL RTA">Bishop MTL RTA</option>
   </select>
   <p style="font-size:11px; margin:0px 0px 10px 0px;">*Computer user can use multiple option to click with press ctrl+shift</p>
   <button id="orderSubmit" type="submit">Add Order Details</button>
@@ -263,6 +263,7 @@
   let orderNumber=parseInt(document.getElementById('orderInput').value);
   let amount=parseInt(document.getElementById('amountInput').value);
   let cost=parseInt(document.getElementById('costInput').value);
+  let othersCost=parseInt(document.getElementById('othersCostInput').value);
   let perNetAmount=amount-cost;
   let select = document.getElementById("productInput");
   let selected = [];
@@ -291,7 +292,7 @@
   localStorage.setItem("grossAmount",grossAmounts);
   
   let currentGrossCost=parseInt(localStorage.getItem("grossCost"));
-  let grossCosts=currentGrossCost+cost;
+  let grossCosts=currentGrossCost+cost+othersCost;
   localStorage.setItem("grossCost",grossCosts);
   
   document.getElementById('totalAccountings').innerHTML=`
