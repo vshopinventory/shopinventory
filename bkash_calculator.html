@@ -106,7 +106,7 @@
   margin:15px 0px 15px 0px;
   border:hidden;
   border-radius:2px;
-  padding:20px;
+  padding:10px;
   font-size:39px;
   color:white;
   font-weight:bold;
@@ -150,12 +150,10 @@
   <li class="nav-item"><a class="nav-link" href="index.html" >Home</a></li>
   <li class="nav-item"><a class="nav-link" href="saltnic.html" >Saltnic E-juice</a></li>
   <li class="nav-item"><a class="nav-link" href="freebase.html" >Freebase E-juice</a></li>
-  <li class="nav-item"><a class="nav-link" href="disposable.html" >Disposable</a></li>
   <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">Convenient Tools</a>
   <ul class="dropdown-menu">
   <li><a class="dropdown-item" href="bkash_calculator.html">Calculator: bKash Cashout charge</a></li>
   <li><a class="dropdown-item" href="">VAT Calculation</a></li>
-  <li><a class="dropdown-item" href="essentialtools.html">Essential Tools</a></li>
   </ul>
   </li>
   </ul>
@@ -224,8 +222,8 @@
   <button type="button" id="codCalculate">Calculate</button>
   
   <div id="codCashoutCost">
-  <p id="codAmountOutput">COD Amount:</p>
-  <p id="delAmountOutput"><span style="font-size:38px;">Delivery Amount:</span></p>
+  <p id="codAmountOutput"></p>
+  <p id="delAmountOutput"><span style="font-size:36px;"></span></p>
   <p id="codCashoutOutput"></p>
   </div>
   </div>
@@ -288,7 +286,7 @@
   //calculation 
   document.getElementById('calculate').addEventListener("click",function(){
   let calculation=Math.round(sum*1.49/100);
-  document.getElementById('costOutput').innerHTML="৳ "+calculation;
+  document.getElementById('costOutput').innerHTML=`Cashout Chaege:<br>৳ ${calculation}`;
   });
   
   //Reset button
@@ -310,7 +308,7 @@
   f.preventDefault();
   let codAmount=parseInt(document.getElementById('codAmount').value);
   codSum+=codAmount;
-  document.getElementById('codAmountOutput').innerHTML+=`<span class="badge bg-warning" style="margin: 0px 4px 0px 4px;">${codAmount}</span>`;
+  document.getElementById('codAmountOutput').innerHTML=`COD Amount:<br><span class="badge bg-warning" style="margin: 0px 4px 0px 4px;">${codAmount}</span>`;
   document.getElementById('codCashout').reset();
   document.getElementById('codAmount').focus();
   });
@@ -328,7 +326,7 @@
   g.preventDefault();
   let delAmount=parseInt(document.getElementById('deliveryAmount').value);
   costSum+=delAmount;
-  document.getElementById('delAmountOutput').innerHTML+=`<span class="badge bg-warning" style="margin: 0px 4px 0px 4px;">${delAmount}</span>`;
+  document.getElementById('delAmountOutput').innerHTML=`Delivery Amount: <span class="badge bg-warning" style="margin: 0px 4px 0px 4px;">${delAmount}</span>`;
   document.getElementById('deliveryCost').reset();
   document.getElementById('deliveryAmount').focus();
   });
@@ -337,7 +335,7 @@
   document.getElementById('clear2').addEventListener("click",clear2);
   function clear2(){
   costSum=0;
-  document.getElementById('delAmountOutput').innerHTML=`<span style="font-size:38px;">Delivery Amount:</span>`;
+  document.getElementById('delAmountOutput').innerHTML=`<span style="font-size:36px;">Delivery Amount:</span>`;
   }
   
   //Calculate button 
@@ -345,7 +343,7 @@
   document.getElementById('codCalculate').addEventListener("click",function(){
   let subtraction=codSum-costSum;
   result=Math.round(subtraction*1.49/100);
-  document.getElementById('codCashoutOutput').innerHTML="৳ "+result;
+  document.getElementById('codCashoutOutput').innerHTML=`Cashout Charge: ৳ ${result}`;
   });
   
   //Reset Button
