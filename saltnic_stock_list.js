@@ -44,7 +44,7 @@ const items={
     pod_Juice_Virginia_Tobacco_55mg:{quantity:3, reserved:"N"},
     pod_Juice_Peach_Berry_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Watermelon_Bubblegum_35mg:{quantity:0, reserved:"N"},
-    pod_Juice_Bangin_Blue_Razz_55mg:{quantity:1, reserved:"N"},
+    pod_Juice_Bangin_Blue_Razz_55mg:{quantity:0, reserved:"N"},
     pod_Juice_Fruity_Bears_35mg:{quantity:1, reserved:"N"},
     pod_Juice_Graham_Cracker_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Jewel_Mint_35mg:{quantity:1, reserved:"N"},
@@ -66,7 +66,7 @@ const items={
     daze_Raspberry_Green_Apple_Watermelon_30mg:{quantity:1, reserved:"N"},
     daze_Raspberry_Green_Apple_Watermelon_30mg_Iced:{quantity:1, reserved:"N"},
     daze_Banana_Cantaloup_Honeydew_30mg_Iced:{quantity:2, reserved:"N"},
-    daze_Banana_Cantaloup_Honeydew_50mg_Iced:{quantity:1, reserved:"N"},
+    daze_Banana_Cantaloup_Honeydew_50mg_Iced:{quantity:0, reserved:"N"},
     daze_Pineapple_Coconut_Banana_Iced_30mg:{quantity:2, reserved:"N"},
     daze_Pineapple_Mango_Orange_30mg_Iced:{quantity:1, reserved:"N"},
     }
@@ -231,10 +231,11 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="20/01/2025";
-    let time="7:45 PM";
+    let date="22/01/2025";
+    let time="1:15 AM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Kings Crest Tabaco Dulce 35mg`;
+Daze Banana Honeydew Cantaloup 50mg Iced
+Pod Juice Bangin Blue Razz 55mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
