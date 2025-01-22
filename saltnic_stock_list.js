@@ -49,7 +49,7 @@ const items={
     pod_Juice_Graham_Cracker_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Jewel_Mint_35mg:{quantity:1, reserved:"N"},
     //Daze (Reds) Start from here
-    reds_Apple_Berries_30mg:{quantity:2, reserved:"N"},
+    reds_Apple_Berries_30mg:{quantity:1, reserved:"N"},
     reds_Apple_Berries_30mg_iced:{quantity:4, reserved:"N"},
     reds_Apple_Berries_50mg_iced:{quantity:1, reserved:"N"},
     reds_Apple_Gold_Kiwi_30mg_Iced:{quantity:7, reserved:"N"},
@@ -232,10 +232,9 @@ const items={
 
     //Update Status
     let date="22/01/2025";
-    let time="1:15 AM";
+    let time="2:25 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Daze Banana Honeydew Cantaloup 50mg Iced
-Pod Juice Bangin Blue Razz 55mg`;
+Reds Apple Berries 30mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
