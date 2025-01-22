@@ -71,10 +71,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="19/01/2025";
-    let time="1:51 AM";
+    let date="22/01/2025";
+    let time="4:51 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Don Juan Cafe 6mg`;
+Kings Crest Tabaco Honey 6mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
