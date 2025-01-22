@@ -222,12 +222,10 @@
   <button type="button" id="codCalculate">Calculate</button>
   
   <div id="codCashoutCost">
-  <p id="codAmountOutput"></p>
-  <p id="delAmountOutput"><span style="font-size:36px;"></span></p>
+  <p id="codAmountOutput">COD Amount:</p>
+  <p id="delAmountOutput"><span style="font-size:36px;">Delivery Amount:</span></p>
   <p id="codCashoutOutput"></p>
   </div>
-  </div>
-  <div class="col-12 col-md-4">
   </div>
   </div>
   </div>
@@ -308,7 +306,7 @@
   f.preventDefault();
   let codAmount=parseInt(document.getElementById('codAmount').value);
   codSum+=codAmount;
-  document.getElementById('codAmountOutput').innerHTML=`COD Amount:<br><span class="badge bg-warning" style="margin: 0px 4px 0px 4px;">${codAmount}</span>`;
+  document.getElementById('codAmountOutput').innerHTML+=`<span class="badge bg-warning" style="margin: 0px 4px 0px 4px;">${codAmount}</span>`;
   document.getElementById('codCashout').reset();
   document.getElementById('codAmount').focus();
   });
@@ -326,7 +324,7 @@
   g.preventDefault();
   let delAmount=parseInt(document.getElementById('deliveryAmount').value);
   costSum+=delAmount;
-  document.getElementById('delAmountOutput').innerHTML=`Delivery Amount: <span class="badge bg-warning" style="margin: 0px 4px 0px 4px;">${delAmount}</span>`;
+  document.getElementById('delAmountOutput').innerHTML+=`<span class="badge bg-warning" style="margin: 0px 4px 0px 4px;">${delAmount}</span>`;
   document.getElementById('deliveryCost').reset();
   document.getElementById('deliveryAmount').focus();
   });
@@ -352,8 +350,8 @@
   codSum=0;
   costSum=0;
   result=0;
-  document.getElementById('codAmountOutput').innerHTML="";
-  document.getElementById('delAmountOutput').innerHTML="";
+  document.getElementById('codAmountOutput').innerHTML="COD Amount:";
+  document.getElementById('delAmountOutput').innerHTML="Delivery Amount:";
   document.getElementById('codCashoutOutput').innerHTML="";
   document.getElementById('codCashout').reset();
   document.getElementById('deliveryCost').reset();
