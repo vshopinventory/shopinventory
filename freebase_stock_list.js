@@ -43,6 +43,105 @@ const items={
     bali_Fruits_Pear_Mango_Guava_3mg:{quantity:9, reserved:"N"},
     bali_Fruits_Pear_Mango_Guava_3mg_Iced:{quantity:19, reserved:"N"},
     }
+    
+    const kc_range=[
+    "king_Crests_Don_Juan_Tabaco_Honey_6mg",
+    "kings_Crest_Don_Juan_Cafe_6mg",
+    "kings_Crest_Don_Juan_Bombo_Aldonza_6mg"
+    ];
+    const skwezed_range=[
+    "skwezed_Mango_Iced_6mg",
+    "skwezed_Mango_Iced_3mg",
+    "skwezed_Green_Apple_6mg",
+    "skwezed_Mixed_Berries_3mg",
+    "skwezed_Watermelon_Grape_3mg_Iced"
+    ];
+    const creamteam_range=[
+    "cream_Team_Butter_Cream_6mg"
+    ];
+    const fusion_range=[
+    "daze_Fusion_Pineapple_Coconut_Banana_6mg_Iced",
+    "daze_Fusion_Pineapple_Coconut_Banana_3mg_Iced",
+    "daze_Fusion_Pineapple_Mango_Orange_6mg",
+    "daze_Fusion_Pineapple_Mango_Orange_3mg",
+    "daze_Fusion_Raspberry_Green_Apple_Watermelon_6mg",
+    "daze_Fusion_Raspberry_Green_Apple_Watermelon_3mg",
+    "daze_Fusion_Lemon_Passionfruit_Blueberry_3mg",
+    "daze_Fusion_Lemon_Passionfruit_Blueberry_3mg_Iced",
+    "daze_Fusion_Lemon_Passionfruit_Blueberry_6mg",
+    "daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced",
+    "daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced",
+    "daze_Fusion_Orange_Yuzu_Tangerine_6mg"
+    ];
+    const reds_range=[
+    "Reds_Apple_Grape_6mg",
+    "Reds_Apple_Original_3mg_Iced",
+    "Reds_Apple_Original_6mg_Iced",
+    "Reds_Apple_Original_6mg",
+    "Reds_Apple_Original_3mg",
+    "Reds_Apple_Berries_6mg_Iced",
+    "Reds_Apple_Berries_3mg_Iced",
+    "Reds_Apple_Berries_6mg",
+    "Reds_Apple_Berries_3mg",
+    "Reds_Apple_Gold_Kiwi_6mg",
+    "Reds_Apple_Gold_Kiwi_3mg"
+    ];
+    const bali_range=[
+    "bali_Fruits_Watermelon_Kiwi_Strawberry_3mg",
+    "bali_Fruits_Watermelon_Kiwi_Strawberry_6mg",
+    "bali_Fruits_Watermelon_Kiwi_Strawberry_3mg_Iced",
+    "bali_Fruits_Pear_Mango_Guava_6mg",
+    "bali_Fruits_Pear_Mango_Guava_3mg",
+    "bali_Fruits_Pear_Mango_Guava_3mg_Iced"
+    ];
+    //Total KC
+    let total_kc=0;
+    kc_range.forEach((key)=>{
+        if(items[key]){
+            total_kc+=items[key].quantity;
+        }
+    });
+    document.getElementById('total_kc').innerHTML=total_kc;
+    //Total Skwezed
+    let total_skwezed=0;
+    skwezed_range.forEach((key)=>{
+    if(items[key]){
+    total_skwezed+=items[key].quantity;
+    }
+    });
+    document.getElementById('total_skwezed').innerHTML=total_skwezed;
+    //Total CreamTeam
+    let total_creamteam=0;
+    creamteam_range.forEach((key)=>{
+    if(items[key]){
+    total_creamteam+=items[key].quantity;
+    }
+    });
+    document.getElementById('total_creamteam').innerHTML=total_creamteam;
+    //Total Daze (fusion)
+    let total_fusion=0;
+    fusion_range.forEach((key)=>{
+    if(items[key]){ 
+    total_fusion+=items[key].quantity;
+    }
+    });
+    document.getElementById('total_fusion').innerHTML=total_fusion;
+    //Total Daze (Reds)
+    let total_reds=0;
+    reds_range.forEach((key)=>{
+    if(items[key]){
+    total_reds+=items[key].quantity;
+    }
+    });
+    document.getElementById('total_reds').innerHTML=total_reds;
+    //Total Bali fruits
+    let total_bali=0;
+    bali_range.forEach((key)=>{
+    if(items[key]){
+    total_bali+=items[key].quantity;
+    }
+    });
+    document.getElementById('total_bali').innerHTML=total_bali;
 
     // Check items Sold Out or Reserved
     Object.keys(items).forEach((key) => {
