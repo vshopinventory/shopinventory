@@ -45,7 +45,7 @@ const items={
     pod_Juice_Peach_Berry_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Watermelon_Bubblegum_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Bangin_Blue_Razz_55mg:{quantity:0, reserved:"N"},
-    pod_Juice_Fruity_Bears_35mg:{quantity:1, reserved:"N"},
+    pod_Juice_Fruity_Bears_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Graham_Cracker_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Jewel_Mint_35mg:{quantity:1, reserved:"N"},
     //Daze (Reds) Start from here
@@ -231,10 +231,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="22/01/2025";
-    let time="4:55 PM";
+    let date="24/01/2025";
+    let time="6:40 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Reds Apple Berries 30mg`;
+Pod Juice Fruity Bear 35mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
