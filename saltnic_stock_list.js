@@ -19,7 +19,7 @@ const items={
     skwezed_watermelon_25mg:{quantity:3, reserved:"N"},
     skwezed_watermelon_25mg_iced:{quantity:2, reserved:"N"},
     skwezed_mango_25mg:{quantity:7, reserved:"N"},
-    skwezed_mango_25mg_iced:{quantity:1, reserved:"N"},
+    skwezed_mango_25mg_iced:{quantity:0, reserved:"N"},
     skwezed_mango_50mg_iced:{quantity:1, reserved:"N"},
     skwezed_watermelon_green_apple_25mg:{quantity:3, reserved:"N"},
     skwezed_watermelon_green_apple_25mg_iced:{quantity:2, reserved:"N"},
@@ -231,10 +231,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="24/01/2025";
-    let time="6:40 PM";
+    let date="25/01/2025";
+    let time="8:25 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Pod Juice Fruity Bear 35mg`;
+skwezed Mango 25mg iced`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
