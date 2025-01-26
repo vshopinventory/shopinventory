@@ -1,7 +1,7 @@
 //Item Lists
 const items={
     kc_tabaco_dulce_35mg:{quantity:18, reserved:"N"},
-    kc_tabaco_dulce_50mg:{quantity:5, reserved:"N"},
+    kc_tabaco_dulce_50mg:{quantity:4, reserved:"N"},
     kc_bombo_aldonza_50mg:{quantity:14, reserved:"N"},
     kc_bombo_aldonza_35mg:{quantity:11, reserved:"N"},
     kc_churro_35mg:{quantity:1, reserved:"N"},
@@ -231,10 +231,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="25/01/2025";
-    let time="8:25 PM";
+    let date="26/01/2025";
+    let time="1:19 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-skwezed Mango 25mg iced`;
+Kings Crest Tabaco Dulce 50mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
