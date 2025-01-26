@@ -65,7 +65,7 @@ const items={
     daze_Lemon_Passionfruit_Blueberry_30mg_Iced:{quantity:2, reserved:"N"},
     daze_Raspberry_Green_Apple_Watermelon_30mg:{quantity:1, reserved:"N"},
     daze_Raspberry_Green_Apple_Watermelon_30mg_Iced:{quantity:1, reserved:"N"},
-    daze_Banana_Cantaloup_Honeydew_30mg_Iced:{quantity:2, reserved:"N"},
+    daze_Banana_Cantaloup_Honeydew_30mg_Iced:{quantity:1, reserved:"N"},
     daze_Banana_Cantaloup_Honeydew_50mg_Iced:{quantity:0, reserved:"N"},
     daze_Pineapple_Coconut_Banana_Iced_30mg:{quantity:2, reserved:"N"},
     daze_Pineapple_Mango_Orange_30mg_Iced:{quantity:1, reserved:"N"},
@@ -232,9 +232,9 @@ const items={
 
     //Update Status
     let date="26/01/2025";
-    let time="1:19 PM";
+    let time="1:25 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Kings Crest Tabaco Dulce 50mg`;
+ Daze Banana Cantaloup Honeydew 30mg Iced`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
