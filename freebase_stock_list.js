@@ -7,7 +7,7 @@ const items={
     skwezed_Mango_Iced_6mg:{quantity:3, reserved:"N"},
     skwezed_Mango_Iced_3mg:{quantity:2, reserved:"N"},
     skwezed_Green_Apple_6mg:{quantity:2, reserved:"N"},
-    skwezed_Mixed_Berries_3mg:{quantity:1, reserved:"N"},
+    skwezed_Mixed_Berries_3mg:{quantity:1, reserved:"Y"},
     skwezed_Watermelon_Grape_3mg_Iced:{quantity:1, reserved:"N"},
     cream_Team_Butter_Cream_6mg:{quantity:4, reserved:"N"},
     //Daze (Fusion) Start from here
@@ -170,8 +170,8 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="22/01/2025";
-    let time="4:51 PM";
+    let date="26/01/2025";
+    let time="7:00 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
 Kings Crest Tabaco Honey 6mg`;
     document.getElementById("date").innerHTML=date;
