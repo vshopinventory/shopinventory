@@ -154,7 +154,7 @@ const items={
     element.style.color = "#ff0000";
     } else if (reserved === "Y") {
     element.innerHTML = "Reserved";
-    element.style.color = "#ff0000";
+    element.style.color = "orange";
     } else {
     element.innerHTML = quantity;
     }
