@@ -51,7 +51,7 @@ const items={
     //Daze (Reds) Start from here
     reds_Apple_Berries_30mg:{quantity:0, reserved:"N"},
     reds_Apple_Berries_30mg_iced:{quantity:4, reserved:"N"},
-    reds_Apple_Berries_50mg_iced:{quantity:1, reserved:"N"},
+    reds_Apple_Berries_50mg_iced:{quantity:0, reserved:"N"},
     reds_Apple_Gold_Kiwi_30mg_Iced:{quantity:7, reserved:"N"},
     reds_Apple_Gold_Kiwi_30mg:{quantity:6, reserved:"N"},
     redsvApple_Grape_30mg:{quantity:2, reserved:"N"},
@@ -232,9 +232,9 @@ const items={
 
     //Update Status
     let date="27/01/2025";
-    let time="5:22 PM";
+    let time="6:53 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Skwezed Watermelon Strawberry 25mg iced`;
+ Reds Apple Berries 50mg iced`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
