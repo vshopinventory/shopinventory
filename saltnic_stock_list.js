@@ -24,7 +24,7 @@ const items={
     skwezed_watermelon_green_apple_25mg:{quantity:3, reserved:"N"},
     skwezed_watermelon_green_apple_25mg_iced:{quantity:2, reserved:"N"},
     skwezed_watermelon_green_apple_50mg_iced:{quantity:2, reserved:"N"},
-    skwezed_watermelon_strawberry_25mg:{quantity:4, reserved:"N"},
+    skwezed_watermelon_strawberry_25mg:{quantity:3, reserved:"N"},
     skwezed_watermelon_strawberry_25mg_iced:{quantity:4, reserved:"N"},
     skwezed_watermelon_strawberry_50mg_iced:{quantity:1, reserved:"N"},
     skwezed_mixed_berry_25mg:{quantity:1, reserved:"N"},
@@ -231,10 +231,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="26/01/2025";
-    let time="1:25 PM";
+    let date="27/01/2025";
+    let time="1:14 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Daze Banana Cantaloup Honeydew 30mg Iced`;
+ Skwezed Watermelon Strawberry 25mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
