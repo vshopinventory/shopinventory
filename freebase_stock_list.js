@@ -37,7 +37,7 @@ const items={
     Reds_Apple_Gold_Kiwi_3mg:{quantity:1, reserved:"N"},
     //Bali Fruits Start from here
     bali_Fruits_Watermelon_Kiwi_Strawberry_3mg:{quantity:13, reserved:"N"},
-    bali_Fruits_Watermelon_Kiwi_Strawberry_6mg:{quantity:4, reserved:"N"},
+    bali_Fruits_Watermelon_Kiwi_Strawberry_6mg:{quantity:3, reserved:"N"},
     bali_Fruits_Watermelon_Kiwi_Strawberry_3mg_Iced:{quantity:4, reserved:"N"},
     bali_Fruits_Pear_Mango_Guava_6mg:{quantity:27, reserved:"N"},
     bali_Fruits_Pear_Mango_Guava_3mg:{quantity:9, reserved:"N"},
@@ -170,10 +170,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="26/01/2025";
-    let time="7:00 PM";
+    let date="27/01/2025";
+    let time="7:44 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Kings Crest Tabaco Honey 6mg`;
+Bali Fruits Watermelon Kiwi Strawberry 6mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
