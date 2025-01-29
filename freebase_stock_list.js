@@ -1,7 +1,7 @@
 //Item Lists
 const items={
     king_Crests_Don_Juan_Tabaco_Honey_6mg:{quantity:4, reserved:"N"},
-    kings_Crest_Don_Juan_Cafe_6mg:{quantity:3, reserved:"N"},
+    kings_Crest_Don_Juan_Cafe_6mg:{quantity:2, reserved:"N"},
     kings_Crest_Don_Juan_Bombo_Aldonza_6mg:{quantity:12, reserved:"N"},
     //skwezed Start from here
     skwezed_Mango_Iced_6mg:{quantity:3, reserved:"N"},
@@ -170,10 +170,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="27/01/2025";
-    let time="7:44 PM";
+    let date="30/01/2025";
+    let time="12:22 AM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Bali Fruits Watermelon Kiwi Strawberry 6mg`;
+Kings Crest Don Juan Cafe 6mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
