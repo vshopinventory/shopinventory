@@ -1,6 +1,6 @@
 //Item Lists
 const items={
-    kc_tabaco_dulce_35mg:{quantity:18, reserved:"N"},
+    kc_tabaco_dulce_35mg:{quantity:17, reserved:"N"},
     kc_tabaco_dulce_50mg:{quantity:4, reserved:"N"},
     kc_bombo_aldonza_50mg:{quantity:14, reserved:"N"},
     kc_bombo_aldonza_35mg:{quantity:11, reserved:"N"},
@@ -232,9 +232,9 @@ const items={
 
     //Update Status
     let date="30/01/2025";
-    let time="1:00 AM";
+    let time="9:00 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Pod Juice Virginia Tobacco 55mg`;
+ Kings Crest Tabaco Dulce 35mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
