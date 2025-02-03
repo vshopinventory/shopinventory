@@ -171,7 +171,7 @@ const items={
         "pod_Juice_Fruity_Bears_35mg",
         "pod_Juice_Graham_Cracker_35mg",
         "pod_Juice_Jewel_Mint_35mg"
-    ]
+    ];
     const reds_renge=[
         //Daze (Reds) Start from here
         "reds_Apple_Berries_30mg",
@@ -185,7 +185,7 @@ const items={
         "reds_Apple_Original_30mg",
         "reds_Apple_Original_50mg",
         "reds_Apple_Original_30mg_iced"
-    ]
+    ];
     const fusion_renge=[
         //Daze (Fusion) Start from here
         "daze_Lemon_Passionfruit_Blueberry_30mg",
@@ -196,6 +196,54 @@ const items={
         "daze_Banana_Cantaloup_Honeydew_50mg_Iced",
         "daze_Pineapple_Coconut_Banana_Iced_30mg",
         "daze_Pineapple_Mango_Orange_30mg_Iced"
+    ];
+    
+    const vgod_renge=[
+        "vGod_Summer_Strawberry_25mg",
+        "vGod_Summer_Strawberry_50mg",
+        "vGod_Purple_Bomb_25mg_Iced",
+        "vGod_Purple_Bomb_50mg",
+        "vGod_Sour_Strawberry_50mg",
+        "vGod_Sour_Strawberry_25mg_Iced",
+        "vGod_Luscious_50mg",
+        "vGod_Mighty_Mint_50mg",
+        "vGod_Lush_Ice_25mg",
+        "vGod_Lush_Ice_50mg"
+    ];
+    
+    const tokyo_renge=[
+        "tokyo_Mighty_Mint_35mg",
+        "tokyo_Melon_Melody_35mg",
+        "tokyo_Green_Apple_35mg",
+        "tokyo_Kiwi_Yogurt_35mg_Iced",
+        "tokyo_Cappuccino_20mg",
+        "tokyo_Iced_Passion_Fruit_30mg",
+        "tokyo_Iced_Passion_Fruit_50mg",
+        "tokyo_Iced_Mint_20mg",
+        "tokyo_Iced_Mint_30mg",
+        "tokyo_Iced_Mint_50mg",
+        "tokyo_Iced_Mango_50mg",
+        "tokyo_Iced_Fruit_Bomb_30mg",
+        "tokyo_Iced_Fruit_Bomb_50mg",
+        "tokyo_Iced_Blueberry_20mg",
+        "tokyo_Iced_Cranberry_Raspberry_20mg",
+        "tokyo_Iced_Cranberry_Raspberry_30mg",
+        "tokyo_Iced_Cranberry_Raspberry_50mg",
+        "tokyo_Iced_Strawberry_Watermelon_50mg",
+        "tokyo_Iced_Strawberry_Yakult_50mg",
+        "tokyo_Iced_Strawberry_Lychee_20mg",
+        "tokyo_Iced_Grapefruit_50mg",
+        "tokyo_Iced_Strawberry_Mango_50mg",
+        "tokyo_Burst_Watermelon_35mg",
+        "tokyo_Iced_Lemon_20mg",
+        "tokyo_Iced_Lemon_50mg",
+        "tokyo_Iced_Peace_20mg",
+        "tokyo_Iced_Peace_50mg",
+        "tokyo_Iced_Hami_Melon_20mg",
+        "tokyo_Iced_Strawberry_Kiwi_30mg",
+        "tokyo_Iced_Strawberry_Kiwi_50mg",
+        "tokyo_Iced_Blueberry_Watermelon_20mg",
+        "tokyo_Iced_Blueberry_Watermelon_50mg"
     ];
 
     //KC Sum
@@ -251,6 +299,24 @@ const items={
         }
     });
     document.getElementById('total_fusion').innerHTML=total_fusion;
+    
+    //VGod Sum
+    let total_vgod=0;
+    vgod_renge.forEach((key)=>{
+        if(items[key]){
+            total_vgod+=items[key].quantity;
+        }
+    });
+    document.getElementById('total_vgod').innerHTML=total_vgod;
+    
+    //Tokyo Sum
+    let total_tokyo=0;
+    tokyo_renge.forEach((key)=>{
+        if(items[key]){
+            total_tokyo+=items[key].quantity;
+        }
+    });
+    document.getElementById('total_tokyo').innerHTML=total_tokyo;
 
     //Chech items sold out or not
     Object.keys(items).forEach((key)=>{
@@ -275,7 +341,7 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="01/02/2025";
+    let date="03/02/2025";
     let time="10:00 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
  Kings Crest Tabaco Dulce 50mg,
