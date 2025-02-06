@@ -20,7 +20,7 @@ const items={
     skwezed_watermelon_25mg_iced:{quantity:2, reserved:"N"},
     skwezed_mango_25mg:{quantity:7, reserved:"N"},
     skwezed_mango_25mg_iced:{quantity:0, reserved:"N"},
-    skwezed_mango_50mg_iced:{quantity:1, reserved:"N"},
+    skwezed_mango_50mg_iced:{quantity:0, reserved:"N"},
     skwezed_watermelon_green_apple_25mg:{quantity:3, reserved:"N"},
     skwezed_watermelon_green_apple_25mg_iced:{quantity:2, reserved:"N"},
     skwezed_watermelon_green_apple_50mg_iced:{quantity:2, reserved:"N"},
@@ -341,10 +341,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="05/02/2025";
-    let time="10:20 AM";
+    let date="06/02/2025";
+    let time="8:04 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Pod Juice Virginia Tobacco 55mg`;
+ Skweezed Mango Iced 50mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
