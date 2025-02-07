@@ -13,7 +13,7 @@ const items={
     //Daze (Fusion) Start from here
     daze_Fusion_Pineapple_Coconut_Banana_6mg_Iced:{quantity:1, reserved:"N"},
     daze_Fusion_Pineapple_Coconut_Banana_3mg_Iced:{quantity:1, reserved:"N"},
-    daze_Fusion_Pineapple_Mango_Orange_6mg:{quantity:7, reserved:"N"},
+    daze_Fusion_Pineapple_Mango_Orange_6mg:{quantity:6, reserved:"N"},
     daze_Fusion_Pineapple_Mango_Orange_3mg:{quantity:1, reserved:"N"},
     daze_Fusion_Raspberry_Green_Apple_Watermelon_6mg:{quantity:2, reserved:"N"},
     daze_Fusion_Raspberry_Green_Apple_Watermelon_3mg:{quantity:1, reserved:"N"},
@@ -170,10 +170,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="30/01/2025";
-    let time="12:22 AM";
+    let date="07/02/2025";
+    let time="7:35 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Kings Crest Don Juan Cafe 6mg`;
+Daze Fusion Pineapple Mango Orange 6mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
