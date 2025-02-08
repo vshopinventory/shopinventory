@@ -1,8 +1,2112 @@
-//Toggle Scroll Button
+<!DOCTYPE html>
+<html>
+<head>
+<title>Saltnic E-liquids</title>
+<link rel="icon" type="image/x-icon" href="logo.png">
+<meta http-equiv="refresh" content="300">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style type="text/css">
+.products-cards{
+    margin:0 5px;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    gap:5px;
+    width:100%;
+    perspective: 1000px;
+}
+
+.cards{
+    width:16%;
+    height:450px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.6s ease;
+}
+
+.cards .front,
+    .cards .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      padding:10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.cards .front {
+      background: white;
+    }
+
+.cards .back {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      color:white;
+      text-align:center;
+      background: #e74c3c;
+      transform: rotateY(180deg);
+    }
+
+.flipped {
+      transform: rotateY(180deg);
+    }
+
+.cards h2{
+    text-align:center;
+}
+
+.post-h2{
+    width: 100%;
+    height: 190px;
+}
+
+
+
+#searchResult{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+}
+
+#quickNavigator button{
+    height:35px;
+    border:none;
+    border-radius:4px;
+    padding:0 15px;
+    background-color:rgba(0,0,0,0.5);
+    color:white;
+    font-weight:bold;
+    }
+    
+#quickNavigator button:active{
+    background-color:rgba(0,0,0,0.2);
+}
+
+.spinner-overlay{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.5);
+    justify-content:center;
+    align-items:center;
+}
+
+.spinner-border{
+    color:white;
+    width:60px;
+    height:60px;
+}
+
+#stock_summary_box{
+    width: 400px;
+    margin: 30px auto 15px;
+    padding: 10px;
+    border:gray 2px solid; 
+    border-radius:12px; 
+    background-color:powderblue;
+ }
+
+@media screen and (max-width:768px){
+    .cards{
+      width:49%;
+      height:340px;
+      }
+
+      .post-h2{
+      width: 100%;
+      height: 140px;
+    }
+
+    .updated-status{
+    width:55%; 
+    height:70px; 
+    margin-right:5px; 
+    padding:8px; 
+    background-color:rgba(25, 135, 84, 0.20); 
+    margin-bottom:5px; 
+    border-radius:6px; 
+    border:0.5px solid green;
+    }
+
+    .updatedProducts-Container{
+      display:none; 
+      position:fixed; 
+      top:30%; 
+      left:50%; 
+      transform:translate(-50%, -70%); 
+      z-index:1000; 
+      width:65%; 
+      background-color:rgb(255, 140, 140); 
+      margin-right:5px; 
+      padding:8px; 
+      border-radius:6px; 
+      border:0.5px solid rgba(255,0,0,0.2); 
+      transition: all 1s ease;
+    }
+
+    #stock_summary_box{
+    width: 95%;
+    margin: 30px auto 15px;
+    padding: 10px;
+    border:gray 2px solid; 
+    border-radius:12px; 
+    background-color:powderblue;
+    }
+  }
+
+  .updated-status{
+    width:200px; 
+    height:70px; 
+    margin-right:5px; 
+    padding:8px; 
+    background-color:rgba(25, 135, 84, 0.20); 
+    margin-bottom:5px; 
+    border-radius:6px; 
+    border:0.5px solid green;
+  }
+  
+  .updatedProducts-Container{
+      display:none; 
+      position:fixed; 
+      top:30%; 
+      left:50%; 
+      transform:translate(-50%, -70%); 
+      z-index:1000; 
+      width:350px; 
+      background-color:rgb(255, 140, 140);
+      text-align: center; 
+      margin-right:5px; 
+      padding:8px; 
+      border-radius:6px; 
+      border:0.5px solid rgba(255,0,0,0.2); 
+      transition: all 1s ease;
+  }
+  
+ .hide{
+     opacity:0;
+     left:100%;
+ }
+ 
+ .show{
+     opacity:1;
+     left:50%;
+ }
+ 
+ #toggleScrollBtn{
+     display:none;
+     position:fixed;
+     right:20px;
+     bottom:10%;
+     z-index:10;
+     width:50px;
+     height:50px;
+     background-color:#EBEBEB;
+     border-radius:50%;
+     box-shadow:1px 1px 2px gray;
+     transition:all 0.3s;
+     cursor:pointer;
+ }
+ 
+ #toggleScrollBtn2{
+ display:none;
+ position:fixed;
+ right:20px;
+ bottom:10%;
+ z-index:10;
+ width:50px;
+ height:50px;
+ background-color:#EBEBEB;
+ border-radius:50%;
+ box-shadow:1px 1px 2px gray;
+ transition:all 0.3s;
+ cursor:pointer;
+ }
+ 
+ .toggleScrollBtnFlex{
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     width:50px;
+     height:50px;
+     border-radius:50%;
+ }
+    
+ #upperFooter{
+ color:white;
+ background-color:hsl(0, 0%, 20%);
+ padding:10px;
+ margin-top:30px;
+ }
+ 
+ #lowerFooter{
+ color:white;
+ background-color:YellowGreen;
+ text-align:center;
+ }
+
+ footer{
+    width:100%;
+ }
+  </style>
+  </head>
+  <body>
+  <!--navbar-->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="index.html"><img src="logo.png" alt="logo" style="width:60px;" class="rounded-pill"></a>
+  <span style="color:white;"><h1><b>Shop Inventory</b></h1></span>
+  <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"><span class="navbar-toggler-icon"></span></button>
+  <div id="collapsibleNavbar" class="collapse navbar-collapse">
+  <ul class="navbar-nav">
+  <li class="nav-item"><a class="nav-link" href="index.html" >Home</a></li>
+  <li class="nav-item"><a class="nav-link" href="saltnic.html" >Saltnic E-juice</a></li>
+  <li class="nav-item"><a class="nav-link" href="freebase.html" >Freebase E-juice</a></li>
+  <li class="nav-item"><a class="nav-link" href="disposable.html" >Disposable</a></li>
+  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">Convenient Tools</a>
+  <ul class="dropdown-menu">
+  <li><a class="dropdown-item" href="bkash_calculator.html">Calculator: bKash Cashout charge</a></li>
+  <li><a class="dropdown-item" href="">VAT Calculation</a></li>
+  <li><a class="dropdown-item" href="essentialtools.html">Essential Tools</a></li>
+  </ul>
+  </li>
+  </ul>
+  <form class="d-flex">
+  <input id="searchInput" type="text" class="form-control me-2" placeholder="Search">
+  <button id="searchBtn" type="button" class="btn btn-primary" onclick="searchEngine()">Search</button>
+  </form>
+  </div>
+  </div>
+  </nav>
+  
+  <div style="padding:5px;" class="container-fluid bg-info">
+  <h1 style="text-align:center;"><b>Saltnic</b></h1>
+  </div>
+  
+  <!--Search Result appear here-->
+  <div id="showingResultMessage" style="display:none;">Showing Result: (<span id="found_count"></span>) items</div>
+  <div id="searchResult"></div>
+  
+  <svg id="svg" style="display:none; margin:100px 0 40px 0;" width="100%" height="20" xmlns="http://www.w3.org/2000/svg" style="margin: 20px 0;">
+  <!-- Gradient definition -->
+  <defs>
+  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%" style="stop-color: #3498db; stop-opacity: 1;" />
+  <stop offset="50%" style="stop-color: #e74c3c; stop-opacity: 1;" />
+  <stop offset="100%" style="stop-color: #f1c40f; stop-opacity: 1;" />
+  </linearGradient>
+  </defs>
+  <!-- Line -->
+  <rect x="0" y="9" width="100%" height="2" rx="5" fill="url(#gradient)" />
+  </svg>
+
+
+  <div id="quickNavigator">
+    <h4 style="margin:0;">Quick Navigator:</h4>
+    <small>For quick search</small><br>
+    <button type="button" onclick="salt55mg()">55mg Salt</button>
+    <button type="button" onclick="salt50mg()">50mg Salt</button>
+    <button type="button" onclick="salt35mg()">35mg Salt</button><br>
+    <button type="button" onclick="salt30mg()">30mg Salt</button>
+    <button type="button" onclick="salt25mg()" style="margin-top:5px;">25mg Salt</button>
+    <button type="button" onclick="saltIced()">Iced</button>
+    <button type="button" onclick="saltNonI()" style="margin-top:5px;">Non-Iced</button>
+  </div>
+  
+  <div class="spinner-overlay" id="spinnerOverlay">
+    <div class="spinner-border" id="spinner"></div>
+  </div>
+  
+
+<!--Update Status-->
+<div style="display: flex; justify-content: end; flex-wrap:wrap;">
+    <div class="updated-status">
+    <p style="font-weight: bold; font-size: 18px;">Last Update:<br><span id="date"></span> <span id="time"> </span></p>
+    </div>
+    
+    <div class="updatedProducts-Container" id="updatedProductsContainer">
+    <pre style="font-family:arial; font-size:16px; padding:0;"><span id="updatedProducts"></span></pre>
+    </div>
+    
+    <div class="alert alert-primary alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    New Shipment Arrived <strong><a href="#tokyo_Mighty_Mint_35mg">Click Here to see</a></strong>
+    </div>
+</div>
+
+
+
+ <!--Post Start From Here-->
+ <h1 style="margin-top: 50px;">Kings Crest:</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+ <!--KC Posts Start from here-->
+    <div class="cards" data-keywords="Kings Crest Tabaco Dulce 35mg NonI">
+    <div class="front"> 
+        <div class="post-h2">
+            <h2>Kings Crest Tabaco Dulce 35mg</h2>
+            </div>
+            <img src="https://vaporworldbd.com/wp-content/uploads/2023/11/d34dcc3331904a477de0168904cfbd52.don-juan-tabaco-dulce-saltnic-e1700653907501.webp" class="img-fluid" alt="KC Tabaco Dulce 30mg"><br>
+            <center><kbd>Qnty-<span id="kc_tabaco_dulce_35mg"></span></kbd></center>
+    </div>
+    <div class="back">
+        <h4><strong>Flavor Note:</strong><br>A sweet chocolate tabaco that blends the traditional savory notes of tabaco and chocolate.</h4>
+    </div>
+    </div>
+
+ <div class="cards" data-keywords="Kings Crest Tabaco Dulce 50mg NonI">
+    <div class="front"> 
+        <div class="post-h2">
+            <h2>Kings Crest Tabaco Dulce 50mg</h2>
+            </div>
+            <img src="https://vaporworldbd.com/wp-content/uploads/2023/11/d34dcc3331904a477de0168904cfbd52.don-juan-tabaco-dulce-saltnic-e1700653907501.webp" class="img-fluid" alt="KC Tabaco Dulce 50mg"><br>
+            <center><kbd>Qnty-<span id="kc_tabaco_dulce_50mg"></span></kbd></center>
+    </div>
+    <div class="back">
+        <h4><strong>Flavor Note:</strong><br>A sweet chocolate tabaco that blends the traditional savory notes of tabaco and chocolate.</h4>
+    </div>
+ </div>
+
+ <div class="cards" data-keywords="Kings Crest Bombo Aldonza 50mg NonI">
+    <div class="front">
+        <div class="post-h2">
+            <h2>Kings Crest Bombo Aldonza 50mg</h2>
+            </div>
+            <img src="https://www.vaporzonebd.com/admin_assats/product/759ffb04da5e304285119204993222dd.don-juan-aldonza-salt.webp" class="img-fluid" alt="KC Bombo Aldonza 50mg"><br>
+            <center><kbd>Qnty-<span id="kc_bombo_aldonza_50mg"></span></kbd></center>
+    </div>
+    <div class="back">
+        <h4><strong>Flavor Note:</strong><br>A chocolate pecan pie, whipped cream and a buttery graham cracker crust tobacco & vanilla.</h4>
+    </div>
+ </div>
+
+ <div class="cards" data-keywords="Kings Crest Bombo Aldonza 35mg NonI">
+    <div class="front">
+        <div class="post-h2">
+            <h2>Kings Crest Bombo Aldonza 35mg</h2>
+            </div>
+            <img src="https://www.vaporzonebd.com/admin_assats/product/759ffb04da5e304285119204993222dd.don-juan-aldonza-salt.webp" class="img-fluid" alt="kc_bombo_aldonza_35mg"><br>
+            <center><kbd>Qnty-<span id="kc_bombo_aldonza_35mg"></span></kbd></center>
+    </div>
+    <div class="back">
+        <h4><strong>Flavor Note:</strong><br>A chocolate pecan pie, whipped cream and a buttery graham cracker crust tobacco & vanilla.</h4>
+    </div>
+ </div>
+
+ <div class="cards" data-keywords="Kings Crest Churro 35mg NonI">
+    <div class="front">
+        <div class="post-h2">
+            <h2>Kings Crest Churro 35mg</h2>
+            </div>
+            <img src="https://vaporworldbd.com/wp-content/uploads/2020/02/don-juan-Churro-salt.png" class="img-fluid" alt="KC Churro 35mg "><br>
+            <center><kbd>Qnty-<span id="kc_churro_35mg"></span></kbd></center>
+    </div>
+    <div class="back">
+        <h4><strong>Flavor Note:</strong><br>A traditional chocolate covered sugar churro.</h4>
+    </div>
+ </div>
+
+ <div class="cards" data-keywords="Kings Crest Don juan Cafe 35mg NonI">
+    <div class="front">
+        <div class="post-h2">
+            <h2>Kings Crest Don juan Cafe 35mg</h2>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz26OIW9pnLZ2CRyRwf8K6jZjq1Pps0GNfoA&s" class="img-fluid" alt="KC Don juan Cafe 35mg "><br>
+            <center><kbd>Qnty-<span id="kc_don_juan_cafe_35mg"></span></kbd></center>
+    </div>
+    <div class="back">
+        <h4><strong>Flavor Note:</strong><br>A creamy chocolate mochaccino cafe.</h4>
+    </div>
+    </div>
+
+    <div class="cards" data-keywords="Kings Crest Grape Ice 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Kings Crest Grape Ice 50mg</h2>
+                </div>
+                <img src="https://www.vaporzonebd.com/admin_assats/product/133812bc55903b29385cdc4541d59d31.kings-crest-grape-ice-nicsalt.webp" class="img-fluid" alt="KC Grape Ice 50mg "><br>
+                <center><kbd>Qnty-<span id="kc_grape_ice_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Grape with Ice</h4>
+        </div>
+        </div>
+
+    <div class="cards" data-keywords="Kings Crest Mango Berry Iced 35mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Kings Crest Mango Berry Iced 35mg</h2>
+                </div>
+                <img src="https://kingscrest.com/wp-content/uploads/2024/05/mango-berry-ice-salt-600x600.jpg" class="img-fluid" alt="KC Mango Berry Iced 35mg"><br>
+                <center><kbd>Qnty-<span id="kc_mango_berry_iced_35mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Mango Berry with Ice</h4>
+        </div>
+    </div>
+
+        <div class="cards" data-keywords="Kings Crest Strawberry Peach Iced 35mg">
+            <div class="front">
+                <div class="post-h2">
+                    <h2>Kings Crest Strawberry Peach Iced 35mg</h2>
+                    </div>
+                    <img src="https://kingscrest.com/wp-content/uploads/2024/05/watermelon-salt-600x600.jpg" class="img-fluid" alt="KC Strawberry Peach Iced 35mg"><br>
+                    <center><kbd>Qnty-<span id="kc_strawberry_peach_iced_35mg"></span></kbd></center>
+            </div>
+            <div class="back">
+                <h4><strong>Flavor Note:</strong><br>Strawberry Peach with Ice</h4>
+            </div>
+        </div>
+
+        <div class="cards" data-keywords="Kings Crest Strawberry Peach Iced 50mg">
+            <div class="front">
+                <div class="post-h2">
+                    <h2>Kings Crest Strawberry Peach Iced 50mg</h2>
+                    </div>
+                    <img src="https://kingscrest.com/wp-content/uploads/2024/05/watermelon-salt-600x600.jpg" class="img-fluid" alt="KC Strawberry Peach Iced 50mg"><br>
+                    <center><kbd>Qnty-<span id="kc_strawberry_peach_iced_50mg"></span></kbd></center>
+            </div>
+            <div class="back">
+                <h4><strong>Flavor Note:</strong><br>Strawberry Peach with Ice</h4>
+            </div>
+        </div>
+
+        <div class="cards" data-keywords="Kings Crest Watermelon Lemonade Iced 35mg">
+            <div class="front">
+                <div class="post-h2">
+                    <h2>Kings Crest Watermelon Lemonade Iced 35mg</h2>
+                    </div>
+                    <img src="https://royalpuff.com.bd/wp-content/uploads/2024/02/Kings_Crest_Fruits_Salts_Watermelon_Lemonade_Ice_30ml_E-Juice__28618__34834-1.jpg" class="img-fluid" alt="KC Watermelon Lemonade Iced 35mg"><br>
+                    <center><kbd>Qnty-<span id="kc_watermelon_lemonade_iced_35mg"></span></kbd></center>
+            </div>
+            <div class="back">
+                <h4><strong>Flavor Note:</strong><br>Watermelon Lemonade with Ice</h4>
+            </div>
+        </div>
+
+        <div class="cards" data-keywords="Kings Crest Watermelon Lemonade Iced 50mg">
+            <div class="front">
+                <div class="post-h2">
+                    <h2>Kings Crest Watermelon Lemonade Iced 50mg</h2>
+                    </div>
+                    <img src="https://royalpuff.com.bd/wp-content/uploads/2024/02/Kings_Crest_Fruits_Salts_Watermelon_Lemonade_Ice_30ml_E-Juice__28618__34834-1.jpg" class="img-fluid" alt="KC Watermelon Lemonade Iced 50mg"><br>
+                    <center><kbd>Qnty-<span id="kc_watermelon_lemonade_iced_50mg"></span></kbd></center>
+            </div>
+            <div class="back">
+                <h4><strong>Flavor Note:</strong><br>Watermelon Lemonade with Ice</h4>
+            </div>
+        </div>
+    </div>
+ 
+
+
+ <h1 style="margin-top: 50px;">Skwezed:</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+    <!--Skwezed Posts Start from here-->
+    <div class="cards" data-keywords="Skwezed Green Apple 25mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Green Apple 25mg</h2>
+                </div>
+                <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_1200/https://vapeshopsky.com/wp-content/uploads/2021/11/Skwezed-Ejuice-30mL-Green-Apple__99522-1200x1200.webp" class="img-fluid" alt="Skwezed Green Apple 25mg"><br>
+                <center><kbd>Qnty-<span id="skwezed_green_apple_25mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Green Apple</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Green Apple 25mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Green Apple 25mg Iced</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/02/iced_green_apple_-_skwezed_salt_-_30ml_-_box_and_bottle.jpg" class="img-fluid" alt="Skwezed Green Apple 25mg Iced"><br>
+                <center><kbd>Qnty-<span id="skwezed_green_apple_25mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Green Apple</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Green Apple 50mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Green Apple 50mg Iced</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/02/iced_green_apple_-_skwezed_salt_-_30ml_-_box_and_bottle.jpg" class="img-fluid" alt="Skwezed Green Apple 50mg Iced"><br>
+                <center><kbd>Qnty-<span id="skwezed_green_apple_50mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Green Apple with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Watermelon 25mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Watermelon 25mg</h2>
+                </div>
+                <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_480/https://vapeshopsky.com/wp-content/uploads/2022/04/Watermelon-Salt-Skwezed-E-Juice_large.webp" class="img-fluid" alt="Skwezed Watermelon 25mg "><br>
+                <center><kbd>Qnty-<span id="skwezed_watermelon_25mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Watermelon</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Watermelon 50mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Watermelon 50mg</h2>
+                </div>
+                <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_480/https://vapeshopsky.com/wp-content/uploads/2022/04/Watermelon-Salt-Skwezed-E-Juice_large.webp" class="img-fluid" alt="Skwezed Watermelon 50mg"><br>
+                <center><kbd>Qnty-<span id="skwezed_watermelon_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Watermelon</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Watermelon 25mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Watermelon 25mg Iced</h2>
+                </div>
+                <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_480/https://vapeshopsky.com/wp-content/uploads/2022/04/Watermelon-Salt-Skwezed-E-Juice_large.webp" class="img-fluid" alt="Skwezed Watermelon 25mg Iced"><br>
+                <center><kbd>Qnty-<span id="skwezed_watermelon_25mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Watermelon with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Mango 25mg NonI">
+        <div class="front">
+            <div class="post-h2">
+            <h2>Skwezed Mango 25mg</h2>
+            </div>
+        <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_600/https://vapeshopsky.com/wp-content/uploads/2021/11/mango-by-Skwezed-SALT-%E2%80%93-30ml-1.png" class="img-fluid" alt="Skwezed Mango 25mg"><br>
+        <center><kbd>Qnty-<span id="skwezed_mango_25mg"></span></kbd></center>
+        </div>
+            <div class="back">
+                <h4><strong>Flavor Note:</strong><br>Mango</h4>
+            </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Mango 25mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Mango 25mg Iced</h2>
+                </div>
+                <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_600/https://vapeshopsky.com/wp-content/uploads/2021/11/mango-by-Skwezed-SALT-%E2%80%93-30ml-1.png" class="img-fluid" alt="Skwezed Mango 25mg Iced"><br>
+                <center><kbd>Qnty-<span id="skwezed_mango_25mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Mango with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Mango 50mg iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Mango 50mg iced</h2>
+                </div>
+                <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_600/https://vapeshopsky.com/wp-content/uploads/2021/11/mango-by-Skwezed-SALT-%E2%80%93-30ml-1.png" class="img-fluid" alt="Skwezed Mango 50mg iced"><br>
+                <center><kbd>Qnty-<span id="skwezed_mango_50mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Mango with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Watermelon Green Apple 25mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Watermelon Green Apple 25mg</h2>
+                </div>
+                <img src="https://www.skwezed.com/cdn/shop/products/skwezed-mix-bottle-box-whitebg-wmga.jpg?v=1665423976&width=823" class="img-fluid" alt="Skwezed Watermelon Green Apple 25mg"><br>
+                <center><kbd>Qnty-<span id="skwezed_watermelon_green_apple_25mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Watermelon Green Apple</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Watermelon Green Apple 25mg iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Watermelon Green Apple 25mg iced</h2>
+                </div>
+                <img src="https://www.skwezed.com/cdn/shop/products/skwezed-mix-bottle-box-whitebg-wmga.jpg?v=1665423976&width=823" class="img-fluid" alt="Skwezed Watermelon Green Apple 25mg iced"><br>
+                <center><kbd>Qnty-<span id="skwezed_watermelon_green_apple_25mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Watermelon Green Apple with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Watermelon Green Apple 50mg iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Watermelon Green Apple 50mg iced</h2>
+                </div>
+                <img src="https://www.skwezed.com/cdn/shop/products/skwezed-mix-bottle-box-whitebg-wmga.jpg?v=1665423976&width=823" class="img-fluid" alt="Skwezed Watermelon Green Apple 50mg iced"><br>
+                <center><kbd>Qnty-<span id="skwezed_watermelon_green_apple_50mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Watermelon Green Apple</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Watermelon Strawberry 25mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Watermelon Strawberry 25mg</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/02/1_Ed1s7-1sz19K5b8nfRR3dw.jpg" class="img-fluid" alt="Skwezed Watermelon Strawberry  25mg"><br>
+                <center><kbd>Qnty-<span id="skwezed_watermelon_strawberry_25mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Watermelon Strawberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Watermelon Strawberry  25mg iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Watermelon Strawberry  25mg iced</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/02/1_Ed1s7-1sz19K5b8nfRR3dw.jpg" class="img-fluid" alt="Skwezed Watermelon Strawberry  25mg iced"><br>
+                <center><kbd>Qnty-<span id="skwezed_watermelon_strawberry_25mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Watermelon Strawberry with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Watermelon Strawberry 50mg iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Watermelon Strawberry 50mg iced</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/02/1_Ed1s7-1sz19K5b8nfRR3dw.jpg" class="img-fluid" alt="Skwezed Watermelon Strawberry  50mg iced"><br>
+                <center><kbd>Qnty-<span id="skwezed_watermelon_strawberry_50mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Watermelon Strawberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Mixed Berry 25mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Mixed Berry 25mg</h2>
+                </div>
+                <img src="https://www.skwezed.com/cdn/shop/files/MixedBerries_ce2624fc-4da2-41ba-a130-f59355e84afc.png?v=1697532003&width=823" class="img-fluid" alt="Skwezed Mixed Berry 25mg "><br>
+                <center><kbd>Qnty-<span id="skwezed_mixed_berry_25mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Mixed Berry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Strawberry 25mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Strawberry 25mg</h2>
+                </div>
+                <img src="https://westcoastvapesupply.com/cdn/shop/products/SkwezedSaltStrawberry.jpg?v=1619757423&width=700" class="img-fluid" alt="Skwezed Strawberry 25mg"><br>
+                <center><kbd>Qnty-<span id="skwezed_strawberry_25mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Strawberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Watermelon White Grape 25mg iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Watermelon White Grape 25mg iced</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/02/skwezed-salt-mix-bottle-box-whitebg-wmwg__13481-700x700.jpg" class="img-fluid" alt="Skwezed Watermelon White Grape 25mg iced"><br>
+                <center><kbd>Qnty-<span id="skwezed_watermelon_white_grapev25mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Watermelon White Grape with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Banana 50mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Banana 50mg</h2>
+                </div>
+                <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_600/https://vapeshopsky.com/wp-content/uploads/2022/04/skwezed-salt-banana-30ml.webp" class="img-fluid" alt="Skwezed Banana 50mg"><br>
+                <center><kbd>Qnty-<span id="skwezed_banana_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Banana</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Banana 25mg iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Banana 25mg iced</h2>
+                </div>
+                <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_700/https://vapeshopsky.com/wp-content/uploads/2022/04/skwezed_salts_-_ice_banana_-_box_bottle-1.png" class="img-fluid" alt="Skwezed Banana 25mg iced"><br>
+                <center><kbd>Qnty-<span id="skwezed_banana_25mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Banana with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Skwezed Pink Lemonade 25mg iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Skwezed Pink Lemonade 25mg iced</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/03/skwezed-salt-30ml-pink-lemonade-ice-1000x1000-1-700x700.jpg" class="img-fluid" alt="Skwezed Pink Lemonade 25mg iced"><br>
+                <center><kbd>Qnty-<span id="skwezed_pink_lemonade_25mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Pink Lemonade with Ice</h4>
+        </div>
+    </div>
+</div>
+
+
+<h1 style="margin-top: 50px;">Pacha:</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+    <!--Pacha Posts Start from here-->
+    <div class="cards" data-keywords="Pacha Apple Tobacco 25mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Pacha Apple Tobacco 25mg</h2>
+                </div>
+                <img src="https://vaporworldbd.com/wp-content/uploads/2023/04/apple-tobacco-salts-800x800.webp" class="img-fluid" alt="Pacha Apple Tobacco 25mg"><br>
+                <center><kbd>Qnty-<span id="pacha_apple_tobacco_25mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Apple Tobacco</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Pacha Fuji 50mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Pacha Fuji 50mg</h2>
+                </div>
+                <img src="https://cdn11.bigcommerce.com/s-n38pmt68o2/images/stencil/608x608/products/2372/17720/Fuji-Salt-608__91271.1729718103.jpg?c=2" class="img-fluid" alt="Pacha Fuji 50mg"><br>
+                <center><kbd>Qnty-<span id="pacha_fuji_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Crisp Fuji apples</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Pacha Fuji 25mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Pacha Fuji 25mg</h2>
+                </div>
+                <img src="https://cdn11.bigcommerce.com/s-n38pmt68o2/images/stencil/608x608/products/2372/17720/Fuji-Salt-608__91271.1729718103.jpg?c=2" class="img-fluid" alt="Pacha Fuji 25mg"><br>
+                <center><kbd>Qnty-<span id="pacha_fuji_25mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Crisp Fuji apples</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Pacha Fuji 25mg iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Pacha Fuji 25mg iced</h2>
+                </div>
+                <img src="https://cdn11.bigcommerce.com/s-n38pmt68o2/images/stencil/608x608/products/2372/17720/Fuji-Salt-608__91271.1729718103.jpg?c=2" class="img-fluid" alt="Pacha Fuji 25mg iced"><br>
+                <center><kbd>Qnty-<span id="pacha_fuji_25mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Crisp Fuji apples with Ice</h4>
+        </div>
+    </div>
+ </div>
+
+
+ <h1 style="margin-top: 50px;">Pod Juice:</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+    <!--Pod Juice Posts Start from here-->
+
+    <div class="cards" data-keywords="Pod Juice Jewel Tobacco 35mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Pod Juice Jewel Tobacco 35mg</h2>
+                </div>
+                <img src="https://podjuice55.com/cdn/shop/products/PJ-JT-30ML-Assets_800x.jpg?v=1643478530" class="img-fluid" alt="Pod Juice Jewel Tobacco 35mg"><br>
+                <center><kbd>Qnty-<span id="pod_Juice_Jewel_Tobacco_35mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Silky tobacco flavor that tastes like it was pulled straight from the earth</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Pod Juice Virginia Tobacco 55mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Pod Juice Virginia Tobacco 55mg</h2>
+                </div>
+                <img src="https://i0.wp.com/vapehubbd.com/wp-content/uploads/2024/09/Virginia-Tobacco-Pod-Juice.png?fit=756%2C771&ssl=1" class="img-fluid" alt="Pod Juice Virginia Tobacco 55mg"><br>
+                <center><kbd>Qnty-<span id="pod_Juice_Virginia_Tobacco_55mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>A traditional Virginia Tobacco</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Pod Juice Peach Berry 35 mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Pod Juice Peach Berry 35 mg</h2>
+                </div>
+                <img src="https://vapordna.com/cdn/shop/products/PodJuiceSaltsPeachBerryContents.webp?v=1705693232&width=580" class="img-fluid" alt="Pod Juice Peach Berry 35 mg"><br>
+                <center><kbd>Qnty-<span id="pod_Juice_Peach_Berry_35mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Peach Berry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Pod Juice Watermelon Bubblegum 35mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Pod Juice Watermelon Bubblegum 35mg</h2>
+                </div>
+                <img src="https://store.eleafworld.com/imagecache/800/images/202404/PJ5000_malibu.jpg" class="img-fluid" alt="Pod Juice Watermelon Bubblegum 35mg"><br>
+                <center><kbd>Qnty-<span id="pod_Juice_Watermelon_Bubblegum_35mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Watermelon Bubblegum</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Pod Juice Bangin Blue Razz 55mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Pod Juice Bangin Blue Razz 55mg</h2>
+                </div>
+                <img src="https://thevapesite.com/cdn/shop/products/image_208ac82a-9302-4539-894f-bcfcf20b5c85_1024x.png?v=1644264189" class="img-fluid" alt="Pod Juice Bangin Blue Razz 55mg"><br>
+                <center><kbd>Qnty-<span id="pod_Juice_Bangin_Blue_Razz_55mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>A blue raspberry chewy candy and adds more blue raspberries for blissful enjoyment.</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Pod Juice Fruity Bears 35mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Pod Juice Fruity Bears 35mg</h2>
+                </div>
+                <img src="https://nicdelivery.com/cdn/shop/files/pod_juice_55_fruity_bears_wholesale_distributor_near_me_free_shipping_delta_9_delta_8_sol_green_cbd_cake_kik_hyde_fe906361-89b7-4dba-a2a1-162ef55ff40e_700x700.jpg?v=1716497453" class="img-fluid" alt="Pod Juice Fruity Bears 35mg"><br>
+                <center><kbd>Qnty-<span id="pod_Juice_Fruity_Bears_35mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Sweet gummy bear chews, enhanced with carefully balanced nicotine salts.</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Pod Juice Graham Cracker 35mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Pod Juice Graham Cracker 35mg</h2>
+                </div>
+                <img src="https://podjuice55.com/cdn/shop/products/PJ-GRAHAM-30ML-Assets_800x.jpg?v=1643674276" class="img-fluid" alt="Pod Juice Graham Cracker 35mg"><br>
+                <center><kbd>Qnty-<span id="pod_Juice_Graham_Cracker_35mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>A succulent, sweet, sugary cracker flavor</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Pod Juice Jewel Mint 35mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Pod Juice Jewel Mint 35mg</h2>
+                </div>
+                <img src="https://podjuice55.com/cdn/shop/products/PJ-JMINT-30ML-Assets_800x.jpg?v=1641322943" class="img-fluid" alt="Pod Juice Jewel Mint 35mg"><br>
+                <center><kbd>Qnty-<span id="pod_Juice_Jewel_Mint_35mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Fresh cool mint flavor.</h4>
+        </div>
+    </div>
+ </div>
+
+
+ <h1 style="margin-top: 50px;">Daze (Reds):</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+    <!--Reds Posts Start from here-->
+    <div class="cards" data-keywords="Reds Apple Berries 30mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Berries 30mg</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/reds-apple-salts-reds-berries-us-import-reds-apple-583074_2000x-700x700.webp" class="img-fluid" alt="Reds Apple Berries 30mg"><br>
+                <center><kbd>Qnty-<span id="reds_Apple_Berries_30mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Apple Berries</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Berries 30mg iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Berries 30mg iced</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/reds-apple-salts-reds-berries-us-import-reds-apple-583074_2000x-700x700.webp" class="img-fluid" alt="Reds Apple Berries 30mg iced"><br>
+                <center><kbd>Qnty-<span id="reds_Apple_Berries_30mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Apple Berries with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Berries 50mg iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Berries 50mg iced</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/reds-apple-salts-reds-berries-us-import-reds-apple-583074_2000x-700x700.webp" class="img-fluid" alt="Reds Apple Berries 50mg iced"><br>
+                <center><kbd>Qnty-<span id="reds_Apple_Berries_50mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Apple Berries with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Gold Kiwi 30mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Gold Kiwi 30mg Iced</h2>
+                </div>
+                <img src="https://westcoastvapesupply.com/cdn/shop/files/7DazeSaltRedsAppleGoldKiwiIced30ml.jpg?v=1697670907&width=700" class="img-fluid" alt="Reds Apple Gold Kiwi 30mg Iced"><br>
+                <center><kbd>Qnty-<span id="reds_Apple_Gold_Kiwi_30mg_Iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Delicious flavor of golden kiwis from New Zealand that will delight the tongue with sweet citrus flavor with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Gold Kiwi 30mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Gold Kiwi 30mg</h2>
+                </div>
+                <img src="https://westcoastvapesupply.com/cdn/shop/files/7DazeSaltRedsAppleGoldKiwiIced30ml.jpg?v=1697670907&width=700" class="img-fluid" alt="Reds Apple Gold Kiwi 30mg"><br>
+                <center><kbd>Qnty-<span id="reds_Apple_Gold_Kiwi_30mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Delicious flavor of golden kiwis from New Zealand that will delight the tongue with sweet citrus flavor</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Grape 30mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Grape 30mg</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/Reds-Grape_30mL-50mg_Product_Shot-both__72109-700x700.webp" class="img-fluid" alt="Reds Apple Grape 30mg"><br>
+                <center><kbd>Qnty-<span id="redsvApple_Grape_30mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Apple Grape</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Grape 30mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Grape 30mg Iced</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/Reds-Grape_30mL-50mg_Product_Shot-both__72109-700x700.webp" class="img-fluid" alt="Reds Apple Grape 30mg Iced"><br>
+                <center><kbd>Qnty-<span id="reds_Apple_Grape_30mg_Iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Apple Grape with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Grape 50mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Grape 50mg</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/Reds-Grape_30mL-50mg_Product_Shot-both__72109-700x700.webp" class="img-fluid" alt="Reds Apple Grape 50mg"><br>
+                <center><kbd>Qnty-<span id="reds_Apple_Grape_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Apple Grape</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Original 30mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Original 30mg</h2>
+                </div>
+                <img src="https://smokesmartllc.com/cdn/shop/products/12010_60b808ce69fd28.16651223_7_20daze_Reds_20Salts_Apple_30mg_box_bottle_1024x1024.png?v=1675452872" class="img-fluid" alt="Reds Apple Original 30mg"><br>
+                <center><kbd>Qnty-<span id="reds_Apple_Original_30mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Crisp apple flavor</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Original 50mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Original 50mg</h2>
+                </div>
+                <img src="https://smokesmartllc.com/cdn/shop/products/12010_60b808ce69fd28.16651223_7_20daze_Reds_20Salts_Apple_30mg_box_bottle_1024x1024.png?v=1675452872" class="img-fluid" alt="Reds Apple Original 50mg"><br>
+                <center><kbd>Qnty-<span id="reds_Apple_Original_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Crisp apple flavor</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Reds Apple Original 30mg iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Reds Apple Original 30mg iced</h2>
+                </div>
+                <img src="https://smokesmartllc.com/cdn/shop/products/12010_60b808ce69fd28.16651223_7_20daze_Reds_20Salts_Apple_30mg_box_bottle_1024x1024.png?v=1675452872" class="img-fluid" alt="Reds Apple Original 30mg iced"><br>
+                <center><kbd>Qnty-<span id="reds_Apple_Original_30mg_iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Crisp apple flavor with a cool menthol finish with Ice</h4>
+        </div>
+    </div>
+ </div>
+
+
+ <h1 style="margin-top: 50px;">Daze (Fusion):</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+    <!--Daze Juice Posts Start from here-->
+    <div class="cards" data-keywords="Daze Lemon Passionfruit Blueberry 30mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Lemon Passionfruit Blueberry 30mg</h2>
+                </div>
+                <img src="https://www.eightvape.com/cdn/shop/products/7-daze-juice-7-daze-fusion-lemon-passionfruit-blueberry-iced-30ml-nic-salt-vape-juice-31146790649967.png?v=1674707038" class="img-fluid" alt="Daze Lemon Passionfruit Blueberry 30mg"><br>
+                <center><kbd>Qnty-<span id="daze_Lemon_Passionfruit_Blueberry_30mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Daze Lemon Passionfruit Blueberry 30mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Lemon Passionfruit Blueberry 30mg Iced</h2>
+                </div>
+                <img src="https://www.eightvape.com/cdn/shop/products/7-daze-juice-7-daze-fusion-lemon-passionfruit-blueberry-iced-30ml-nic-salt-vape-juice-31146790649967.png?v=1674707038" class="img-fluid" alt="Daze Lemon Passionfruit Blueberry 30mg Iced"><br>
+                <center><kbd>Qnty-<span id="daze_Lemon_Passionfruit_Blueberry_30mg_Iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Daze Raspberry Green Apple Watermelon 30mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Raspberry Green Apple Watermelon 30mg</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/SM-Daze-Ice-Raspberry-Green-Apple-Watermelon-FreeSmokeVape.jpg" class="img-fluid" alt="Daze Raspberry Green Apple Watermelon 30mg"><br>
+                <center><kbd>Qnty-<span id="daze_Raspberry_Green_Apple_Watermelon_30mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Raspberry Green Apple Watermelon</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Daze Raspberry Green Apple Watermelon 30mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Raspberry Green Apple Watermelon 30mg Iced</h2>
+                </div>
+                <img src="https://royalpuff.com.bd/wp-content/uploads/2024/10/SM-Daze-Ice-Raspberry-Green-Apple-Watermelon-FreeSmokeVape.jpg" class="img-fluid" alt="Daze Raspberry Green Apple Watermelon 30mg Iced"><br>
+                <center><kbd>Qnty-<span id="daze_Raspberry_Green_Apple_Watermelon_30mg_Iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Raspberry Green Apple Watermelon with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Daze Banana Cantaloup Honeydew 30mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Banana Cantaloup Honeydew 30mg Iced</h2>
+                </div>
+                <img src="https://vape-street.com/cdn/shop/products/7Daze-Red-Fusion-Salt-Ice-Banana-Cantaloupe-Honeydew.jpg?v=1656112028&width=900" class="img-fluid" alt="Daze Banana Cantaloup Honeydew 30mg Iced"><br>
+                <center><kbd>Qnty-<span id="daze_Banana_Cantaloup_Honeydew_30mg_Iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Banana Cantaloup Honeydew with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Daze Banana Cantaloup Honeydew 50mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Banana Cantaloup Honeydew 50mg Iced</h2>
+                </div>
+                <img src="https://vape-street.com/cdn/shop/products/7Daze-Red-Fusion-Salt-Ice-Banana-Cantaloupe-Honeydew.jpg?v=1656112028&width=900" class="img-fluid" alt="Daze Banana Cantaloup Honeydew 50mg Iced"><br>
+                <center><kbd>Qnty-<span id="daze_Banana_Cantaloup_Honeydew_50mg_Iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Banana Cantaloup Honeydew Ice</h4>
+        </div>  
+    </div>
+
+    <div class="cards" data-keywords="Daze Pineapple Coconut  Banana Iced 30mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Pineapple Coconut  Banana Iced 30mg</h2>
+                </div>
+                <img src="https://www.punkjuice.com/cdn/shop/products/7Daze-PineappleCoconutBananaIced-Salt-30ml.jpg?v=1671737350&width=675" class="img-fluid" alt="Daze Pineapple Coconut  Banana Iced 30mg"><br>
+                <center><kbd>Qnty-<span id="daze_Pineapple_Coconut_Banana_Iced_30mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Pineapple Coconut  Banana with Ice</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Daze Pineapple Mango Orange 30mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Daze Pineapple Mango Orange 30mg Iced</h2>
+                </div>
+                <img src="https://vapemall.pk/cdn/shop/products/7daze-fusion-salt-30ml-pineapplemangoorange_1__53684.jpg?v=1684259641&width=823" class="img-fluid" alt="Daze Pineapple Mango Orange 30mg Iced"><br>
+                <center><kbd>Qnty-<span id="daze_Pineapple_Mango_Orange_30mg_Iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Pineapple Mango Orange with Ice</h4>
+        </div>
+    </div>
+</div>
+
+<h1 style="margin-top: 50px;">VGod:</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+    <!--VGod Posts Start from here-->
+    <div class="cards" data-keywords="VGod Summer Strawberry 25mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>VGod Summer Strawberry 25mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd3esGXB4nOnch7nuKPCnRmNjkV6LBk_SfSg&s" class="img-fluid" alt="VGod Summer Strawberry 25mg"><br>
+                <center><kbd>Qnty-<span id="vGod_Summer_Strawberry_25mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="VGod Summer Strawberry 50mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>VGod Summer Strawberry 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd3esGXB4nOnch7nuKPCnRmNjkV6LBk_SfSg&s" class="img-fluid" alt="VGod Summer Strawberry 50mg"><br>
+                <center><kbd>Qnty-<span id="vGod_Summer_Strawberry_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="VGod Purple Bomb 25mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>VGod Purple Bomb 25mg Iced</h2>
+                </div>
+                <img src="https://saltnic.com/pub/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/s/a/saltnic_icedpurplebomb_25mg.png" class="img-fluid" alt="VGod Purple Bomb 25mg Iced"><br>
+                <center><kbd>Qnty-<span id="vGod_Purple_Bomb_25mg_Iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="VGod Purple Bomb 50mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>VGod Purple Bomb 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYD1TdMXvraVpbwLJm2gc5MTpK-bcGsiMhyA&s" class="img-fluid" alt="VGod Purple Bomb 50mg"><br>
+                <center><kbd>Qnty-<span id="vGod_Purple_Bomb_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="VGod Sour Strawberry 50mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>VGod Sour Strawberry 50mg</h2>
+                </div>
+                <img src="https://vsquadbd.com/wp-content/uploads/2024/03/Berry-Bomb-by-Vgod-salt.jpg" class="img-fluid" alt="VGod Purple Bomb 50mg"><br>
+                <center><kbd>Qnty-<span id="vGod_Sour_Strawberry_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="VGod Sour Strawberry 25mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>VGod Sour Strawberry 25mg Iced</h2>
+                </div>
+                <img src="https://www.gvape.vip/wp-content/uploads/2020/11/IMG_20200914_165506_145.jpg" class="img-fluid" alt="VGod Sour Strawberry 25mg Iced"><br>
+                <center><kbd>Qnty-<span id="vGod_Sour_Strawberry_25mg_Iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="VGod Luscious 50mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>VGod Luscious 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzCBGbtm4sSw9G7G-rw6S9HTwtchBwcldJjg&s" class="img-fluid" alt="VGod Luscious 50mg"><br>
+                <center><kbd>Qnty-<span id="vGod_Luscious_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="VGod Mighty Mint 50mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>VGod Mighty Mint 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgtu5dBiu9s0uX9_pM_Sw6RYRQ7w7WqZflqA&s" class="img-fluid" alt="VGod Mighty Mint 50mg"><br>
+                <center><kbd>Qnty-<span id="vGod_Mighty_Mint_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="VGod Lush Ice 25mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>VGod Lush Ice 25mg</h2>
+                </div>
+                <img src="https://vaporzonebd.com/admin_assats/product/0325e7887c9d0c87fdd2bdb960b99704.vgod-lush-ice-saltnic-30ml.webp" class="img-fluid" alt="VGod Lush Ice 25mg"><br>
+                <center><kbd>Qnty-<span id="vGod_Lush_Ice_25mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="VGod Lush Ice 50mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>VGod Lush Ice 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbxLZ-sOYz6iWQM3EsLgndu0gqrALcckkYaX-1NfSuZ-kGFFN0efEbcfw&s=10" class="img-fluid" alt="VGod Lush Ice 50mg"><br>
+                <center><kbd>Qnty-<span id="vGod_Lush_Ice_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+ </div>
+
+
+ <h1 style="margin-top: 50px;">Tokyo:</h1>
+ <div class="products-cards">  <!--This is Flex Container that contains posts-->
+    <!--Tokyo Posts Start from here-->
+    <div class="cards" data-keywords="Tokyo Mighty Mint 35mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Mighty Mint 35mg</h2>
+                </div>
+                <img src="https://smok.ae/wp-content/uploads/2023/09/Tokyo-Super-Cool-Mighty-Mint-600x600.jpg" class="img-fluid" alt="Tokyo Mighty Mint 35mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Mighty_Mint_35mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit </h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Melon Melody 35mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Melon Melody 35mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc8UZZ_0RWk5nOoweybheymsffJE4uiykTPw&s" class="img-fluid" alt="Tokyo Melon Melody 35mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Melon_Melody_35mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Green Apple 35mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Green Apple 35mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8uorGmGVBs4_wfC1TX76FnjCUSqdGSaHCJg&s" class="img-fluid" alt="Tokyo Green Apple 35mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Green_Apple_35mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Kiwi Yogurt 35mg Iced">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Kiwi Yogurt 35mg Iced</h2>
+                </div>
+                <img src="https://devapoursarea.pk/wp-content/uploads/2023/01/Kiwi-Yogurt-Tokyo-Super-Cool-Nic-Salt-1.jpg" class="img-fluid" alt="Tokyo Kiwi Yogurt 35mg Iced"><br>
+                <center><kbd>Qnty-<span id="tokyo_Kiwi_Yogurt_35mg_Iced"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Cappuccino 20mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Cappuccino 20mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu9iQg3XsavjKwkpD18U6y0yJ_3ik-nOpnmA&s" class="img-fluid" alt="Tokyo Cappuccino 20mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Cappuccino_20mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Passion Fruit 30mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Passion Fruit 30mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvin6RsiMGPaVtlNUTd5nOWa1g5rBmlyi0ww&s" class="img-fluid" alt="Tokyo Iced Passion Fruit 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Passion_Fruit_30mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Passion Fruit 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Passion Fruit 50mg</h2>
+                </div>
+                <img src="https://vaporzonebd.com/admin_assats/product/3449af0be8ab542bf7ac82f69410d425.tokyo-iced-passion-fruit-30ml.webp" class="img-fluid" alt="Tokyo Iced Passion Fruit 50mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Passion_Fruit_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Mint 20mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Mint 20mg</h2>
+                </div>
+                <img src="https://www.rockstarvapor.co/wp-content/uploads/2022/03/MINT.jpg.webp" class="img-fluid" alt="Tokyo Iced Mint 20mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Mint_20mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Mint 30mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Mint 30mg</h2>
+                </div>
+                <img src="https://www.rockstarvapor.co/wp-content/uploads/2022/03/MINT.jpg.webp" class="img-fluid" alt="Tokyo Iced Mint 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Mint_30mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Mint 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Mint 50mg</h2>
+                </div>
+                <img src="https://www.rockstarvapor.co/wp-content/uploads/2022/03/MINT.jpg.webp" class="img-fluid" alt="Tokyo Iced Mint 50mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Mint_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Mango 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Mango 50mg</h2>
+                </div>
+                <img src="https://vapebazaar.pk/wp-content/uploads/2022/07/Tokyo-Iced-Mango-30ml-01.webp" class="img-fluid" alt="Tokyo Iced Mango 50mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Mango_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Fruit Bomb 30mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Fruit Bomb 30mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEp_0RTbP4eYZviz1aSAwlT9110hYns_6w_Q&s" class="img-fluid" alt="Tokyo Iced Fruit Bomb 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Fruit_Bomb_30mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Fruit Bomb 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Fruit Bomb 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEp_0RTbP4eYZviz1aSAwlT9110hYns_6w_Q&s" class="img-fluid" alt="Tokyo Iced Fruit Bomb 50mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Fruit_Bomb_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Blueberry 20mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Blueberry 20mg</h2>
+                </div>
+                <img src="https://vapebazaar.pk/wp-content/uploads/2022/07/Tokyo-Iced-Blueberry-SaltNic-30ml-01.webp" class="img-fluid" alt="Tokyo Iced Blueberry 20mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Blueberry_20mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Cranberry Raspberry 20mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Cranberry Raspberry 20mg</h2>
+                </div>
+                <img src="https://ovseg.b-cdn.net/wp-content/uploads/2024/06/tokyo-salt-30ml-ice-cranberry-raspberry.webp" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 20mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Cranberry_Raspberry_20mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Cranberry Raspberry 30mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Cranberry Raspberry 30mg</h2>
+                </div>
+                <img src="https://ovseg.b-cdn.net/wp-content/uploads/2024/06/tokyo-salt-30ml-ice-cranberry-raspberry.webp" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Cranberry_Raspberry_30mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Cranberry Raspberry 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Cranberry Raspberry 50mg</h2>
+                </div>
+                <img src="https://ovseg.b-cdn.net/wp-content/uploads/2024/06/tokyo-salt-30ml-ice-cranberry-raspberry.webp" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Cranberry_Raspberry_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Strawberry Watermelon 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Strawberry Watermelon 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvbJKeFibtzInerGJZtAasymYCAkrwnhS0Fw&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Strawberry_Watermelon_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Strawberry Yakult 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Strawberry Yakult 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbr3XY_Cyd4-YeLGfvryq1PniMRq1hi43Dhg&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Strawberry_Yakult_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Strawberry Lychee 20mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Strawberry Lychee 20mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeIMmBkVJ93sKJaQVLok-eADh3RzLqLh0R2g&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Strawberry_Lychee_20mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Grapefruit 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Grapefruit 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_qW0M-pO2iTDwSoeBQd8dvNNuWOQKlzdtSA&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Grapefruit_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Strawberry Mango 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Strawberry Mango 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbv3Ej6fBYZaMgmdyWO8wjh22jqRvFbQlvbg&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Strawberry_Mango_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Burst Watermelon 35mg NonI">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Burst Watermelon 35mg</h2>
+                </div>
+                <img src="https://e-litecigs.com/cdn/shop/files/Tokyo-Saltnic-Super-Cool-Burst-Watermelon-30ml-35mg_2048x.webp?v=1691663906" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Burst_Watermelon_35mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Lemon 20mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Lemon 20mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8hVJ2hEkJGIrcRn8yV627GNtpL6iguBU8kQ&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Lemon_20mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Lemon 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Lemon 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8hVJ2hEkJGIrcRn8yV627GNtpL6iguBU8kQ&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Lemon_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Peace 20mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Peace 20mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR61U13E8s9fHlHVkKpwKM1qImrVkr5WjbLIQ&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Peace_20mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Peace 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Peace 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR61U13E8s9fHlHVkKpwKM1qImrVkr5WjbLIQ&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Peace_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Hami Melon 20mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Hami Melon 20mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3dnh1Ar6o_5QE0-bcP_NrPI-Q-kqn74YWA&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Hami_Melon_20mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Strawberry Kiwi 30mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Strawberry Kiwi 30mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxEc7tM7gDIzLAJEo_Jyn8Pb5aDblsJEqgdA&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Strawberry_Kiwi_30mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Strawberry Kiwi 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Strawberry Kiwi 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxEc7tM7gDIzLAJEo_Jyn8Pb5aDblsJEqgdA&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Strawberry_Kiwi_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Blueberry Watermelon 20mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Blueberry Watermelon 20mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTakLzJsqmMi2Z3J4R_Z42vQqHboyNHUQgx4A&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Blueberry_Watermelon_20mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+
+    <div class="cards" data-keywords="Tokyo Iced Blueberry Watermelon 50mg">
+        <div class="front">
+            <div class="post-h2">
+                <h2>Tokyo Iced Blueberry Watermelon 50mg</h2>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTakLzJsqmMi2Z3J4R_Z42vQqHboyNHUQgx4A&s" class="img-fluid" alt="Tokyo Iced Cranberry Raspberry 30mg"><br>
+                <center><kbd>Qnty-<span id="tokyo_Iced_Blueberry_Watermelon_50mg"></span></kbd></center>
+        </div>
+        <div class="back">
+            <h4><strong>Flavor Note:</strong><br>Lemon Passionfruit Blueberry</h4>
+        </div>
+    </div>
+ </div>
+
+ <!--post end-->
+
+
+  <!--Stock Summary-->
+<div id="stock_summary_box">
+<h2 style="text-align:center;">Stock Summary</h2>
+<hr>
+<p style="font-weight: bold;">Kings Crest: <span id="total_kc"></span> pcs</p>
+<p style="font-weight: bold;">Skwezed: <span id="total_skwezed"></span> pcs</p>
+<p style="font-weight: bold;">Pacha: <span id="total_pacha"></span> pcs</p>
+<p style="font-weight: bold;">Pod Juice: <span id="total_pod_Juice"></span> pcs</p>
+<p style="font-weight: bold;">Daze (Reds): <span id="total_reds"></span> pcs</p>
+<p style="font-weight: bold;">Daze (Fusion): <span id="total_fusion"></span> pcs</p>
+<p style="font-weight: bold;">VGod: <span id="total_vgod"></span> pcs</p>
+<p style="font-weight: bold;">Tokyo: <span id="total_tokyo"></span> pcs</p>
+<p style="text-align:center; background-color:rgb(36,154,232); width:180px; border-radius:12px; margin:auto; color:white;">Total saltnic items: <span id="sum"></span></p>
+</div>
+
+<!--Toggle Scroll Button-->
+<div id="toggleScrollBtn" onclick="toggleScroll()">
+    <div class="toggleScrollBtnFlex"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="20" viewBox="0 0 384 512"><path fill="#74C0FC" d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg></div>
+</div>
+
+<div id="toggleScrollBtn2" onclick="toggleScroll2()">
+    <div class="toggleScrollBtnFlex"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="20" viewBox="0 0 384 512"><path fill="#74C0FC" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg></div>
+</div>
+
+  
+  <footer>
+  <div id="upperFooter">
+  <div class="mt-1" style="text-align:center; word-spacing:15px">
+  <p style="word-spacing:0px;"><strong>Follow us:</strong></p>
+  <i class="bi bi-facebook" style="font-size:26px; color:#1877F2;"></i>
+  <i class="bi bi-instagram" style="font-size:26px; color:#fa7e1e;"></i>
+  <i class="bi bi-pinterest" style="font-size:26px; color:#E60023;"></i>
+  <i class="bi bi-linkedin" style="font-size:26px; color:#0077B5;"></i>
+  <i class="bi bi-twitter-x" style="font-size:26px; color:#657786;"></i>
+  </div>
+  <div class="row mt-5">
+  <div class="col-3">
+  <p style="font-weight:bold;">About</p>
+  </div>
+  <div class="col-3">
+  <p style="font-weight:bold;">Contact</p>
+  </div>
+  <div class="col-3">
+  <p style="font-weight:bold;">Privacy Policy</p>
+  </div>
+  <div class="col-3">
+  <p style="font-weight:bold;">Navigation</p>
+  </div>
+  </div>
+  <div class="mt-2">
+  <a href="index.html"><img src="logo.png" width="60"height="45" alt="logo"></a><br>
+   <p>This is a products inventory website.<br>Where you can see how many products are available.<br> On the other hand You can calculate some necessary accountings like bKash payment cashout charges.<br> The cost of Merchant payment cashout charges as well.<br>You can also calculate Mushak(VAT) calculation on this website </p>
+  </div>
+  </div>
+  <div id="lowerFooter">
+  <p>All rights reserved | Copyright ©2024<br>Designed by Abdul Muktadir Nahid</p>
+  </div>
+  </footer>
+  
+  <script src="saltnic_stock_list.js"></script>
+  <script>
+    //Given CSS style with integration
+  const cards=document.querySelectorAll('.cards');
+  
+  cards.forEach((card)=>{
+      card.addEventListener("click", function(){
+          card.classList.add("flipped");
+          
+          setTimeout(()=>{
+              card.classList.remove("flipped");
+          }, 2000);
+      });
+  });
+
+  //Quick Navigator Functions
+  function salt55mg() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "55mg"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found_count=0;
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  document.getElementById('found_count').innerHTML="";
+  
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+      spinnerOverlay.style.display="none";
+      items.forEach((item) => {
+      let keywords = item.getAttribute('data-keywords');
+      if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+      let clone = item.cloneNode(true);
+      resultContainer.appendChild(clone);
+      found_count+=1;
+      found = true;
+      document.getElementById('svg').style.display="block";
+      document.getElementById('showingResultMessage').style.display="block";
+      document.getElementById('found_count').innerHTML=found_count;
+      }
+      });
+      
+      if (!found) {
+      resultContainer.innerHTML = "Result Not found.";
+      }
+  }, 1000);
+  }
+  
+  
+  function salt50mg() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "50mg"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found_count=0;
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  document.getElementById('found_count').innerHTML="";
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+  spinnerOverlay.style.display="none";
+  items.forEach((item) => {
+  let keywords = item.getAttribute('data-keywords');
+  if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+  let clone = item.cloneNode(true);
+  resultContainer.appendChild(clone);
+  found_count+=1;
+  found = true;
+  document.getElementById('svg').style.display="block";
+  document.getElementById('showingResultMessage').style.display="block";
+  document.getElementById('found_count').innerHTML=found_count;
+  }
+  });
+  
+  if (!found) {
+  resultContainer.innerHTML = "Result Not found.";
+  }
+  }, 1000);
+  }
+  
+  function salt35mg() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "35mg"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found_count=0;
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  document.getElementById('found_count').innerHTML="";
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+  spinnerOverlay.style.display="none";
+  items.forEach((item) => {
+  let keywords = item.getAttribute('data-keywords');
+  if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+  let clone = item.cloneNode(true);
+  resultContainer.appendChild(clone);
+  found_count+=1;
+  found = true;
+  document.getElementById('svg').style.display="block";
+  document.getElementById('showingResultMessage').style.display="block";
+  document.getElementById('found_count').innerHTML=found_count;
+  }
+  });
+  
+  if (!found) {
+  resultContainer.innerHTML = "Result Not found.";
+  }
+  }, 1000);
+  }
+  
+  function salt25mg() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "25mg"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found_count=0;
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  document.getElementById('found_count').innerHTML="";
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+  spinnerOverlay.style.display="none";
+  items.forEach((item) => {
+  let keywords = item.getAttribute('data-keywords');
+  if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+  let clone = item.cloneNode(true);
+  resultContainer.appendChild(clone);
+  found_count+=1;
+  found = true;
+  document.getElementById('svg').style.display="block";
+  document.getElementById('showingResultMessage').style.display="block";
+  document.getElementById('found_count').innerHTML=found_count;
+  }
+  });
+  
+  if (!found) {
+  resultContainer.innerHTML = "Result Not found.";
+  }
+  }, 1000);
+  }
+  
+  function saltIced() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "Iced"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found_count=0;
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  document.getElementById('found_count').innerHTML="";
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+  spinnerOverlay.style.display="none";
+  items.forEach((item) => {
+  let keywords = item.getAttribute('data-keywords');
+  if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+  let clone = item.cloneNode(true);
+  resultContainer.appendChild(clone);
+  found_count+=1;
+  found = true;
+  document.getElementById('svg').style.display="block";
+  document.getElementById('showingResultMessage').style.display="block";
+  document.getElementById('found_count').innerHTML=found_count;
+  }
+  });
+  
+  if (!found) {
+  resultContainer.innerHTML = "Result Not found.";
+  }
+  }, 1000);
+  }
+  
+  function salt30mg() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "30mg"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found_count=0;
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  document.getElementById('found_count').innerHTML="";
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+  spinnerOverlay.style.display="none";
+  items.forEach((item) => {
+  let keywords = item.getAttribute('data-keywords');
+  if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+  let clone = item.cloneNode(true);
+  resultContainer.appendChild(clone);
+  found_count+=1;
+  found = true;
+  document.getElementById('svg').style.display="block";
+  document.getElementById('showingResultMessage').style.display="block";
+  document.getElementById('found_count').innerHTML=found_count;
+  }
+  });
+  
+  if (!found) {
+  resultContainer.innerHTML = "Result Not found.";
+  }
+  }, 1000);
+  }
+  
+  function saltNonI() {
+  const spinnerOverlay=document.getElementById('spinnerOverlay');
+  let items = document.querySelectorAll('.cards');
+  let searchQuery = "NonI"; // Adjust the query to match part of `data-keywords`
+  let resultContainer = document.getElementById('searchResult');
+  let found_count=0;
+  let found = false;
+  
+  resultContainer.innerHTML = ""; // Clear previous results
+  document.getElementById('found_count').innerHTML="";
+  
+  spinnerOverlay.style.display="flex";
+  setTimeout(()=>{
+  spinnerOverlay.style.display="none";
+  items.forEach((item) => {
+  let keywords = item.getAttribute('data-keywords');
+  if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
+  let clone = item.cloneNode(true);
+  resultContainer.appendChild(clone);
+  found_count+=1;
+  found = true;
+  document.getElementById('svg').style.display="block";
+  document.getElementById('showingResultMessage').style.display="block";
+  document.getElementById('found_count').innerHTML=found_count;
+  }
+  });
+  
+  if (!found) {
+  resultContainer.innerHTML = "Result Not found.";
+  }
+  }, 1000);
+  }
+  
+  //Search Engine
+  function searchEngine(){
+      let items=document.querySelectorAll('.cards');
+      let searchQuery=document.getElementById('searchInput').value.trim().toLowerCase();
+      let resultContainer=document.getElementById('searchResult');
+      resultContainer.innerHTML="";
+      document.getElementById('found_count').innerHTML="";
+      let found_count=0;
+      let found=false;
+      
+      items.forEach((item)=>{
+          let keywords=item.getAttribute('data-keywords');
+          if(keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())){
+              let clone=item.cloneNode(true);
+              resultContainer.appendChild(clone);
+              found_count+=1;
+              found=true;
+              document.getElementById('svg').style.display="block";
+              document.getElementById('showingResultMessage').style.display="block";
+	          document.getElementById('found_count').innerHTML=found_count;
+          }
+      });
+      if(!found){
+      resultContainer.innerHTML="Result Not found";
+      }
+  }
+  
+  
+  //Toggle Scroll Button
   let toggleScrollBtn=document.getElementById('toggleScrollBtn');
   let toggleScrollBtn2=document.getElementById('toggleScrollBtn2');
   
-  window.onscroll=function a(){
+  window.onscroll=function (){
       let halfMiddleScreen=document.documentElement.scrollHeight*49/100;
       if(window.scrollY<=halfMiddleScreen){
           toggleScrollBtn.style.display="block";
@@ -17,17 +2121,20 @@
       }
   }
   
-  window.onscroll=function b(){
+  window.addEventListener("scroll",function (){
   let secondHalfMiddleScreen=document.documentElement.scrollHeight*46/100;
   if(window.scrollY>=secondHalfMiddleScreen){
   toggleScrollBtn2.style.display="block";
   }else{
-  toggleScrollBtn.style.display="none";
+  toggleScrollBtn2.style.display="none";
   }
-  }
+  });
   
   function toggleScroll2(){
   if(window.scrollY>=document.documentElement.scrollHeight*46/100){
   window.scrollTo({top:0, behavior:"smooth"});
   }
   }
+  </script>
+  </body>
+  </html>
