@@ -260,6 +260,7 @@ footer{
  </div>
  
  <!--Search Result appear here-->
+ <div id="showingResultMessage" style="display:none;">Showing Result: (<span id="found_count"></span>) items</div>
  <div id="searchResult"></div>
   
  <svg id="svg" style="display:none; margin:100px 0 40px 0;" width="100%" height="20" xmlns="http://www.w3.org/2000/svg" style="margin: 20px 0;">
@@ -899,9 +900,11 @@ footer{
   let items = document.querySelectorAll('.cards');
   let searchQuery = "6mg"; // Adjust the query to match part of `data-keywords`
   let resultContainer = document.getElementById('searchResult');
+  let found_count=0;
   let found = false;
   
   resultContainer.innerHTML = ""; // Clear previous results
+  document.getElementById('found_count').innerHTML="";
   
   spinnerOverlay.style.display="flex";
   setTimeout(()=>{
@@ -911,7 +914,10 @@ footer{
       if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
       let clone = item.cloneNode(true);
       resultContainer.appendChild(clone);
+      found_count+=1;
       found = true;
+      document.getElementById('showingResultMessage').style.display="block";
+      document.getElementById('found_count').innerHTML=found_count;
       document.getElementById('svg').style.display="block";
       }
       });
@@ -927,9 +933,11 @@ footer{
   let items = document.querySelectorAll('.cards');
   let searchQuery = "3mg"; // Adjust the query to match part of `data-keywords`
   let resultContainer = document.getElementById('searchResult');
+  let found_count=0;
   let found = false;
   
   resultContainer.innerHTML = ""; // Clear previous results
+  document.getElementById('found_count').innerHTML="";
   
   spinnerOverlay.style.display="flex";
   setTimeout(()=>{
@@ -939,7 +947,10 @@ footer{
       if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
       let clone = item.cloneNode(true);
       resultContainer.appendChild(clone);
+      found_count+=1;
       found = true;
+      document.getElementById('showingResultMessage').style.display="block";
+      document.getElementById('found_count').innerHTML=found_count;
       document.getElementById('svg').style.display="block";
       }
       });
@@ -955,9 +966,11 @@ footer{
   let items = document.querySelectorAll('.cards');
   let searchQuery = "Iced"; // Adjust the query to match part of `data-keywords`
   let resultContainer = document.getElementById('searchResult');
+  let found_count=0;
   let found = false;
   
   resultContainer.innerHTML = ""; // Clear previous results
+  document.getElementById('found_count').innerHTML="";
   
   spinnerOverlay.style.display="flex";
   setTimeout(()=>{
@@ -967,7 +980,10 @@ footer{
       if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
       let clone = item.cloneNode(true);
       resultContainer.appendChild(clone);
+      found_count+=1;
       found = true;
+      document.getElementById('showingResultMessage').style.display="block";
+      document.getElementById('found_count').innerHTML=found_count;
       document.getElementById('svg').style.display="block";
       }
       });
@@ -983,9 +999,11 @@ footer{
   let items = document.querySelectorAll('.cards');
   let searchQuery = "NonI"; // Adjust the query to match part of `data-keywords`
   let resultContainer = document.getElementById('searchResult');
+  let found_count=0;
   let found = false;
   
   resultContainer.innerHTML = ""; // Clear previous results
+  document.getElementById('found_count').innerHTML="";
   
   spinnerOverlay.style.display="flex";
   setTimeout(()=>{
@@ -995,7 +1013,10 @@ footer{
       if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
       let clone = item.cloneNode(true);
       resultContainer.appendChild(clone);
+      found_count+=1;
       found = true;
+      document.getElementById('showingResultMessage').style.display="block";
+      document.getElementById('found_count').innerHTML=found_count;
       document.getElementById('svg').style.display="block";
       }
       });
@@ -1011,9 +1032,11 @@ footer{
   let items = document.querySelectorAll('.cards');
   let searchQuery = "120ml"; // Adjust the query to match part of `data-keywords`
   let resultContainer = document.getElementById('searchResult');
+  let found_count=0;
   let found = false;
   
   resultContainer.innerHTML = ""; // Clear previous results
+  document.getElementById('found_count').innerHTML="";
   
   spinnerOverlay.style.display="flex";
   setTimeout(()=>{
@@ -1023,7 +1046,10 @@ footer{
       if (keywords && keywords.toLowerCase().includes(searchQuery.toLowerCase())) {
       let clone = item.cloneNode(true);
       resultContainer.appendChild(clone);
+      found_count+=1;
       found = true;
+      document.getElementById('showingResultMessage').style.display="block";
+      document.getElementById('found_count').innerHTML=found_count;
       document.getElementById('svg').style.display="block";
       }
       });
