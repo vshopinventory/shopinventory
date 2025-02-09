@@ -170,8 +170,8 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="07/02/2025";
-    let time="7:35 PM";
+    let date="09/02/2025";
+    let time="1:45 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
 Daze Fusion Pineapple Mango Orange 6mg`;
     document.getElementById("date").innerHTML=date;
