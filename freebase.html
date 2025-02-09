@@ -208,6 +208,46 @@
     background-color:powderblue;
     }
   }
+  
+  
+#toggleScrollBtn{
+     display:none;
+     position:fixed;
+     right:20px;
+     bottom:10%;
+     z-index:10;
+     width:50px;
+     height:50px;
+     background-color:#EBEBEB;
+     border-radius:50%;
+     box-shadow:1px 1px 2px gray;
+     transition:all 0.3s;
+     cursor:pointer;
+ }
+ 
+ #toggleScrollBtn2{
+ display:none;
+ position:fixed;
+ right:20px;
+ bottom:10%;
+ z-index:10;
+ width:50px;
+ height:50px;
+ background-color:#EBEBEB;
+ border-radius:50%;
+ box-shadow:1px 1px 2px gray;
+ transition:all 0.3s;
+ cursor:pointer;
+ }
+ 
+ .toggleScrollBtnFlex{
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     width:50px;
+     height:50px;
+     border-radius:50%;
+ }
 
 footer{
     width: 100%;
@@ -844,9 +884,17 @@ footer{
  <p style="text-align:center; background-color:rgb(36,154,232); width:180px; border-radius:12px; margin:auto; color:white;">Total saltnic items: <span id="sum"></span></p>
  </div>
  
+ <!--Toggle Scroll Button-->
+ <div id="toggleScrollBtn" onclick="toggleScroll()">
+ <div class="toggleScrollBtnFlex"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="20" viewBox="0 0 384 512"><path fill="#74C0FC" d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg></div>
+ </div>
+ 
+ <div id="toggleScrollBtn2" onclick="toggleScroll2()">
+ <div class="toggleScrollBtnFlex"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="20" viewBox="0 0 384 512"><path fill="#74C0FC" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg></div>
+ </div>
+ 
  <footer>
  <div id="upperFooter" class="mt-5">
- <a class="btn btn-light float-end" href="#"><i class="bi bi-chevron-double-up"></i></a><br>
  <div class="mt-1" style="text-align:center; word-spacing:15px">
  <p style="word-spacing:0px;"><strong>Follow us:</strong></p>
  <i class="bi bi-facebook" style="font-size:26px; color:#1877F2;"></i>
@@ -1058,6 +1106,40 @@ footer{
       resultContainer.innerHTML = "Result Not found.";
       }
   }, 1000);
+  }
+  
+  //Toggle Scroll Button
+  let toggleScrollBtn=document.getElementById('toggleScrollBtn');
+  let toggleScrollBtn2=document.getElementById('toggleScrollBtn2');
+  
+  window.onscroll=function (){
+  let halfMiddleScreen=document.documentElement.scrollHeight*49/100;
+  if(window.scrollY<=halfMiddleScreen){
+  toggleScrollBtn.style.display="block";
+  }else{
+  toggleScrollBtn.style.display="none";
+  }
+  }
+  
+  function toggleScroll(){
+  if(window.scrollY<=document.documentElement.scrollHeight*50/100){
+  window.scrollTo({top:document.documentElement.scrollHeight*87/100, behavior:"smooth"});
+  }
+  }
+  
+  window.addEventListener("scroll",function (){
+  let secondHalfMiddleScreen=document.documentElement.scrollHeight*46/100;
+  if(window.scrollY>=secondHalfMiddleScreen){
+  toggleScrollBtn2.style.display="block";
+  }else{
+  toggleScrollBtn2.style.display="none";
+  }
+  });
+  
+  function toggleScroll2(){
+  if(window.scrollY>=document.documentElement.scrollHeight*46/100){
+  window.scrollTo({top:0, behavior:"smooth"});
+  }
   }
  </script>
  </body>
