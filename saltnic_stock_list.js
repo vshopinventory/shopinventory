@@ -40,7 +40,7 @@ const items={
     pacha_fuji_25mg:{quantity:2, reserved:"N"},
     pacha_fuji_25mg_iced:{quantity:2, reserved:"N"},
     //Pod Juice Start from here
-    pod_Juice_Jewel_Tobacco_35mg:{quantity:3, reserved:"N"},
+    pod_Juice_Jewel_Tobacco_35mg:{quantity:2, reserved:"N"},
     pod_Juice_Virginia_Tobacco_55mg:{quantity:1, reserved:"N"},
     pod_Juice_Peach_Berry_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Watermelon_Bubblegum_35mg:{quantity:0, reserved:"N"},
@@ -342,9 +342,9 @@ const items={
 
     //Update Status
     let date="12/02/2025";
-    let time="5:00 PM";
+    let time="7:50 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Kings Crest Tabaco Dulce 50mg`;
+ Pod Juice Jewel Tobacco 35mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
