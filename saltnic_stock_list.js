@@ -8,7 +8,7 @@ const items={
     kc_don_juan_cafe_35mg :{quantity:0, reserved:"N"},
     kc_grape_ice_50mg :{quantity:1, reserved:"N"},
     kc_mango_berry_iced_35mg:{quantity:2, reserved:"N"},
-    kc_strawberry_peach_iced_35mg:{quantity:3, reserved:"N"},
+    kc_strawberry_peach_iced_35mg:{quantity:2, reserved:"N"},
     kc_strawberry_peach_iced_50mg:{quantity:1, reserved:"N"},
     kc_watermelon_lemonade_iced_35mg:{quantity:5, reserved:"N"},
     kc_watermelon_lemonade_iced_50mg:{quantity:1, reserved:"N"},
@@ -342,9 +342,10 @@ const items={
 
     //Update Status
     let date="12/02/2025";
-    let time="7:50 PM";
+    let time="7:53 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Pod Juice Jewel Tobacco 35mg`;
+ Pod Juice Jewel Tobacco 35mg,
+ Kings Crest Strawberry Peach Iced 35mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
