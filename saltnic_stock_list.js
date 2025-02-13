@@ -27,7 +27,7 @@ const items={
     skwezed_watermelon_strawberry_25mg:{quantity:3, reserved:"N"},
     skwezed_watermelon_strawberry_25mg_iced:{quantity:3, reserved:"N"},
     skwezed_watermelon_strawberry_50mg_iced:{quantity:1, reserved:"N"},
-    skwezed_mixed_berry_25mg:{quantity:1, reserved:"N"},
+    skwezed_mixed_berry_25mg:{quantity:0, reserved:"N"},
     skwezed_strawberry_25mg:{quantity:3, reserved:"N"},
     skwezed_watermelon_50mg:{quantity:1, reserved:"N"},
     skwezed_watermelon_white_grapev25mg_iced:{quantity:1, reserved:"N"},
@@ -341,11 +341,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="12/02/2025";
-    let time="7:53 PM";
+    let date="13/02/2025";
+    let time="2:50 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Pod Juice Jewel Tobacco 35mg,
- Kings Crest Strawberry Peach Iced 35mg`;
+ Skwezed Mixed Berry 25mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
