@@ -72,7 +72,7 @@ const items={
     //VGod Start from here
     vGod_Summer_Strawberry_25mg:{quantity:1, reserved:"N"},
     vGod_Summer_Strawberry_50mg:{quantity:2, reserved:"N"},
-    vGod_Purple_Bomb_25mg_Iced:{quantity:1, reserved:"N"},
+    vGod_Purple_Bomb_25mg_Iced:{quantity:0, reserved:"N"},
     vGod_Purple_Bomb_50mg:{quantity:1, reserved:"N"},
     vGod_Sour_Strawberry_50mg:{quantity:3, reserved:"N"},
     vGod_Sour_Strawberry_25mg_Iced:{quantity:1, reserved:"N"},
@@ -342,9 +342,9 @@ const items={
 
     //Update Status
     let date="13/02/2025";
-    let time="2:50 PM";
+    let time="5:18 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Skwezed Mixed Berry 25mg`;
+ VGod Purple Bomb 25mg Iced`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
