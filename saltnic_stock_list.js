@@ -14,7 +14,7 @@ const items={
     kc_watermelon_lemonade_iced_50mg:{quantity:1, reserved:"N"},
     //skwezed Start from here
     skwezed_green_apple_25mg:{quantity:1, reserved:"N"},
-    skwezed_green_apple_25mg_iced:{quantity:5, reserved:"N"},
+    skwezed_green_apple_25mg_iced:{quantity:4, reserved:"N"},
     skwezed_green_apple_50mg_iced:{quantity:3, reserved:"N"},
     skwezed_watermelon_25mg:{quantity:3, reserved:"N"},
     skwezed_watermelon_25mg_iced:{quantity:2, reserved:"N"},
@@ -342,9 +342,9 @@ const items={
 
     //Update Status
     let date="14/02/2025";
-    let time="12:04 AM";
+    let time="4:00 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Kings Crest Bombo Aldonza 50mg`;
+ Skwezed Green Apple 25mg Iced`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
