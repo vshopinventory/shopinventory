@@ -342,7 +342,7 @@ const items={
 
     //Update Status
     let date="16/02/2025";
-    let time="11:00 PM";
+    let time="11:08 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
  Kings Crest Tabaco Dulce 35mg`;
     document.getElementById("date").innerHTML=date;
