@@ -1,6 +1,6 @@
 //Item Lists
 const items={
-    kc_tabaco_dulce_35mg:{quantity:16, reserved:"N"},
+    kc_tabaco_dulce_35mg:{quantity:14, reserved:"N"},
     kc_tabaco_dulce_50mg:{quantity:2, reserved:"N"},
     kc_bombo_aldonza_50mg:{quantity:13, reserved:"N"},
     kc_bombo_aldonza_35mg:{quantity:10, reserved:"N"},
@@ -342,7 +342,7 @@ const items={
 
     //Update Status
     let date="16/02/2025";
-    let time="1:07 PM";
+    let time="11:00 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
  Kings Crest Tabaco Dulce 35mg`;
     document.getElementById("date").innerHTML=date;
