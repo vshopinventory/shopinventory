@@ -171,10 +171,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="09/02/2025";
-    let time="1:45 PM";
+    let date="17/02/2025";
+    let time="7:33 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Daze Fusion Pineapple Mango Orange 6mg`;
+Cream Team Butter Cream 6mg/100ml`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
