@@ -9,7 +9,8 @@ const items={
     skwezed_Green_Apple_6mg:{quantity:2, reserved:"N"},
     skwezed_Mixed_Berries_3mg:{quantity:1, reserved:"Y"},
     skwezed_Watermelon_Grape_3mg_Iced:{quantity:1, reserved:"N"},
-    cream_Team_Butter_Cream_6mg:{quantity:4, reserved:"N"},
+    //Cream Team Start from here
+    cream_Team_Butter_Cream_6mg:{quantity:3, reserved:"N"},
     //Daze (Fusion) Start from here
     daze_Fusion_Pineapple_Coconut_Banana_6mg_Iced:{quantity:1, reserved:"N"},
     daze_Fusion_Pineapple_Coconut_Banana_3mg_Iced:{quantity:1, reserved:"N"},
