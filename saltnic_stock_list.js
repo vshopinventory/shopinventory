@@ -6,7 +6,7 @@ const items={
     kc_bombo_aldonza_35mg:{quantity:10, reserved:"N"},
     kc_churro_35mg:{quantity:1, reserved:"N"},
     kc_don_juan_cafe_35mg :{quantity:0, reserved:"N"},
-    kc_grape_ice_50mg :{quantity:1, reserved:"N"},
+    kc_grape_ice_50mg :{quantity:0, reserved:"N"},
     kc_mango_berry_iced_35mg:{quantity:2, reserved:"N"},
     kc_strawberry_peach_iced_35mg:{quantity:2, reserved:"N"},
     kc_strawberry_peach_iced_50mg:{quantity:1, reserved:"N"},
@@ -341,10 +341,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="16/02/2025";
-    let time="11:08 PM";
+    let date="18/02/2025";
+    let time="9:50 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Kings Crest Tabaco Dulce 35mg`;
+ Kings Crest Grape Ice 50mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
