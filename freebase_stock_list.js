@@ -28,7 +28,7 @@ const items={
     Reds_Apple_Grape_6mg:{quantity:8, reserved:"N"},
     Reds_Apple_Original_3mg_Iced:{quantity:1, reserved:"N"},
     Reds_Apple_Original_6mg_Iced:{quantity:1, reserved:"N"},
-    Reds_Apple_Original_6mg:{quantity:4, reserved:"N"},
+    Reds_Apple_Original_6mg:{quantity:3, reserved:"N"},
     Reds_Apple_Original_3mg:{quantity:1, reserved:"N"},
     Reds_Apple_Berries_6mg_Iced:{quantity:1, reserved:"N"},
     Reds_Apple_Berries_3mg_Iced:{quantity:1, reserved:"N"},
@@ -172,9 +172,9 @@ const items={
 
     //Update Status
     let date="19/02/2025";
-    let time="12:42 PM";
+    let time="12:58 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Daze Fusion Banana Cantaloupe Honeydew 6mg Iced 100ml`;
+Reds Apple Original 6mg/100ml`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
