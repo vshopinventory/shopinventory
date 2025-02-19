@@ -35,7 +35,7 @@ const items={
     skwezed_banana_25mg_iced:{quantity:1, reserved:"N"},
     skwezed_pink_lemonade_25mg_iced:{quantity:1, reserved:"N"},
     //Pacha Start from here
-    pacha_apple_tobacco_25mg:{quantity:3, reserved:"N"},
+    pacha_apple_tobacco_25mg:{quantity:2, reserved:"N"},
     pacha_fuji_50mg:{quantity:1, reserved:"N"},
     pacha_fuji_25mg:{quantity:2, reserved:"N"},
     pacha_fuji_25mg_iced:{quantity:2, reserved:"N"},
@@ -342,9 +342,9 @@ const items={
 
     //Update Status
     let date="19/02/2025";
-    let time="12:38 PM";
+    let time="7:18 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Kings Crest Tabaco Dulce 35mg`;
+ Pacha Apple Tobacco 25mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
