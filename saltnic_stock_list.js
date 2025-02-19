@@ -47,7 +47,7 @@ const items={
     pod_Juice_Bangin_Blue_Razz_55mg:{quantity:0, reserved:"N"},
     pod_Juice_Fruity_Bears_35mg:{quantity:0, reserved:"N"},
     pod_Juice_Graham_Cracker_35mg:{quantity:0, reserved:"N"},
-    pod_Juice_Jewel_Mint_35mg:{quantity:1, reserved:"N"},
+    pod_Juice_Jewel_Mint_35mg:{quantity:0, reserved:"N"},
     //Daze (Reds) Start from here
     reds_Apple_Berries_30mg:{quantity:0, reserved:"N"},
     reds_Apple_Berries_30mg_iced:{quantity:4, reserved:"N"},
@@ -342,9 +342,9 @@ const items={
 
     //Update Status
     let date="19/02/2025";
-    let time="7:18 PM";
+    let time="7:25 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Pacha Apple Tobacco 25mg`;
+ Pod Juice Jewel Mint 35mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
