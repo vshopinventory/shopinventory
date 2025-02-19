@@ -2,7 +2,7 @@
 const items={
     kc_tabaco_dulce_35mg:{quantity:13, reserved:"N"},
     kc_tabaco_dulce_50mg:{quantity:2, reserved:"N"},
-    kc_bombo_aldonza_50mg:{quantity:13, reserved:"N"},
+    kc_bombo_aldonza_50mg:{quantity:12, reserved:"N"},
     kc_bombo_aldonza_35mg:{quantity:10, reserved:"N"},
     kc_churro_35mg:{quantity:1, reserved:"N"},
     kc_don_juan_cafe_35mg :{quantity:0, reserved:"N"},
@@ -342,9 +342,9 @@ const items={
 
     //Update Status
     let date="19/02/2025";
-    let time="7:25 PM";
+    let time="7:50 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Pod Juice Jewel Mint 35mg`;
+ Kings Crest Bombo Aldonza 50mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
