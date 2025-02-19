@@ -21,7 +21,7 @@ const items={
     daze_Fusion_Lemon_Passionfruit_Blueberry_3mg:{quantity:2, reserved:"N"},
     daze_Fusion_Lemon_Passionfruit_Blueberry_3mg_Iced:{quantity:1, reserved:"N"},
     daze_Fusion_Lemon_Passionfruit_Blueberry_6mg:{quantity:8, reserved:"N"},
-    daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced:{quantity:2, reserved:"N"},
+    daze_Fusion_Banana_Cantaloupe_Honeydew_6mg_Iced:{quantity:1, reserved:"N"},
     daze_Fusion_Banana_Cantaloupe_Honeydew_3mg_Iced:{quantity:1, reserved:"N"},
     daze_Fusion_Orange_Yuzu_Tangerine_6mg:{quantity:0, reserved:"N"},
     //Daze (Reds) Start from here
@@ -171,10 +171,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="17/02/2025";
-    let time="7:33 PM";
+    let date="19/02/2025";
+    let time="12:42 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Cream Team Butter Cream 6mg/100ml`;
+Daze Fusion Banana Cantaloupe Honeydew 6mg Iced 100ml`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
