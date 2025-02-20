@@ -4,7 +4,7 @@ const items={
     kings_Crest_Don_Juan_Cafe_6mg:{quantity:2, reserved:"N"},
     kings_Crest_Don_Juan_Bombo_Aldonza_6mg:{quantity:12, reserved:"N"},
     //skwezed Start from here
-    skwezed_Mango_Iced_6mg:{quantity:3, reserved:"N"},
+    skwezed_Mango_Iced_6mg:{quantity:2, reserved:"N"},
     skwezed_Mango_Iced_3mg:{quantity:2, reserved:"N"},
     skwezed_Green_Apple_6mg:{quantity:2, reserved:"N"},
     skwezed_Mixed_Berries_3mg:{quantity:1, reserved:"Y"},
@@ -171,10 +171,10 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="19/02/2025";
-    let time="12:58 PM";
+    let date="20/02/2025";
+    let time="7:53 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Reds Apple Original 6mg/100ml`;
+Skwezed Mango Iced 6mg/100ml`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
