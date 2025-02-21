@@ -63,11 +63,11 @@ const items={
     //Daze (Fusion) Start from here
     daze_Lemon_Passionfruit_Blueberry_30mg:{quantity:2, reserved:"N"},
     daze_Lemon_Passionfruit_Blueberry_30mg_Iced:{quantity:2, reserved:"N"},
-    daze_Raspberry_Green_Apple_Watermelon_30mg:{quantity:1, reserved:"N"},
+    daze_Raspberry_Green_Apple_Watermelon_30mg:{quantity:0, reserved:"N"},
     daze_Raspberry_Green_Apple_Watermelon_30mg_Iced:{quantity:1, reserved:"N"},
     daze_Banana_Cantaloup_Honeydew_30mg_Iced:{quantity:1, reserved:"N"},
     daze_Banana_Cantaloup_Honeydew_50mg_Iced:{quantity:0, reserved:"N"},
-    daze_Pineapple_Coconut_Banana_Iced_30mg:{quantity:2, reserved:"N"},
+    daze_Pineapple_Coconut_Banana_Iced_30mg:{quantity:1, reserved:"N"},
     daze_Pineapple_Mango_Orange_30mg_Iced:{quantity:1, reserved:"N"},
     //VGod Start from here
     vGod_Summer_Strawberry_25mg:{quantity:1, reserved:"N"},
@@ -341,10 +341,11 @@ const items={
     document.getElementById('sum').innerHTML=sum;
 
     //Update Status
-    let date="20/02/2025";
+    let date="21/02/2025";
     let time="6:00 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Skwezed Watermelon Strawberry 25mg`;
+ Daze Pineapple Coconut Banana Iced 30mg,
+ Daze Raspberry Green Apple Watermelon 30mg`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
