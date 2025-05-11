@@ -174,7 +174,7 @@ const items={
     let date="20/02/2025";
     let time="7:53 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
-Skwezed Mango Iced 6mg/100ml`;
+ওয়েবসাইটের ইনভেন্টরি সাময়িক সময়ের জন্য বন্ধ আছে।`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
