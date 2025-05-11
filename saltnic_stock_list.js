@@ -344,8 +344,7 @@ const items={
     let date="21/02/2025";
     let time="6:00 PM";
     let updatedProducts=`<strong>Last updated Product(s):</strong>
- Daze Pineapple Coconut Banana Iced 30mg,
- Daze Raspberry Green Apple Watermelon 30mg`;
+সাময়িকভাবে ওয়েবসাইট ইনভেন্টরি বন্ধ আছে।`;
     document.getElementById("date").innerHTML=date;
     document.getElementById("time").innerHTML=time;
     document.getElementById('updatedProducts').innerHTML=updatedProducts;
